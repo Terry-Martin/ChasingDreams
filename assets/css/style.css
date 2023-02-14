@@ -72,13 +72,17 @@ nav {
   background-color: yellowgreen;
   gap: 10px;
   padding: 20px;
+  height: 80vh;
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
 .left-grid {
-  display: flex;
   grid-area: left-grid;
-  flex-direction: column;
+
+  display: grid;
+  grid-template-rows: 40% 20% 25% 15%;
+  /* display: flex; */
+  /* flex-direction: column; */
   background-color: red;
   padding: 30px;
   gap: 5px;
@@ -87,25 +91,25 @@ nav {
 /* main content area */
 .left-grid-content {
   background-color: aquamarine;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* user reply options */
 .left-grid-user-response {
   background-color: blanchedalmond;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* user movement controls */
 .left-grid-user-controls {
   background-color: coral;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* main content area */
 .left-grid-user-items {
   background-color: darkgrey;
-  padding: 10px;
+  padding: 5px;
 }
 
 
@@ -128,31 +132,31 @@ nav {
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: gold;
-  padding: 10px;
+  padding: 5px;
 }
 
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: honeydew;
-  padding: 10px;
+  padding: 5px;
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: indianred;
-  padding: 10px;
+  padding: 5px;
 }
 
 .right-grid-npc1-info{
   grid-area: npc1-info;
   background-color: khaki;
-  padding: 10px;
+  padding: 5px;
 }
 
 .right-grid-npc2-info{
   grid-area: npc2-info;
   background-color: lemonchiffon;
-  padding: 10px;
+  padding: 5px;
 }
 
 
