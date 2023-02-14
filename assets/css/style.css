@@ -1,87 +1,139 @@
 /* logo, heading and nav bar */
 
 .header-bar {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 25px;
-    padding-right: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-items: center;
-    color: #F0FFF0;
-    letter-spacing: 5px;
-    font-size: 45px;
-    background-color: #301934;
-    font-family: "Montserrat", sans-serif;
-    height: 10vh;
-  }
-  
-  .header-bar i {
-    font-size: 60px;
-  }
-  
-  /* navigation menu */
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  .nav-list {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .nav-list li {
-    list-style: none;
-    flex: 0 0 auto;
-  }
-  
-  .nav-list a {
-    color: #F0FFF0;
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 6px 8px;
-  }
-  
-  .nav-list a:hover:not(.active) {
-    background-color: #F0FFF0;
-    color: #301934;
-  }
-  
-  .nav-list li a.active {
-    font-weight: 900;
-    color: rgb(250, 250, 6);
-    border-style: solid;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  color: #F0FFF0;
+  letter-spacing: 5px;
+  font-size: 45px;
+  background-color: #301934;
+  font-family: "Montserrat", sans-serif;
+  height: 10vh;
+}
+
+.header-bar i {
+  font-size: 60px;
+}
+
+/* navigation menu */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list li {
+  list-style: none;
+  flex: 0 0 auto;
+}
+
+.nav-list a {
+  color: #F0FFF0;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 8px;
+}
+
+.nav-list a:hover:not(.active) {
+  background-color: #F0FFF0;
+  color: #301934;
+}
+
+.nav-list li a.active {
+  font-weight: 900;
+  color: rgb(250, 250, 6);
+  border-style: solid;
+}
 
 
+
+
+
+/* container grid to house left grid and right grid for main game area */
+.container-grid {
+  display: grid;
+  grid-template-columns: 66% 33%;
+  /* grid-template-rows: auto; */
+  grid-template-areas:
+    'left-grid right-grid';
+  background-color: yellowgreen;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
+.left-grid {
+  display: flex;
+  grid-area: left-grid;
+  flex-direction: column;
+  background-color: red;
+}
+
+/* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
+.right-grid {
+  grid-area: right-grid;
+  background-color: brown;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
 .footer-bar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 30px;
-    background-color: blue;
-    font-family: "Montserrat", sans-serif;
-    letter-spacing: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 8vh;
-  }
-  
-  /* social media links on footer */
-  
-  .soc-media-links {
-    display: flex;
-    list-style: none;
-    color: #F0FFF0;
-  }
-  
-  .soc-media-links:hover {
-    color: cadetblue;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30px;
+  background-color: blue;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 8vh;
+}
+
+/* social media links on footer */
+
+.soc-media-links {
+  display: flex;
+  list-style: none;
+  color: #F0FFF0;
+}
+
+.soc-media-links:hover {
+  color: cadetblue;
+}
