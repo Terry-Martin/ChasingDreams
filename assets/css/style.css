@@ -62,7 +62,6 @@ nav {
 
 
 
-
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
@@ -70,8 +69,8 @@ nav {
   grid-template-areas:
     'left-grid right-grid';
   background-color: yellowgreen;
-  gap: 10px;
-  padding: 20px;
+  gap: 5px;
+  padding: 5px;
   height: 80vh;
 }
 
@@ -84,7 +83,7 @@ nav {
   /* display: flex; */
   /* flex-direction: column; */
   background-color: red;
-  padding: 30px;
+  padding: 10px;
   gap: 5px;
 }
 
@@ -125,7 +124,7 @@ nav {
     'player-info player-info'
     'npc1-info npc2-info';
   background-color: fuchsia;
-  padding: 30px;
+  padding: 10px;
   gap: 5px;
 }
 
@@ -159,6 +158,9 @@ nav {
   padding: 5px;
 }
 
+.player-stats {
+  color: white;
+}
 
 
 

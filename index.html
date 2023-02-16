@@ -47,20 +47,23 @@
 
             <div class="left-grid-user-response">Player Responses
                 <form action="">
-                    <input type="radio" id="one" name="player-response" value="walk along the shore" onclick="alert('You walk along the shore');">
+                    <input type="radio" id="one" name="player-response" value="walk along the shore"
+                        onclick="alert('You walk along the shore');">
                     <label for="one">walk along the shore?</label>
                     <br>
-                    <input type="radio" id="two" name="player-response" value="go for a swim" onclick="alert('You go for a swim');">
+                    <input type="radio" id="two" name="player-response" value="go for a swim"
+                        onclick="alert('You go for a swim');">
                     <label for="two">go for a swim?</label>
                     <br>
-                    <input type="radio" id="three" name="player-response" value="explore the sand dunes" onclick="alert('You explore the sand dunes');">
+                    <input type="radio" id="three" name="player-response" value="explore the sand dunes"
+                        onclick="alert('You explore the sand dunes');">
                     <label for="three">explore the sand dunes?</label>
                 </form>
             </div>
 
             <div class="left-grid-user-controls">
                 <form action="">
-                    <button>Continue</button>
+                    <button onclick="document.getElementById('continue').innerHTML = Date()">Continue</button>
                     <button>Go Back</button>
                     <button>Use Item</button>
                     <button>Drink</button>
@@ -78,9 +81,9 @@
         <div class="right-grid">
             <div class="right-grid-dream-info">Dream Info
                 <ul>
-                    <li>Terrain</li>
-                    <li>Weather</li>
-                    <li>Action type</li>
+                    <li id="terrain">Terrain</li>
+                    <li id="weather">Weather</li>
+                    <li id ="continue">Action type</li>
                 </ul>
             </div>
 
@@ -89,16 +92,19 @@
                     <li>Current Time</li>
                     <li>How long asleep</li>
                     <li>Target Time</li>
-                    <li id = "currentMood"></li>
+                    <li id="currentMood"></li>
                 </ul>
             </div>
 
             <div class="right-grid-player-info"> Player Info
                 <ul>
                     <li>Name</li>
-                    <li>Hot\Cold</li>
-                    <li>Relaxed\Agitated</li>
-                    <li>Tired\Refreshed</li>
+                    <li>Age</li>
+                    <li class="player-stats">Creativity</li>
+                    <li class="player-stats">Relaxation</li>
+                    <li class="player-stats">Comfort</li>
+                    <li class="player-stats">Luck</li>
+                    <li class="player-stats">Strength</li>
                 </ul>
             </div>
             <div class="right-grid-npc1-info">NPC One Info
