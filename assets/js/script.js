@@ -31,11 +31,11 @@ function startGame() {
         luck: startingStat(),
         strength: startingStat(),
         mood: function () {
-            return (this.luck + this.comfort) / 2;
+            return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
         }
     }
 
-   
+
 
     // Display current character stat values
     document.getElementById("name").textContent = "Name: Terry";
@@ -46,6 +46,8 @@ function startGame() {
     document.getElementsByClassName("player-stats")[2].textContent = "Comfort: " + character.comfort;
     document.getElementsByClassName("player-stats")[3].textContent = "Luck: " + character.luck;
     document.getElementsByClassName("player-stats")[4].textContent = "Strength: " + character.strength;
+
+    document.getElementById("currentMood").textContent = "Sleep Depth: " + character.mood();
 
     // Set weather array and display random weather data
     const weather = ["Raining", "Sunny", "Snowy", "Hurricane"];
@@ -58,11 +60,19 @@ function startGame() {
     let terrainType = Math.floor(Math.random() * terrain.length);
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
 
+    let areaNumber = 3;
+    document.getElementById("area").textContent = "Dream Area: " + areaNumber;
+
+    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
+
 }
 
+
+/**
+ * Generate a random number between 70 and 99
+ */
 function startingStat() {
 
-    // Generate a random number between 70 and 99
     return Math.floor(Math.random() * 20) + 70;
 }
 
@@ -78,10 +88,9 @@ function startingStat() {
 console.log(character.name);
 console.log(character.mood()); */
 
-// let x = character.mood();
-// document.getElementById("currentMood").textContent = x;
 
-// document.getElementById("currentMood").textContent = character.mood();
+
+
 
 
 // hide element/text
@@ -104,6 +113,13 @@ console.log(character.mood()); */
 
 
 // Edit style using getElementsByClassName
-    /* for (const s of document.getElementsByClassName("player-stats")) {
-        s.style.color = "purple";
-    } */
+/* for (const s of document.getElementsByClassName("player-stats")) {
+    s.style.color = "purple";
+} */
+
+
+
+
+    // let t = character.mood();
+    // document.getElementById("currentMood").textContent = t;
+    // document.getElementById("currentMood").textContent = character.mood();
