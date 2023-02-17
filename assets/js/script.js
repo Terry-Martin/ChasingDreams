@@ -1,19 +1,3 @@
-/* document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
-                checkAnswer();
-            } else {
-                let gameType = this.getAttribute("data-type");
-                runGame(gameType);
-            }
-        })
-    }*/
-
-// object.onload = startGame();
-
 window.onload = function () {
     startGame();
 };
@@ -30,12 +14,10 @@ function startGame() {
         comfort: startingStat(),
         luck: startingStat(),
         strength: startingStat(),
-        mood: function () {
+        sleepDepth: function () {
             return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
         }
     }
-
-
 
     // Display current character stat values
     document.getElementById("name").textContent = "Name: Terry";
@@ -46,8 +28,6 @@ function startGame() {
     document.getElementsByClassName("player-stats")[2].textContent = "Comfort: " + character.comfort;
     document.getElementsByClassName("player-stats")[3].textContent = "Luck: " + character.luck;
     document.getElementsByClassName("player-stats")[4].textContent = "Strength: " + character.strength;
-
-    document.getElementById("currentMood").textContent = "Sleep Depth: " + character.mood();
 
     // Set weather array and display random weather data
     const weather = ["Raining", "Sunny", "Snowy", "Hurricane"];
@@ -60,22 +40,57 @@ function startGame() {
     let terrainType = Math.floor(Math.random() * terrain.length);
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
 
+    // Set Dream Area number. This will increment by 1 each area the player completes
     let areaNumber = 3;
     document.getElementById("area").textContent = "Dream Area: " + areaNumber;
 
+    // Calculate player sleep depth as a calculation of player stats and display
+    document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
+
+    // Change font colour depending on current score
+    if (character.sleepDepth() < 26) {
+        document.getElementById("sleep-depth").style.color = "red";
+    } else if (character.sleepDepth() < 76) {
+        document.getElementById("sleep-depth").style.color = "yellow";
+    } else {
+        document.getElementById("sleep-depth").style.color = "green";
+    }
+
+    // Calculate player progress from current dream area. 1 area complete = 15 minutes of sleep
     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
 
-}
 
+
+
+
+
+
+
+}
 
 /**
  * Generate a random number between 70 and 99
  */
 function startingStat() {
-
     return Math.floor(Math.random() * 20) + 70;
 }
 
+
+/* document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "submit") {
+                checkAnswer();
+            } else {
+                let gameType = this.getAttribute("data-type");
+                runGame(gameType);
+            }
+        })
+    }*/
+
+// object.onload = startGame();
 
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
@@ -87,10 +102,6 @@ function startingStat() {
 
 console.log(character.name);
 console.log(character.mood()); */
-
-
-
-
 
 
 // hide element/text
@@ -118,8 +129,6 @@ console.log(character.mood()); */
 } */
 
 
-
-
-    // let t = character.mood();
-    // document.getElementById("currentMood").textContent = t;
-    // document.getElementById("currentMood").textContent = character.mood();
+// let t = character.mood();
+// document.getElementById("currentMood").textContent = t;
+// document.getElementById("currentMood").textContent = character.mood();

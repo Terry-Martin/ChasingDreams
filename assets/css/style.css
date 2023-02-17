@@ -91,6 +91,7 @@ nav {
 .left-grid-content {
   background-color: aquamarine;
   padding: 5px;
+  background: url('../images/terrain/canyon.jpg');
 }
 
 /* user reply options */
