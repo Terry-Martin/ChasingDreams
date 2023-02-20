@@ -14,6 +14,7 @@ function startGame() {
         comfort: startingStat(),
         luck: startingStat(),
         strength: startingStat(),
+        // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
         }
@@ -37,8 +38,24 @@ function startGame() {
     // Set terrain array and display random terrain data
     // https://outforia.com/types-of-terrain/
     const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
+
     let terrainType = Math.floor(Math.random() * terrain.length);
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
+
+    //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
+    const terrainImage = [
+        "url('/assets/images/terrain/foothills.jpg')",
+        "url('/assets/images/terrain/swamp.jpg')",
+        "url('/assets/images/terrain/meadow.jpg')",
+        "url('/assets/images/terrain/forest.jpg')",
+        "url('/assets/images/terrain/canyon.jpg')",
+        "url('/assets/images/terrain/valley.jpg')",
+        "url('/assets/images/terrain/dunes.jpg')",
+        "url('/assets/images/terrain/glacier.jpg')"
+    ];
+
+    document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[terrainType];
+
 
     // Set Dream Area number. This will increment by 1 each area the player completes
     let areaNumber = 3;
@@ -58,15 +75,8 @@ function startGame() {
 
     // Calculate player progress from current dream area. 1 area complete = 15 minutes of sleep
     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
-
-
-
-
-
-
-
-
 }
+
 
 /**
  * Generate a random number between 70 and 99
@@ -132,3 +142,14 @@ console.log(character.mood()); */
 // let t = character.mood();
 // document.getElementById("currentMood").textContent = t;
 // document.getElementById("currentMood").textContent = character.mood();
+
+
+/* document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[0];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[1];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[2];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[3];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[4];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[5];
+document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[6]; */
+
+//document.getElementById("left-grid-content1").style.backgroundImage = "url('/assets/images/terrain/canyon.jpg')";
