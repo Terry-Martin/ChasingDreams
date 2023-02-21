@@ -14,7 +14,7 @@ function startGame() {
         comfort: startingStat(),
         luck: startingStat(),
         strength: startingStat(),
-        
+
         // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
@@ -44,7 +44,7 @@ function startGame() {
         "url('/assets/images/weather/hurricane2.jpg')"
     ];
 
-    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = weatherImage[weatherType]; 
+    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = weatherImage[weatherType];
 
 
     // Set terrain array and display random terrain data
@@ -55,7 +55,7 @@ function startGame() {
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
 
     //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
-     const terrainImage = [
+    const terrainImage = [
         "url('/assets/images/terrain/foothills.jpg')",
         "url('/assets/images/terrain/swamp.jpg')",
         "url('/assets/images/terrain/meadow.jpg')",
@@ -66,8 +66,8 @@ function startGame() {
         "url('/assets/images/terrain/glacier.jpg')"
     ];
 
-    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType]; 
-    
+    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
+
 
     // Set Dream Area number. This will increment by 1 each area the player completes
     let areaNumber = 3;
@@ -87,7 +87,31 @@ function startGame() {
 
     // Calculate player progress from current dream area. 1 area complete = 15 minutes of sleep
     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
+
+
+
+
+
+
+
+    // Check player answer and give feedback
+    
+    let playerAnswer = document.getElementById("player-answer").value;
+    //playerAnswer = "AliCe";
+
+
+    let playerAnswer1 = playerAnswer.toUpperCase();
+    
+    if (playerAnswer1 === "ALICE") {
+        alert("CORRECT!!!!!!!!");
+    } else {
+        alert("WRONG!!!!!!");
+    }
+
 }
+
+
+
 
 
 /**
@@ -96,6 +120,7 @@ function startGame() {
 function startingStat() {
     return Math.floor(Math.random() * 20) + 70;
 }
+
 
 
 /* document.addEventListener("DOMContentLoaded", function () {

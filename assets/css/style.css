@@ -198,3 +198,8 @@ nav {
 .soc-media-links:hover {
   color: cadetblue;
 }
+
+/* Hightlight Blank Word in Content area */
+strong {
+  color: red;
+}
