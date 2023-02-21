@@ -86,12 +86,14 @@ nav {
   background-color: red;
   padding: 10px;
   gap: 5px;
+
 }
 
 /* main content area */
 .left-grid-content {
   background-color: aquamarine;
   padding: 5px;
+  /* opacity: .6; */
   /* background-image: url('../images/terrain/canyon.jpg'); */
 }
 
@@ -163,22 +165,6 @@ nav {
 .player-stats {
   color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

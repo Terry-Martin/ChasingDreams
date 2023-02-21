@@ -14,6 +14,7 @@ function startGame() {
         comfort: startingStat(),
         luck: startingStat(),
         strength: startingStat(),
+        
         // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
@@ -35,6 +36,17 @@ function startGame() {
     let weatherType = Math.floor(Math.random() * weather.length);
     document.getElementById("weather").textContent = "Weather: " + weather[weatherType];
 
+    // Set the weather background
+    const weatherImage = [
+        "url('/assets/images/weather/rain1.jpg')",
+        "url('/assets/images/weather/clear_sky.jpg')",
+        "url('/assets/images/weather/snow1.jpg')",
+        "url('/assets/images/weather/hurricane2.jpg')"
+    ];
+
+    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = weatherImage[weatherType]; 
+
+
     // Set terrain array and display random terrain data
     // https://outforia.com/types-of-terrain/
     const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
@@ -43,7 +55,7 @@ function startGame() {
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
 
     //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
-    const terrainImage = [
+     const terrainImage = [
         "url('/assets/images/terrain/foothills.jpg')",
         "url('/assets/images/terrain/swamp.jpg')",
         "url('/assets/images/terrain/meadow.jpg')",
@@ -54,8 +66,8 @@ function startGame() {
         "url('/assets/images/terrain/glacier.jpg')"
     ];
 
-    document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[terrainType];
-
+    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType]; 
+    
 
     // Set Dream Area number. This will increment by 1 each area the player completes
     let areaNumber = 3;
