@@ -1,24 +1,38 @@
 window.onload = function () {
-    startGame();
+    newGame();
 };
 
-function startGame() {
 
-    // Create array and array property?
+function newGame() {
+    startingStats();
+    setWeather();
+    setTerrain();
+    setDreamInfo();
+}
+
+function startingStats() {
+    // Create character array
     // Assign a random number between 70 and 99 to each of the variable player stats
     const character = {
         name: "Terry",
         age: 41,
-        creativity: startingStat(),
-        relaxation: startingStat(),
-        comfort: startingStat(),
-        luck: startingStat(),
-        strength: startingStat(),
+        creativity: generateStat(),
+        relaxation: generateStat(),
+        comfort: generateStat(),
+        luck: generateStat(),
+        strength: generateStat(),
 
         // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
         }
+    }
+
+    /**
+     * Generate a random number between 70 and 99
+     */
+    function generateStat() {
+        return Math.floor(Math.random() * 20) + 70;
     }
 
     // Display current character stat values
@@ -30,7 +44,9 @@ function startGame() {
     document.getElementsByClassName("player-stats")[2].textContent = "Comfort: " + character.comfort;
     document.getElementsByClassName("player-stats")[3].textContent = "Luck: " + character.luck;
     document.getElementsByClassName("player-stats")[4].textContent = "Strength: " + character.strength;
+}
 
+function setWeather() {
     // Set weather array and display random weather data
     const weather = ["Raining", "Sunny", "Snowy", "Hurricane"];
     let weatherType = Math.floor(Math.random() * weather.length);
@@ -45,8 +61,9 @@ function startGame() {
     ];
 
     document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = weatherImage[weatherType];
+}
 
-
+function setTerrain() {
     // Set terrain array and display random terrain data
     // https://outforia.com/types-of-terrain/
     const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
@@ -67,13 +84,15 @@ function startGame() {
     ];
 
     document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
+}
 
-
+function setDreamInfo() {
     // Set Dream Area number. This will increment by 1 each area the player completes
     let areaNumber = 3;
     document.getElementById("area").textContent = "Dream Area: " + areaNumber;
 
     // Calculate player sleep depth as a calculation of player stats and display
+    // ?? Is character.sleepDepth accessible??  
     document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
 
     // Change font colour depending on current score
@@ -87,40 +106,35 @@ function startGame() {
 
     // Calculate player progress from current dream area. 1 area complete = 15 minutes of sleep
     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
+}
 
-
-
-
-
-
-
+/*
     // Check player answer and give feedback
-    
+
     let playerAnswer = document.getElementById("player-answer").value;
     //playerAnswer = "AliCe";
 
 
     let playerAnswer1 = playerAnswer.toUpperCase();
-    
+
     if (playerAnswer1 === "ALICE") {
         alert("CORRECT!!!!!!!!");
     } else {
         alert("WRONG!!!!!!");
     }
-
-}
-
+*/ 
 
 
 
 
-/**
- * Generate a random number between 70 and 99
- */
-function startingStat() {
-    return Math.floor(Math.random() * 20) + 70;
-}
 
+
+
+
+
+/* window.onload = function () {
+    startGame();
+}; */
 
 
 /* document.addEventListener("DOMContentLoaded", function () {

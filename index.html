@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Chasing Dreams</title>
 </head>
 
@@ -43,6 +44,7 @@
         <div class="left-grid">
             <div class="left-grid-content" id="left-grid-content1">
                 <h3>Missing Song Lyric</h3>
+                <h5><em>White Rabbit</em></h5>
                 <p>One pill makes you larger
                     <br>
                     And one pill makes you small
@@ -56,38 +58,24 @@
                     When she's ten feet tall
                     <br>
                 </p>
-                <p><em>White Rabbit</em></p>
+                <p><em>By Jefferson Airplane</em></p>
             </div>
-            
-
 
             <div class="left-grid-user-response">
                 <p>According to Jefferson Airplane, who should you ask?</p>
-                <form action="https://formdump.codeinstitute.net/" method="POST" id="main-content">
+                <!-- <form action="https://formdump.codeinstitute.net/" method="POST" id="main-content"></form> -->
+                <form id="main-content">
                     <label for="player-answer">Answer: </label>
                     <input type="text" id="player-answer" name="player-answer" value="GOOOOOOOOOOOO" required>
                     <br>
-                    <button type="submit" class="button" form="main-content"><strong>Submit</strong></button>
+                    <button type="submit" class="button" form="main-content" onclick="newGame()"><strong>Submit</strong></button>
                     <button>Hint</button>
                 </form>
-                <!-- <form action="">
-                    <input type="radio" id="one" name="player-response" value="walk along the shore"
-                        onclick="alert('You walk along the shore');">
-                    <label for="one">walk along the shore?</label>
-                    <br>
-                    <input type="radio" id="two" name="player-response" value="go for a swim"
-                        onclick="alert('You go for a swim');">
-                    <label for="two">go for a swim?</label>
-                    <br>
-                    <input type="radio" id="three" name="player-response" value="explore the sand dunes"
-                        onclick="alert('You explore the sand dunes');">
-                    <label for="three">explore the sand dunes?</label>
-                </form> -->
             </div>
 
             <div class="left-grid-user-controls">
                 <form action="">
-                    <button onclick="document.getElementById('continue').innerHTML = Date()">Continue</button>
+                    <button>Continue</button>
                     <button>Go Back</button>
                     <button>Use Item</button>
                     <button>Drink</button>
@@ -176,6 +164,7 @@
             </li>
         </ul>
     </footer>
+
     <!-- font awesome script -->
     <script src="https://kit.fontawesome.com/9d9c64c030.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
