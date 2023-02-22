@@ -68,14 +68,15 @@
                     <label for="player-answer">Answer: </label>
                     <input type="text" id="player-answer" name="player-answer" value="GOOOOOOOOOOOO" required>
                     <br>
-                    <button type="submit" class="button" form="main-content" onclick="newGame()"><strong>Submit</strong></button>
+                    <button type="submit" class="button" form="main-content"><strong>Submit</strong></button>
                     <button>Hint</button>
                 </form>
             </div>
 
             <div class="left-grid-user-controls">
                 <form action="">
-                    <button>Continue</button>
+                    <button id="start-game">Continue</button>
+                    <p id="demo"></p>
                     <button>Go Back</button>
                     <button>Use Item</button>
                     <button>Drink</button>

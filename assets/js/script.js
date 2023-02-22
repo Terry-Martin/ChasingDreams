@@ -1,9 +1,15 @@
-window.onload = function () {
+/* window.onload = function () {
     newGame();
-};
+} */
 
+const startGame = document.getElementById("start-game");
+startGame.addEventListener("click", newGame);
 
 function newGame() {
+    // Prevent page reloading
+    event.preventDefault();
+
+    // Call game funtions
     startingStats();
     setWeather();
     setTerrain();
@@ -35,7 +41,7 @@ function startingStats() {
         return Math.floor(Math.random() * 20) + 70;
     }
 
-    // Display current character stat values
+    // Display player stat values
     document.getElementById("name").textContent = "Name: Terry";
     document.getElementById("age").textContent = "Age: 41";
 
@@ -122,7 +128,7 @@ function setDreamInfo() {
     } else {
         alert("WRONG!!!!!!");
     }
-*/ 
+*/
 
 
 
