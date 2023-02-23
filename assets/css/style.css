@@ -60,9 +60,6 @@ nav {
   border-style: solid;
 }
 
-
-
-
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
@@ -115,7 +112,6 @@ nav {
   padding: 5px;
 }
 
-
 /* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
 .right-grid {
   grid-area: right-grid;
@@ -166,13 +162,6 @@ nav {
   color: white;
 }
 
-
-
-
-
-
-
-
 /* footer */
 .footer-bar {
   display: flex;
@@ -202,4 +191,45 @@ nav {
 /* Hightlight Blank Word in Content area */
 strong {
   color: red;
+}
+
+
+/* Min-width: 992px (smaller desktop viewpoints) */
+@media only screen and (max-width: 992px) {
+  .header-bar {
+    display: none;
+  }
+}
+
+/* Min-width: 768px (smaller desktop viewpoints) */
+@media only screen and (max-width: 768px) {
+  .footer-bar {
+    display: none;
+  }
+}
+
+/* Min-width: 480px (smaller desktop viewpoints) */
+@media only screen and (max-width: 600px) {
+  
+/* container grid to house left grid and right grid for main game area */
+.container-grid {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'left-grid'
+    'right-grid';
+  background-color: rgb(50, 205, 205);
+  gap: 5px;
+  padding: 5px;
+  height: 100vh;
+}
+}
+
+/* Min-width: 480px (smaller desktop viewpoints) */
+@media only screen and (max-width: 480px) {
+}
+
+/* Min-width: 320px (smaller desktop viewpoints) */
+@media only screen and (max-width: 320px) {
+ 
 }

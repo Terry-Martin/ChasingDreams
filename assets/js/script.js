@@ -107,7 +107,7 @@ function setTerrain() {
 // Update game level and diplay next question
 function displayQuestion() {
     let gameCounter = document.getElementById("area-number").textContent;
-    
+
     //Display Question
     if (gameCounter == 1) {
         document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
@@ -120,8 +120,8 @@ function displayQuestion() {
     gameCounter++;
     document.getElementById("area-number").textContent = gameCounter;
 
-     // ?? Is character.sleepDepth accessible??  
-     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 15) / 60) + " hours";
+    // ?? Is character.sleepDepth accessible??  
+    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 15) / 60) + " hours";
 }
 
 // Check player answer verses correct answer and feedback 
