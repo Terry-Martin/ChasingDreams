@@ -1,9 +1,8 @@
-/* window.onload = function () {
-    newGame();
-} */
-
 const startGame = document.getElementById("start-game");
 startGame.addEventListener("click", newGame);
+
+const submitAnswer = document.getElementById("submit-answer");
+submitAnswer.addEventListener("click", checkAnswer);
 
 function newGame() {
     // Prevent page reloading
@@ -13,12 +12,13 @@ function newGame() {
     startingStats();
     setWeather();
     setTerrain();
-    setDreamInfo();
+    displayQuestion();
 }
 
+// Create character array
+// Assign a random number between 70 and 99 to each of the variable player stats
 function startingStats() {
-    // Create character array
-    // Assign a random number between 70 and 99 to each of the variable player stats
+
     const character = {
         name: "Terry",
         age: 41,
@@ -50,6 +50,18 @@ function startingStats() {
     document.getElementsByClassName("player-stats")[2].textContent = "Comfort: " + character.comfort;
     document.getElementsByClassName("player-stats")[3].textContent = "Luck: " + character.luck;
     document.getElementsByClassName("player-stats")[4].textContent = "Strength: " + character.strength;
+
+    // Calculate player sleep depth as a calculation of player stats and display 
+    document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
+
+    // Change font colour depending on current score
+    if (character.sleepDepth() < 26) {
+        document.getElementById("sleep-depth").style.color = "red";
+    } else if (character.sleepDepth() < 76) {
+        document.getElementById("sleep-depth").style.color = "yellow";
+    } else {
+        document.getElementById("sleep-depth").style.color = "green";
+    }
 }
 
 function setWeather() {
@@ -92,47 +104,41 @@ function setTerrain() {
     document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
 }
 
-function setDreamInfo() {
-    // Set Dream Area number. This will increment by 1 each area the player completes
-    let areaNumber = 3;
-    document.getElementById("area").textContent = "Dream Area: " + areaNumber;
-
-    // Calculate player sleep depth as a calculation of player stats and display
-    // ?? Is character.sleepDepth accessible??  
-    document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
-
-    // Change font colour depending on current score
-    if (character.sleepDepth() < 26) {
-        document.getElementById("sleep-depth").style.color = "red";
-    } else if (character.sleepDepth() < 76) {
-        document.getElementById("sleep-depth").style.color = "yellow";
+// Update game level and diplay next question
+function displayQuestion() {
+    let gameCounter = document.getElementById("area-number").textContent;
+    
+    //Display Question
+    if (gameCounter == 1) {
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
+    } else if (gameCounter == 2) {
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br>_ _ _ (_ _ _ is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>"
     } else {
-        document.getElementById("sleep-depth").style.color = "green";
+        document.getElementById("left-grid-content1").innerHTML = "NEXT"
     }
 
-    // Calculate player progress from current dream area. 1 area complete = 15 minutes of sleep
-    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((areaNumber * 15) / 60) + " hours";
+    gameCounter++;
+    document.getElementById("area-number").textContent = gameCounter;
+
+     // ?? Is character.sleepDepth accessible??  
+     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 15) / 60) + " hours";
 }
 
-/*
-    // Check player answer and give feedback
+// Check player answer verses correct answer and feedback 
+function checkAnswer() {
+
+    // Prevent page reloading
+    event.preventDefault();
 
     let playerAnswer = document.getElementById("player-answer").value;
-    //playerAnswer = "AliCe";
+    playerAnswer = playerAnswer.toUpperCase();
 
-
-    let playerAnswer1 = playerAnswer.toUpperCase();
-
-    if (playerAnswer1 === "ALICE") {
-        alert("CORRECT!!!!!!!!");
+    if (playerAnswer === "ALICE") {
+        alert("Correct");
     } else {
-        alert("WRONG!!!!!!");
+        alert("Wrong");
     }
-*/
-
-
-
-
+}
 
 
 
