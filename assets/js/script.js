@@ -12,10 +12,7 @@ function newGame() {
     event.preventDefault();
 
     // Reset displays
-    document.getElementById("area-number").textContent = 1;
-    document.getElementById("left-grid-content1").textContent = "";
-    document.getElementById("game-question").textContent = "";
-    document.getElementById("player-answer").textContent = "";
+    resetGameData()
 
     // Call game funtions
     startingStats();
@@ -53,11 +50,11 @@ function startingStats() {
     document.getElementById("name").textContent = "Name: Terry";
     document.getElementById("age").textContent = "Age: 41";
 
-    document.getElementsByClassName("player-stats")[0].textContent = "Creativity: " + character.creativity;
-    document.getElementsByClassName("player-stats")[1].textContent = "Relaxation: " + character.relaxation;
-    document.getElementsByClassName("player-stats")[2].textContent = "Comfort: " + character.comfort;
-    document.getElementsByClassName("player-stats")[3].textContent = "Luck: " + character.luck;
-    document.getElementsByClassName("player-stats")[4].textContent = "Strength: " + character.strength;
+    document.getElementsByClassName("player-stats")[0].textContent = character.creativity;
+    document.getElementsByClassName("player-stats")[1].textContent = character.relaxation;
+    document.getElementsByClassName("player-stats")[2].textContent = character.comfort;
+    document.getElementsByClassName("player-stats")[3].textContent = character.luck;
+    document.getElementsByClassName("player-stats")[4].textContent = character.strength;
 
     // Calculate player sleep depth as a calculation of player stats and display 
     document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
@@ -120,6 +117,7 @@ function displayQuestion() {
     event.preventDefault();
 
     let gameCounter = document.getElementById("area-number").textContent;
+    gameCounter++;
 
     //Display Question
     if (gameCounter == 1) {
@@ -133,11 +131,15 @@ function displayQuestion() {
         document.getElementById("game-question").innerHTML = "NEXT QUESTION";
     }
 
-    gameCounter++;
+
     document.getElementById("area-number").textContent = gameCounter;
 
-    // ?? Is character.sleepDepth accessible??  
     document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 15) / 60) + " hours";
+
+    // Game complete as player reached level 32 which equals the mythical 8 hours of sleep
+    if (gameCounter == 32) {
+        alert("CONGRATS!!!");
+    }
 }
 
 // Check player answer verses correct answer and feedback 
@@ -149,11 +151,31 @@ function checkAnswer() {
     let playerAnswer = document.getElementById("player-answer").value;
     playerAnswer = playerAnswer.toUpperCase();
 
-    if (playerAnswer === "ALICE") {
+    if (playerAnswer === "ALICE" && document.getElementById("area-number").textContent == 1) {
         alert("Correct");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
+    } else if (playerAnswer === "FUN" && document.getElementById("area-number").textContent == 2) {
+        alert("Correct");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
     } else {
-        alert("Wrong");
+        alert("HMMMMMZ");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 10;
     }
+
+    document.getElementById("player-answer").value = "";
+}
+
+
+// Reset game data and displays to start game position
+function resetGameData() {
+    // Prevent page reloading
+    event.preventDefault();
+
+    document.getElementById("area-number").textContent = 0;
+    document.getElementById("left-grid-content1").textContent = "";
+    document.getElementById("game-question").textContent = "";
+    document.getElementById("player-answer").value = "";
+
 }
 
 
