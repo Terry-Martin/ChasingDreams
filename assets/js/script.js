@@ -4,15 +4,23 @@ startGame.addEventListener("click", newGame);
 const submitAnswer = document.getElementById("submit-answer");
 submitAnswer.addEventListener("click", checkAnswer);
 
+const continueGame = document.getElementById("continue-game");
+continueGame.addEventListener("click", displayQuestion);
+
 function newGame() {
     // Prevent page reloading
     event.preventDefault();
+
+    // Reset displays
+    document.getElementById("area-number").textContent = 1;
+    document.getElementById("left-grid-content1").textContent = "";
+    document.getElementById("game-question").textContent = "";
+    document.getElementById("player-answer").textContent = "";
 
     // Call game funtions
     startingStats();
     setWeather();
     setTerrain();
-    displayQuestion();
 }
 
 // Create character array
@@ -71,6 +79,7 @@ function setWeather() {
     document.getElementById("weather").textContent = "Weather: " + weather[weatherType];
 
     // Set the weather background
+    // ??CHANGE WEATHER TO GAME TYPE??
     const weatherImage = [
         "url('/assets/images/weather/rain1.jpg')",
         "url('/assets/images/weather/clear_sky.jpg')",
@@ -106,15 +115,22 @@ function setTerrain() {
 
 // Update game level and diplay next question
 function displayQuestion() {
+
+    // Prevent page reloading
+    event.preventDefault();
+
     let gameCounter = document.getElementById("area-number").textContent;
 
     //Display Question
     if (gameCounter == 1) {
         document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
+        document.getElementById("game-question").innerHTML = "According to Jefferson Airplane, who should you ask?";
     } else if (gameCounter == 2) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br>_ _ _ (_ _ _ is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>"
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br>_ _ _ (_ _ _ is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
+        document.getElementById("game-question").innerHTML = "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?";
     } else {
-        document.getElementById("left-grid-content1").innerHTML = "NEXT"
+        document.getElementById("left-grid-content1").innerHTML = "NEXT GAME DATA";
+        document.getElementById("game-question").innerHTML = "NEXT QUESTION";
     }
 
     gameCounter++;
