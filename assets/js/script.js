@@ -16,7 +16,7 @@ function newGame() {
 
     // Call game funtions
     startingStats();
-    setWeather();
+    setGame();
     setTerrain();
 }
 
@@ -65,29 +65,28 @@ function startingStats() {
     }
 }
 
-function setWeather() {
-    // Set weather array and display random weather data
-    const weather = ["Raining", "Sunny", "Snowy", "Hurricane"];
-    let weatherType = Math.floor(Math.random() * weather.length);
-    document.getElementById("weather").textContent = "Weather: " + weather[weatherType];
+function setGame() {
+    // Set game type array and display random game type data
+    const game = ["Missing Lyric", "Echos of the Past", "Morning Ritual", "Did You Know?"];
+    let gameType = Math.floor(Math.random() * game.length);
+    document.getElementById("game").textContent = "Game Type: " + game[gameType];
 
     // Set the weather background
     // ??CHANGE WEATHER TO GAME TYPE??
-    const weatherImage = [
+    const gameImage = [
         "url('/assets/images/weather/rain1.jpg')",
         "url('/assets/images/weather/clear_sky.jpg')",
         "url('/assets/images/weather/snow1.jpg')",
         "url('/assets/images/weather/hurricane2.jpg')"
     ];
 
-    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = weatherImage[weatherType];
+    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType];
 }
 
 function setTerrain() {
     // Set terrain array and display random terrain data
     // https://outforia.com/types-of-terrain/
     const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
-
     let terrainType = Math.floor(Math.random() * terrain.length);
     document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
 
