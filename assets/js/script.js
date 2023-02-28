@@ -27,15 +27,13 @@ function startingStats() {
     const character = {
         name: "Terry",
         age: 41,
-        creativity: generateStat(),
         relaxation: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
-        strength: generateStat(),
-
+        
         // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
-            return Math.floor((this.creativity + this.relaxation + this.comfort + this.luck + this.strength) / 5);
+            return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
         }
     }
 
@@ -50,11 +48,9 @@ function startingStats() {
     document.getElementById("name").textContent = "Name: Terry";
     document.getElementById("age").textContent = "Age: 41";
 
-    document.getElementsByClassName("player-stats")[0].textContent = character.creativity;
-    document.getElementsByClassName("player-stats")[1].textContent = character.relaxation;
-    document.getElementsByClassName("player-stats")[2].textContent = character.comfort;
-    document.getElementsByClassName("player-stats")[3].textContent = character.luck;
-    document.getElementsByClassName("player-stats")[4].textContent = character.strength;
+    document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
+    document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
+    document.getElementsByClassName("player-stats")[2].textContent = character.luck;
 
     // Calculate player sleep depth as a calculation of player stats and display 
     document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
@@ -134,10 +130,10 @@ function displayQuestion() {
 
     document.getElementById("area-number").textContent = gameCounter;
 
-    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 15) / 60) + " hours";
+    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 30) / 60) + " hours";
 
-    // Game complete as player reached level 32 which equals the mythical 8 hours of sleep
-    if (gameCounter == 32) {
+    // Game complete as player reached level 16 which equals the mythical 8 hours of sleep
+    if (gameCounter == 16) {
         alert("CONGRATS!!!");
     }
 }
