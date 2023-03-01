@@ -18,6 +18,12 @@ function newGame() {
     startingStats();
     setGame();
     setTerrain();
+
+    // Disable button
+    document.getElementById("start-game").disabled = "true";
+
+    // Hide button
+    document.getElementById("start-game").style.visibility = "hidden";
 }
 
 // Create character array
@@ -172,6 +178,12 @@ function resetGameData() {
     document.getElementById("player-answer").value = "";
 
 }
+
+
+
+
+
+
 
 
 

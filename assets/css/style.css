@@ -233,3 +233,31 @@ strong {
 @media only screen and (max-width: 320px) {
  
 }
+
+#start-game, #continue-game, #submit-answer {
+
+/* Based on https://fdossena.com/?p=html5cool/buttons/i.frag */
+padding: 0.3em 1.2em;
+margin: 0 0.3em 0.3em 0;
+border-radius: 2em;
+text-decoration: none;
+font-weight:300;
+color: black;
+background-color: antiquewhite;
+text-align: center;
+transition: all 0.2s;
+}
+
+#start-game:hover, #continue-game:hover, #submit-answer:hover {
+
+background-color: burlywood;
+}
+
+
+
+
+
+
+
+
+
