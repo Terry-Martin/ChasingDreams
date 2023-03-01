@@ -77,7 +77,7 @@ nav {
   grid-area: left-grid;
 
   display: grid;
-  grid-template-rows: 40% 20% 25% 15%;
+  grid-template-rows: auto;
   /* display: flex; */
   /* flex-direction: column; */
   background-color: red;

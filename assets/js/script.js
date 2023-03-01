@@ -23,7 +23,7 @@ function newGame() {
     document.getElementById("start-game").disabled = "true";
 
     // Hide button
-    document.getElementById("start-game").style.visibility = "hidden";
+    // document.getElementById("start-game").style.visibility = "hidden";
 }
 
 // Create character array
@@ -32,7 +32,6 @@ function startingStats() {
 
     const character = {
         name: "Terry",
-        age: 41,
         relaxation: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
@@ -52,7 +51,6 @@ function startingStats() {
 
     // Display player stat values
     document.getElementById("name").textContent = "Name: Terry";
-    document.getElementById("age").textContent = "Age: 41";
 
     document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
     document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
@@ -164,6 +162,8 @@ function checkAnswer() {
     }
 
     document.getElementById("player-answer").value = "";
+
+    document.getElementById("submit-answer").disabled = "true";
 }
 
 
