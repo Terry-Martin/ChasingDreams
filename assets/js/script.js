@@ -1,11 +1,11 @@
 const startGame = document.getElementById("start-game");
 startGame.addEventListener("click", newGame);
 
-const submitAnswer = document.getElementById("submit-answer");
-submitAnswer.addEventListener("click", checkAnswer);
-
 const continueGame = document.getElementById("continue-game");
 continueGame.addEventListener("click", displayQuestion);
+
+const submitAnswer = document.getElementById("submit-answer");
+submitAnswer.addEventListener("click", checkAnswer);
 
 function newGame() {
     // Prevent page reloading
@@ -18,9 +18,10 @@ function newGame() {
     startingStats();
     setGame();
     setTerrain();
+    displayQuestion();
 
     // Disable button
-    document.getElementById("start-game").disabled = "true";
+    //document.getElementById("start-game").disabled = "true";
 
     // Hide button
     // document.getElementById("start-game").style.visibility = "hidden";
@@ -163,7 +164,7 @@ function checkAnswer() {
 
     document.getElementById("player-answer").value = "";
 
-    document.getElementById("submit-answer").disabled = "true";
+    // document.getElementById("submit-answer").disabled = "true";
 }
 
 
