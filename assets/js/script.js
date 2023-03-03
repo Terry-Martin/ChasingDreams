@@ -7,7 +7,10 @@ continueGame.addEventListener("click", displayQuestion);
 const submitAnswer = document.getElementById("submit-answer");
 submitAnswer.addEventListener("click", checkAnswer);
 
+
+
 function newGame() {
+
     // Prevent page reloading
     event.preventDefault();
 
@@ -19,6 +22,7 @@ function newGame() {
     setGame();
     setTerrain();
     displayQuestion();
+
 
     // Disable button
     //document.getElementById("start-game").disabled = "true";
@@ -36,7 +40,7 @@ function startingStats() {
         relaxation: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
-        
+
         // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
@@ -131,10 +135,8 @@ function displayQuestion() {
         document.getElementById("game-question").innerHTML = "NEXT QUESTION";
     }
 
-
     document.getElementById("area-number").textContent = gameCounter;
-
-    document.getElementById("total-sleep").textContent = "Total Sleep: " + ((gameCounter * 30) / 60) + " hours";
+    document.getElementById("total-sleep").textContent = (gameCounter * 30) / 60;
 
     // Game complete as player reached level 16 which equals the mythical 8 hours of sleep
     if (gameCounter == 16) {
@@ -163,7 +165,6 @@ function checkAnswer() {
     }
 
     document.getElementById("player-answer").value = "";
-
     // document.getElementById("submit-answer").disabled = "true";
 }
 
@@ -180,10 +181,43 @@ function resetGameData() {
 
 }
 
+//const startGame = document.getElementById("start-game");
+//startGame.addEventListener("click", newGame);
 
+const progress = document.getElementById("check-progress");
+progress.addEventListener("click", showProgress);
 
+function showProgress() {
+    event.preventDefault();
 
+    const block = document.querySelectorAll('.block');
+    let num = parseInt(document.getElementById("total-sleep").textContent);
 
+    block.forEach(item => {
+        let numElement = item.querySelector('.num');
+        //let num = parseInt(numElement.innerText);
+        //let num = parseInt(progress);
+        //let num = document.getElementById("total-sleep").textContent;
+        let count = 0;
+        let time = 2000 / num;
+        let circle = item.querySelector('.circle');
+        setInterval(() => {
+            if (count == num) {
+                clearInterval();
+            } else {
+                count += 1;
+                numElement.innerText = count;
+            }
+        }, time)
+        circle.style.strokeDashoffset = 503 - (503 * (num / 8));
+        let dots = item.querySelector('.dots');
+        dots.style.transform =
+            `rotate(${360 * ((num * 12.5) / 100)}deg)`;
+        if (num == 100) {
+            dots.style.opacity = 0;
+        }
+    })
+};
 
 
 
@@ -262,30 +296,3 @@ document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = 
 document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[6]; */
 
 //document.getElementById("left-grid-content1").style.backgroundImage = "url('/assets/images/terrain/canyon.jpg')";
-
-
-const block = document.querySelectorAll('.block');
-window.addEventListener('load', function () {
-  block.forEach(item => {
-    let numElement = item.querySelector('.num');
-    let num = parseInt(numElement.innerText);
-    let count = 0;
-    let time = 2000 / num;
-    let circle = item.querySelector('.circle');
-    setInterval(() => {
-      if (count == num) {
-        clearInterval();
-      } else {
-        count += 1;
-        numElement.innerText = count;
-      }
-    }, time)
-    circle.style.strokeDashoffset = 503 - (503 * (num / 100));
-    let dots = item.querySelector('.dots');
-    dots.style.transform =
-      `rotate(${360 * ((num * 12.5) / 100)}deg)`;
-    if (num == 100) {
-      dots.style.opacity = 0;
-    }
-  })
-});

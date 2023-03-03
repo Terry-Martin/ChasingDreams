@@ -52,8 +52,9 @@
 
         <div class="right-grid-sleep-status">Sleep Status
             <ul>
-                <li id="total-sleep">Total Sleep: 0.5 hours</li>
+                
                 <li>Target Sleep: 8 Hours</li>
+                <li>Total Sleep: <span id="total-sleep">8</span></li>
                 <li id="sleep-depth"></li>
             </ul>
         </div>
@@ -61,13 +62,9 @@
         <div class="right-grid-player-info"> Player Info
             <ul>
                 <li id="name">Name</li>
-
                 <li>Relaxation: <span class="player-stats"></span></li>
-                </li>
                 <li>Comfort: <span class="player-stats"></span></li>
-                </li>
                 <li>Luck: <span class="player-stats"></span></li>
-                </li>
             </ul>
         </div>
 
@@ -79,7 +76,7 @@
         <div class="block">
             <div class="box">
                 <p class="number">
-                    <span class="num">8</span>
+                    <span class="num"></span>
                     <span class="sub">hours</span>
                 </p>
                 <p class="title">Sleep</p>
@@ -103,8 +100,8 @@
 
         <div class="right-grid-npc2-info">Player Items
             <form action="">
-                <button>Dream Jumper</button>
-                <button>Luxury Pillow</button>
+                <button id = "dream">Dream Jumper</button>
+                <button id = "check-progress">Check Progress - Luxury Pillow</button>
                 <button>Hot Water Bottle</button>
         </div>
 
