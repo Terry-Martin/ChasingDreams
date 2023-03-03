@@ -7,10 +7,10 @@ continueGame.addEventListener("click", displayQuestion);
 const submitAnswer = document.getElementById("submit-answer");
 submitAnswer.addEventListener("click", checkAnswer);
 
-
+const progress = document.getElementById("check-progress");
+progress.addEventListener("click", showProgress);
 
 function newGame() {
-
     // Prevent page reloading
     event.preventDefault();
 
@@ -23,18 +23,14 @@ function newGame() {
     setTerrain();
     displayQuestion();
 
-
     // Disable button
     //document.getElementById("start-game").disabled = "true";
-
     // Hide button
     // document.getElementById("start-game").style.visibility = "hidden";
 }
-
 // Create character array
 // Assign a random number between 70 and 99 to each of the variable player stats
 function startingStats() {
-
     const character = {
         name: "Terry",
         relaxation: generateStat(),
@@ -62,7 +58,7 @@ function startingStats() {
     document.getElementsByClassName("player-stats")[2].textContent = character.luck;
 
     // Calculate player sleep depth as a calculation of player stats and display 
-    document.getElementById("sleep-depth").textContent = "Sleep Depth: " + character.sleepDepth();
+    document.getElementById("sleep-depth").textContent = character.sleepDepth();
 
     // Change font colour depending on current score
     if (character.sleepDepth() < 26) {
@@ -74,6 +70,16 @@ function startingStats() {
     }
 }
 
+function updateStats() {
+    let xy = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
+    let op = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
+    let df = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
+    let bn = (parseInt((xy + op + df)/3));
+    alert(parseInt((xy + op + df)/3));
+
+    document.getElementById("sleep-depth").textContent = bn;
+}
+
 function setGame() {
     // Set game type array and display random game type data
     const game = ["Missing Lyric", "Echos of the Past", "Morning Ritual", "Did You Know?"];
@@ -82,14 +88,14 @@ function setGame() {
 
     // Set the weather background
     // ??CHANGE WEATHER TO GAME TYPE??
-    const gameImage = [
+    /*const gameImage = [
         "url('/assets/images/weather/rain1.jpg')",
         "url('/assets/images/weather/clear_sky.jpg')",
         "url('/assets/images/weather/snow1.jpg')",
         "url('/assets/images/weather/hurricane2.jpg')"
     ];
+    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType]; */
 
-    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType];
 }
 
 function setTerrain() {
@@ -116,7 +122,6 @@ function setTerrain() {
 
 // Update game level and diplay next question
 function displayQuestion() {
-
     // Prevent page reloading
     event.preventDefault();
 
@@ -142,11 +147,12 @@ function displayQuestion() {
     if (gameCounter == 16) {
         alert("CONGRATS!!!");
     }
+
+    updateStats();
 }
 
 // Check player answer verses correct answer and feedback 
 function checkAnswer() {
-
     // Prevent page reloading
     event.preventDefault();
 
@@ -178,14 +184,7 @@ function resetGameData() {
     document.getElementById("left-grid-content1").textContent = "";
     document.getElementById("game-question").textContent = "";
     document.getElementById("player-answer").value = "";
-
 }
-
-//const startGame = document.getElementById("start-game");
-//startGame.addEventListener("click", newGame);
-
-const progress = document.getElementById("check-progress");
-progress.addEventListener("click", showProgress);
 
 function showProgress() {
     event.preventDefault();
@@ -218,9 +217,6 @@ function showProgress() {
         }
     })
 };
-
-
-
 
 
 
