@@ -74,8 +74,7 @@ function updateStats() {
     let xy = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
     let op = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
     let df = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
-    let bn = (parseInt((xy + op + df)/3));
-    alert(parseInt((xy + op + df)/3));
+    let bn = (parseInt((xy + op + df) / 3));
 
     document.getElementById("sleep-depth").textContent = bn;
 }
@@ -133,8 +132,14 @@ function displayQuestion() {
         document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
         document.getElementById("game-question").innerHTML = "According to Jefferson Airplane, who should you ask?";
     } else if (gameCounter == 2) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br>_ _ _ (_ _ _ is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br><strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
         document.getElementById("game-question").innerHTML = "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?";
+    } else if (gameCounter == 3) {
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>In Dreams</em></h5><p>A candy-colored clown they call the <strong>_ _ _ _</strong>man</p><p>Tiptoes to my room every night</p><p>Just to sprinkle stardust and to whisper</p><p>Go to sleep, everything is alright</p><em>by Roy Orbison</em>";
+        document.getElementById("game-question").innerHTML = "Who sneaks into Roy Orbisons room every night?";
+    } else if (gameCounter == 4) {
+        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em> All I Have To Do Is Dream</em></h5><p> When I feel <strong> _ _ _ _ </strong> in the night <br> And I need you to hold me tight <br> Whenever I want you, all I have to do is <br> </p><p><em> by The Everly Brothers </em></p>";
+        document.getElementById("game-question").innerHTML = "What colour do The Everly Brothers use to describe their feelings?";
     } else {
         document.getElementById("left-grid-content1").innerHTML = "NEXT GAME DATA";
         document.getElementById("game-question").innerHTML = "NEXT QUESTION";
@@ -147,8 +152,6 @@ function displayQuestion() {
     if (gameCounter == 16) {
         alert("CONGRATS!!!");
     }
-
-    updateStats();
 }
 
 // Check player answer verses correct answer and feedback 
@@ -165,6 +168,12 @@ function checkAnswer() {
     } else if (playerAnswer === "FUN" && document.getElementById("area-number").textContent == 2) {
         alert("Correct");
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
+    } else if (playerAnswer === "SAND" && document.getElementById("area-number").textContent == 3) {
+        alert("Correct");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
+    } else if (playerAnswer === "BLUE" && document.getElementById("area-number").textContent == 4) {
+        alert("Correct");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 10;
     } else {
         alert("HMMMMMZ");
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 10;
@@ -172,6 +181,8 @@ function checkAnswer() {
 
     document.getElementById("player-answer").value = "";
     // document.getElementById("submit-answer").disabled = "true";
+
+    updateStats();
 }
 
 
