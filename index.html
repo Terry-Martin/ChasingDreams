@@ -11,97 +11,117 @@
     <title>Chasing Dreams</title>
 </head>
 
-<div class="container-grid">
+<body>
 
-    <div class="left-grid">
-        <div class="left-grid-content" id="left-grid-content1">
-            <p>You fall into a peaceful slumber</p>
-            <p>Wouldn't it be great to get a full, restive eight hours sleep for once...</p>
-            <br>
-            <button id="start-game">New Game</button>
-            </form>
-        </div>
+    <div class="container-grid">
 
-        <div class="left-grid-user-response">
-            <p id="game-question"></p>
-            <!-- <form action="https://formdump.codeinstitute.net/" method="POST" id="main-content"></form> -->
-            <form id="main-content">
-                <label for="player-answer">Answer: </label>
-                <input type="text" id="player-answer" name="player-answer" value="" required>
+        <div class="left-grid">
+            <div class="left-grid-content" id="left-grid-content1">
+                <p>You fall into a peaceful slumber</p>
+                <p>Wouldn't it be great to get a full, restive eight hours sleep for once...</p>
                 <br>
-                <button type="submit" class="button" form="main-content"
-                    id="submit-answer"><strong>Submit</strong></button>
-                <button id="continue-game">Continue</button>
-            </form>
-        </div>
-
-    </div>
-
-    <div class="right-grid">
-        <div class="right-grid-dream-info">Dream Info
-            <ul>
-                <li id="terrain">Terrain</li>
-                <li id="game">Game type: </li>
-                <li id="area-number">0</li>
-            </ul>
-        </div>
-
-        <div class="right-grid-sleep-status">Sleep Status
-            <ul>
-                <li>Target Sleep: 8 Hours</li>
-                <li>Total Sleep:
-                    <span id="total-sleep"></span>
-                </li>
-                <li>Sleep Depth:
-                    <span id="sleep-depth"></span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="right-grid-player-info"> Player Info
-            <ul>
-                <li id="name">Name</li>
-                <li>Relaxation: <span class="player-stats"></span></li>
-                <li>Comfort: <span class="player-stats"></span></li>
-                <li>Luck: <span class="player-stats"></span></li>
-            </ul>
-        </div>
-
-        <!-- Progres Circle Bar-->
-        <div class="block">
-            <div class="box">
-                <p class="number">
-                    <span class="num"></span>
-                    <span class="sub">hours</span>
-                </p>
-                <p class="title">Sleep</p>
+                <button id="start-game">New Game</button>
+                </form>
             </div>
-            <span class="dots"></span>
-            <svg class="svg">
-                <defs>
-                    <linearGradient id="gradientStyle">
-                        <stop offset="0%" stop-color="#565656" />
-                        <stop offset="100%" stop-color="#b7b5b5" />
-                    </linearGradient>
-                </defs>
-                <circle class="circle" cx="90" cy="90" r="80" />
-            </svg>
+
+            <div class="left-grid-user-response">
+                
+                <!-- <form action="https://formdump.codeinstitute.net/" method="POST" id="main-content"></form> -->
+                <form id="main-content">
+                    <p id="game-question"></p>
+                    <label for="player-answer">Answer: </label>
+                    <input type="text" id="player-answer" name="player-answer" value="" required>
+                    <br>
+                    <button type="submit" class="button" form="main-content"
+                        id="submit-answer"><strong>Submit</strong></button>
+                    <button id="continue-game">Continue</button>
+                </form>
+                <br>
+                <form id="true-false">
+                    <div class="button2">
+                        <input type="radio" id="a25" name="check-substitution-2" />
+                        <label class="btn btn-default" for="a25">True</label>
+                    </div>
+                    <div class="button2">
+                        <input type="radio" id="a50" name="check-substitution-2" />
+                        <label class="btn btn-default" for="a50">False</label>
+                    </div>
+                </form>
+            </div>
+
         </div>
 
-        <div class="right-grid-npc2-info">Player Items
-            <form action="">
-                <button id="dream">Dream Jumper</button>
-                <button id="check-progress">Check Progress - Luxury Pillow</button>
-                <button>Hot Water Bottle</button>
-        </div>
+        <div class="right-grid">
+            <div class="right-grid-dream-info">Dream Info
+                <ul>
+                    <li id="terrain">Terrain</li>
+                    <li>Game Type: 
+                        <span id = "game"></span>
+                    </li>
+                    <li>Total Sleep:
+                        <span id="total-sleep"></span>
+                    </li>
 
+                    <li id="area-number">0</li>
+                </ul>
+            </div>
+
+            <div class="right-grid-sleep-status">Sleep Status
+                <ul>
+                    <li>Target Sleep: 8 Hours</li>
+                    <li>Total Sleep:
+                        <span id="total-sleep"></span>
+                    </li>
+                    <li>Sleep Depth:
+                        <span id="sleep-depth"></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right-grid-player-info"> Player Info
+                <ul>
+                    <li id="name">Name</li>
+                    <li>Relaxation: <span class="player-stats"></span></li>
+                    <li>Comfort: <span class="player-stats"></span></li>
+                    <li>Luck: <span class="player-stats"></span></li>
+                </ul>
+            </div>
+
+            <!-- Progres Circle Bar-->
+            <div class="block">
+                <div class="box">
+                    <p class="number">
+                        <span class="num"></span>
+                        <span class="sub">hours</span>
+                    </p>
+                    <p class="title">Sleep</p>
+                </div>
+                <span class="dots"></span>
+                <svg class="svg">
+                    <defs>
+                        <linearGradient id="gradientStyle">
+                            <stop offset="0%" stop-color="#565656" />
+                            <stop offset="100%" stop-color="#b7b5b5" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="circle" cx="90" cy="90" r="80" />
+                </svg>
+            </div>
+
+            <div class="right-grid-npc2-info">Player Items
+                <form action="">
+                    <button id="dream">Dream Jumper</button>
+                    <button id="check-progress">Check Progress - Luxury Pillow</button>
+                    <button>Hot Water Bottle</button>
+            </div>
+
+        </div>
     </div>
-</div>
-<br>
+    <br>
 
-<!-- font awesome script -->
-<script src="https://kit.fontawesome.com/9d9c64c030.js" crossorigin="anonymous"></script>
-<script src="assets/js/script.js"></script>
+    <!-- font awesome script -->
+    <script src="https://kit.fontawesome.com/9d9c64c030.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

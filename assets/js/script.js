@@ -10,6 +10,14 @@ submitAnswer.addEventListener("click", checkAnswer);
 const progress = document.getElementById("check-progress");
 progress.addEventListener("click", showProgress);
 
+
+document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'hidden';
+document.getElementById("main-content").style.visibility = "hidden";
+document.getElementById("true-false").style.visibility = "hidden";
+
+
+
+
 function newGame() {
     // Prevent page reloading
     event.preventDefault();
@@ -23,11 +31,21 @@ function newGame() {
     setTerrain();
     displayQuestion();
 
+    document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'visible';
+
+    if (document.getElementById("game").textContent == "Missing Lyric") {
+        document.getElementById("main-content").style.visibility = "visible";
+    } else if (document.getElementById("game").textContent == "Truthy or Falsy") {
+        document.getElementById("true-false").style.visibility = "visible";
+    } else {
+        alert("Wrong game");
+    }
+
     // Disable button
     //document.getElementById("start-game").disabled = "true";
-    // Hide button
-    // document.getElementById("start-game").style.visibility = "hidden";
 }
+
+
 // Create character array
 // Assign a random number between 70 and 99 to each of the variable player stats
 function startingStats() {
@@ -81,9 +99,9 @@ function updateStats() {
 
 function setGame() {
     // Set game type array and display random game type data
-    const game = ["Missing Lyric", "Echos of the Past", "Morning Ritual", "Did You Know?"];
+    const game = ["Missing Lyric", "Echos of the Past", "Morning Ritual", "Truthy or Falsy"];
     let gameType = Math.floor(Math.random() * game.length);
-    document.getElementById("game").textContent = "Game Type: " + game[gameType];
+    document.getElementById("game").textContent = game[gameType];
 
     // Set the weather background
     // ??CHANGE WEATHER TO GAME TYPE??
