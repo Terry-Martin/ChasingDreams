@@ -6,28 +6,28 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
-  grid-template-columns: 66% 33%;
+  grid-template-columns: 55% 45%;
   grid-template-areas:
     'left-grid right-grid';
-
-  background-color: #355C7D;
-  gap: 20px;
-  padding: 5px;
+  background-color: #C06C84;
+  gap: 15px;
+  padding: 15px;
   height: 80vh;
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
 .left-grid {
   grid-area: left-grid;
-
+  background-color: #355C7D;
   display: grid;
   grid-template-rows: auto;
-  /* display: flex; */
-  /* flex-direction: column; */
-  background-color: #C06C84;
-  padding: 10px;
+  padding: 20px;
   gap: 5px;
+}
 
+.left-grid h2 {
+  font-weight: bolder;
+  font-size: 26px;
 }
 
 /* main content area */
@@ -36,11 +36,18 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   padding: 5px;
   /* opacity: .6; */
   /* background-image: url('../images/terrain/canyon.jpg'); */
+
 }
 
 .start-message {
   font-size: 24px;
   font-family: 'Schoolbell', cursive;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* user reply options */
@@ -53,12 +60,20 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 .left-grid-user-controls {
   background-color: #F8B195;
   padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* main content area */
 .left-grid-user-items {
   background-color: #F8B195;
   padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
@@ -67,32 +82,59 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 25% 50% 25%;
+  /* grid-template-rows: 25% 50% 25%; */
+  grid-template-rows: auto;
   grid-template-areas:
     'dream-info sleep-status'
     'player-info player-info'
-    'block npc2-info';
-  background-color: #C06C84;
-  padding: 10px;
-  gap: 5px;
+    'npc2-info npc2-info';
+  background-color: #355C7D;
+  padding: 20px;
+  gap: 10px;
+
+}
+
+.right-grid h3 {
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+.right-grid ul {
+  list-style-type:none;
 }
 
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: #F8B195;
-  padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
-  padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;;
+ 
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
-  padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+
+  /* display: flex;
+  align-items: centre;
+  justify-content: left; */
+
+  /* padding-left: 25px; */
+
+}
+
+.right-grid-player-info h3 {
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .block {
@@ -111,12 +153,10 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   color: #6C5B7B;
 }
 
-
 /* Hightlight Blank Word in Content area */
 strong {
   color: red;
 }
-
 
 /* Min-width: 992px (smaller desktop viewpoints) */
 @media only screen and (max-width: 992px) {
@@ -150,10 +190,12 @@ strong {
 }
 
 /* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+}
 
 /* Min-width: 320px (smaller desktop viewpoints) */
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+}
 
 #start-game,
 #continue-game,
@@ -165,23 +207,18 @@ strong {
   border-radius: 2em;
   text-decoration: none;
   font-weight: 300;
-  color: black;
-  background-color: antiquewhite;
+  color: #F8B195;
+  background-color: #355C7D ;
   text-align: center;
   transition: all 0.2s;
+  text-shadow: none;
 }
 
 #start-game:hover,
 #continue-game:hover,
 #submit-answer:hover {
-
   background-color: burlywood;
 }
-
-
-
-
-
 
 /* Progress Bar */
 
@@ -285,8 +322,6 @@ strong {
   animation-fill-mode: forwards;
   transition: 2s stroke-dashoffset;
 }
-
-
 
 /* radio input to look like button input */
 .button2 {

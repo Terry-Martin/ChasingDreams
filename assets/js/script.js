@@ -15,9 +15,6 @@ document.getElementsByClassName("left-grid-user-response")[0].style.visibility =
 document.getElementById("main-content").style.visibility = "hidden";
 document.getElementById("true-false").style.visibility = "hidden";
 
-
-
-
 function newGame() {
     // Prevent page reloading
     event.preventDefault();
@@ -32,7 +29,12 @@ function newGame() {
     displayQuestion();
 
     document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'visible';
+    document.getElementById("main-content").style.visibility = "visible";
+    
+    document.getElementById("continue-game").disabled = true;
+    document.getElementById("submit-answer").disabled = false;
 
+    /*
     if (document.getElementById("game").textContent == "Missing Lyric") {
         document.getElementById("main-content").style.visibility = "visible";
     } else if (document.getElementById("game").textContent == "Truthy or Falsy") {
@@ -40,6 +42,7 @@ function newGame() {
     } else {
         alert("Wrong game");
     }
+    */
 
     // Disable button
     //document.getElementById("start-game").disabled = "true";
@@ -142,21 +145,23 @@ function displayQuestion() {
     // Prevent page reloading
     event.preventDefault();
 
+
+
     let gameCounter = document.getElementById("area-number").textContent;
     gameCounter++;
 
     //Display Question
     if (gameCounter == 1) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
+        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
         document.getElementById("game-question").innerHTML = "According to Jefferson Airplane, who should you ask?";
     } else if (gameCounter == 2) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br><strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
+        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br><strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
         document.getElementById("game-question").innerHTML = "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?";
     } else if (gameCounter == 3) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em>In Dreams</em></h5><p>A candy-colored clown they call the <strong>_ _ _ _</strong>man</p><p>Tiptoes to my room every night</p><p>Just to sprinkle stardust and to whisper</p><p>Go to sleep, everything is alright</p><em>by Roy Orbison</em>";
+        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>In Dreams</em></h5><p>A candy-colored clown they call the <strong>_ _ _ _</strong>man</p><p>Tiptoes to my room every night</p><p>Just to sprinkle stardust and to whisper</p><p>Go to sleep, everything is alright</p><em>by Roy Orbison</em>";
         document.getElementById("game-question").innerHTML = "Who sneaks into Roy Orbisons room every night?";
     } else if (gameCounter == 4) {
-        document.getElementById("left-grid-content1").innerHTML = "<h3>Missing Song Lyric</h3><h5><em> All I Have To Do Is Dream</em></h5><p> When I feel <strong> _ _ _ _ </strong> in the night <br> And I need you to hold me tight <br> Whenever I want you, all I have to do is <br> </p><p><em> by The Everly Brothers </em></p>";
+        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> All I Have To Do Is Dream</em></h5><p> When I feel <strong> _ _ _ _ </strong> in the night <br> And I need you to hold me tight <br> Whenever I want you, all I have to do is <br> </p><p><em> by The Everly Brothers </em></p>";
         document.getElementById("game-question").innerHTML = "What colour do The Everly Brothers use to describe their feelings?";
     } else {
         document.getElementById("left-grid-content1").innerHTML = "NEXT GAME DATA";
@@ -170,12 +175,18 @@ function displayQuestion() {
     if (gameCounter == 16) {
         alert("CONGRATS!!!");
     }
+
+    document.getElementById("continue-game").disabled = true;
+    document.getElementById("submit-answer").disabled = false;
 }
 
 // Check player answer verses correct answer and feedback 
 function checkAnswer() {
     // Prevent page reloading
     event.preventDefault();
+
+    document.getElementById("continue-game").disabled = false;
+    document.getElementById("submit-answer").disabled = true;
 
     let playerAnswer = document.getElementById("player-answer").value;
     playerAnswer = playerAnswer.toUpperCase();

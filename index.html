@@ -19,18 +19,20 @@
     <title>Chasing Dreams</title>
 </head>
 
-
 <body>
 
     <div class="container-grid">
 
         <div class="left-grid">
             <div class="left-grid-content" id="left-grid-content1">
-                <p class="start-message">You fall into a peaceful slumber</p>
-                <p class="start-message">Wouldn't it be great to get a full, restive eight hours sleep.....for once</p>
-                <br>
-                <button id="start-game">Start Dreaming</button>
-                </form>
+                <section>
+                    <p class="start-message">You fall into a deep, peaceful slumber.</p>
+                    <p class="start-message">Wouldn't it be great to get a full, restive eight hours sleep.....for once
+                    </p>
+                    <br>
+                    <button id="start-game">Start Dreaming</button>
+                </section>
+
             </div>
 
             <div class="left-grid-user-response">
@@ -41,8 +43,8 @@
                     <label for="player-answer">Answer: </label>
                     <input type="text" id="player-answer" name="player-answer" value="" required>
                     <br>
-                    <button type="submit" class="button" form="main-content"
-                        id="submit-answer"><strong>Submit</strong></button>
+                    <br>
+                    <button type="submit" class="button" form="main-content" id="submit-answer">Submit</button>
                     <button id="continue-game">Continue</button>
                 </form>
                 <br>
@@ -61,42 +63,31 @@
         </div>
 
         <div class="right-grid">
-            <div class="right-grid-dream-info">Dream Info
-                <ul>
-                    <li id="terrain">Terrain</li>
-                    <li>Game Type:
-                        <span id="game"></span>
-                    </li>
-                    <li>Total Sleep:
-                        <span id="total-sleep"></span>
-                    </li>
+            <div class="right-grid-dream-info">
+                <section>
+                    <h3>Dream Info</h3>
+                    <ul>
+                        <li id="terrain">Terrain</li>
+                        <li>Game Type:
+                            <span id="game"></span>
+                        </li>
+                        <li>Total Sleep:
+                            <span id="total-sleep"></span>
+                        </li>
 
-                    <li id="area-number">0</li>
-                </ul>
+                        <li id="area-number">0</li>
+                    </ul>
+                </section>
             </div>
 
-            <div class="right-grid-sleep-status">Sleep Status
-                <ul>
-                    <li>Target Sleep: 8 Hours</li>
-                    <li>Total Sleep:
-                        <span id="total-sleep"></span>
-                    </li>
-                    <li>Sleep Depth:
-                        <span id="sleep-depth"></span>
-                    </li>
-                </ul>
-            </div>
+            <div class="right-grid-sleep-status">
+                <section>
+                    <h3>Sleep Duration</h3>
+                    <ul>
+                        <li>Target Sleep: 8 Hours</li>
+                    </ul>
 
-            <div class="right-grid-player-info"> Player Info
-                <ul>
-                    <li id="name">Name</li>
-                    <li>Relaxation: <span class="player-stats"></span></li>
-                    <li>Comfort: <span class="player-stats"></span></li>
-                    <li>Luck: <span class="player-stats"></span></li>
-                </ul>
-            </div>
-
-            <!-- Progres Circle Bar-->
+                     <!-- Progres Circle Bar-->
             <div class="block">
                 <div class="box">
                     <p class="number">
@@ -116,6 +107,32 @@
                     <circle class="circle" cx="90" cy="90" r="80" />
                 </svg>
             </div>
+                </section>
+            </div>
+
+            <div class="right-grid-player-info">
+                <section>
+                    <h3>Player Info</h3>
+                    <ul>
+                        <li id="name">Name:</li>
+                        <li>Relaxation: 
+                            <span class="player-stats"></span></li>
+                        <li>Comfort: 
+                            <span class="player-stats"></span></li>
+                        <li>Luck: 
+                            <span class="player-stats"></span></li>
+                        <li>Sleep Depth:
+                            <span id="sleep-depth"></span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+           
+
+
+
+
 
             <div class="right-grid-npc2-info">Player Items
                 <form action="">
