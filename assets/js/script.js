@@ -153,68 +153,6 @@ function displayQuestion() {
 
 
 
-    /*
-        switch (gameCounter) {
-            case 1:
-                document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
-                document.getElementById("game-question").innerHTML = "According to Jefferson Airplane, who should you ask?";
-                break;
-            case 2:
-                document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br><strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>";
-                document.getElementById("game-question").innerHTML = "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?";
-                break;
-            case 3:
-                alert("3");
-                break;
-            default:
-                alert("4");
-        }
-
-    */
-    /*
-    //Display Question
-    if (gameCounter == 1) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>White Rabbit</em></h5><p>One pill makes you larger<br>And one pill makes you small<br>And the ones that mother gives you<br>Don't do anything at all<br>Go ask <strong> _ _ _ _ _</strong><br>When she's ten feet tall<br></p><p><em>By Jefferson Airplane</em></p>";
-        document.getElementById("game-question").innerHTML = "According to Jefferson Airplane, who should you ask?";
-    } else if (gameCounter == 2) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>She's Leaving Home</em></h5><p>She (what did we do that was wrong)<br>Is Having (we didn't know it was wrong)<br><strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)<br>Something inside, that was always denied,<br>For so many years,<br>She's leaving home<p><em>by The Beatles</em></p></p>"; 
-        document.getElementById("game-question").innerHTML = "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?";
-    } else if (gameCounter == 3) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>In Dreams</em></h5><p>A candy-colored clown they call the <strong>_ _ _ _</strong>man</p><p>Tiptoes to my room every night</p><p>Just to sprinkle stardust and to whisper</p><p>Go to sleep, everything is alright</p><em>by Roy Orbison</em>";
-        document.getElementById("game-question").innerHTML = "Who sneaks into Roy Orbisons room every night?";
-    } else if (gameCounter == 4) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> All I Have To Do Is Dream</em></h5><p> When I feel <strong> _ _ _ _ </strong> in the night <br> And I need you to hold me tight <br> Whenever I want you, all I have to do is <br> </p><p><em> by The Everly Brothers </em></p>";
-        document.getElementById("game-question").innerHTML = "What colour do The Everly Brothers use to describe their feelings?";
-    } else if (gameCounter == 5) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> Boulevard of Broken Dreams</em></h5><p> I walk this empty street<br>On the Boulevard of Broken Dreams<br>Where the city sleeps<br>And I'm the only one, and I walk alone<br></p><p><em> by Green Day </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 6) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> Dont Dream Its Over</em></h5><p>… Hey now, hey now<br>Don't dream it's over<br>Hey now, hey now<br>When the world comes in<br></p><p><em> by Crowded House </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 7) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> Dreams</em></h5><p>Oh, thunder only happens when it's raining<br>Players only love you when they're playing<br>Say, women...they will come and they will go<br>When the rain washes you clean, you'll know<br></p><p><em> by Fleetwood Mac </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 8) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>Sweet Dreams (Are Made of This)</em></h5><p>Sweet dreams are made of this<br>Who am I to disagree<br>I travel the world and the seven seas<br>Everybody's looking for something<br></p><p><em> by Eurythmics </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 9) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> Dreamlover</em></h5><p>I don't want another pretender<br>To disillusion me one more time<br>Whispering words of forever<br>Playing with my mind<br></p><p><em> by Mariah Carey  </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 10) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>Dream Operator</em></h5><p>Every dream has a name<br>And names tell your story<br>This song is your dream<br>You're the dream operator<br></p><p><em> by Talking Heads</em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 11) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em> Dream Weaver</em></h5><p>I've just closed my eyes again<br>Climbed aboard the dream weaver train<br>Driver take away my worries of today<br>And leave tomorrow behind<br></p><p><em> by Gary Wright  </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else if (gameCounter == 12) {
-        document.getElementById("left-grid-content1").innerHTML = "<h2>Missing Song Lyric</h2><h5><em>California Dreamin</em></h5><p>All the leaves are brown <br>And the sky is gray<br>I've been for a walk <br>On a winter's day <br></p><p><em> by The Mamas & the Papas </em></p>";
-        document.getElementById("game-question").innerHTML = "?";
-    } else {
-        document.getElementById("left-grid-content1").innerHTML = "NEXT GAME DATA";
-        document.getElementById("game-question").innerHTML = "NEXT QUESTION";
-    }
-*/
-
 
 
     document.getElementById("area-number").textContent = gameCounter;
@@ -229,8 +167,10 @@ function displayQuestion() {
     document.getElementById("submit-answer").disabled = false;
 }
 
+
+/*
 // Check player answer verses correct answer and feedback 
-function checkAnswer() {
+ function checkAnswer() {
     // Prevent page reloading
     event.preventDefault();
 
@@ -253,7 +193,7 @@ function checkAnswer() {
         alert("Correct");
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 10;
     } else {
-        /* alert("HMMMMMZ"); */
+        alert("HMMMMMZ"); 
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 10;
     }
 
@@ -261,8 +201,8 @@ function checkAnswer() {
     // document.getElementById("submit-answer").disabled = "true";
 
     updateStats();
-}
-
+} 
+*/
 
 // Reset game data and displays to start game position
 function resetGameData() {
@@ -586,25 +526,28 @@ let lyricGame = [{
 ];
 
 
-let xyz = 20;
 
-document.getElementById("song-title").innerHTML = lyricGame[xyz].songTitle;
-document.getElementById("line-one").innerHTML = lyricGame[xyz].line1;
-document.getElementById("line-two").innerHTML = lyricGame[xyz].line2;
-document.getElementById("line-three").innerHTML = lyricGame[xyz].line3;
-document.getElementById("line-four").innerHTML = lyricGame[xyz].line4;
-document.getElementById("song-by").innerHTML = lyricGame[xyz].songBy;
-document.getElementById("game-question").innerHTML = lyricGame[xyz].question;
+// Returns a random integer from 0 to 25:
+let lyricQuestionNumber = Math.floor(Math.random() * 26);
 
-let correctAnswer = lyricGame[xyz].answer;
-let playerAnswer = "KISS";
+document.getElementById("song-title").innerHTML = lyricGame[lyricQuestionNumber].songTitle;
+document.getElementById("line-one").innerHTML = lyricGame[lyricQuestionNumber].line1;
+document.getElementById("line-two").innerHTML = lyricGame[lyricQuestionNumber].line2;
+document.getElementById("line-three").innerHTML = lyricGame[lyricQuestionNumber].line3;
+document.getElementById("line-four").innerHTML = lyricGame[lyricQuestionNumber].line4;
+document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
+document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
 
-if (correctAnswer == playerAnswer) {
+let correctAnswer = lyricGame[lyricQuestionNumber].answer;
+
+function checkAnswer() {
+    let playerAnswer1 = document.getElementById("player-answer").value;
+if (correctAnswer == playerAnswer1) {
     alert("Most Excellent");
 } else {
     alert("oh nooooooo");
 }
-
+}
 
 document.getElementById('welcome-message').style.display = 'none';
 
