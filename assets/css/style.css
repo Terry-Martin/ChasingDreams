@@ -6,13 +6,13 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: auto;
   grid-template-areas:
     'left-grid right-grid';
-  background-color: #C06C84;
-  gap: 15px;
-  padding: 15px;
-  height: 80vh;
+  /* background-color: #C06C84; */
+  max-width: 1300px;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
@@ -22,67 +22,57 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   display: grid;
   grid-template-rows: auto;
   padding: 20px;
-  gap: 5px;
+  gap: 20px;
 }
 
-.left-grid h2 {
-  font-weight: bolder;
-  font-size: 26px;
-}
 
 /* main content area */
 .left-grid-content {
   background-color: #F8B195;
-  padding: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
   /* opacity: .6; */
   /* background-image: url('../images/terrain/canyon.jpg'); */
-
 }
 
 .start-message {
   font-size: 24px;
   font-family: 'Schoolbell', cursive;
-
-  padding-top: 25px;
-
+  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
-  padding: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 /* user movement controls */
 .left-grid-user-controls {
   background-color: #F8B195;
-  padding: 5px;
-
+  padding: 10px;;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 /* main content area */
 .left-grid-user-items {
   background-color: #F8B195;
-  padding: 5px;
-
+  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 /* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
 .right-grid {
   grid-area: right-grid;
-
   display: grid;
   grid-template-columns: auto;
-  /* grid-template-rows: 25% 50% 25%; */
   grid-template-rows: auto;
   grid-template-areas:
     'dream-info sleep-status'
@@ -90,51 +80,31 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
     'npc2-info npc2-info';
   background-color: #355C7D;
   padding: 20px;
-  gap: 10px;
+  gap: 20px;
 
-}
-
-.right-grid h3 {
-  font-weight: bolder;
-  font-size: 24px;
 }
 
 .right-grid ul {
-  list-style-type:none;
+  list-style-type: none;
 }
 
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: #F8B195;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
-  padding-top: 10px;
-  padding-left: 10px;;
- 
+  padding: 10px;
+
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
-  padding-top: 10px;
-  padding-left: 10px;
-
-  /* display: flex;
-  align-items: centre;
-  justify-content: left; */
-
-  /* padding-left: 25px; */
-
-}
-
-.right-grid-player-info h3 {
-  font-weight: bolder;
-  font-size: 24px;
+  padding: 10px;
 }
 
 .block {
@@ -182,7 +152,6 @@ strong {
     grid-template-areas:
       'left-grid'
       'right-grid';
-    background-color: rgb(50, 205, 205);
     gap: 5px;
     padding: 5px;
     height: 100vh;
@@ -190,12 +159,10 @@ strong {
 }
 
 /* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 480px) {
-}
+@media only screen and (max-width: 480px) {}
 
 /* Min-width: 320px (smaller desktop viewpoints) */
-@media only screen and (max-width: 320px) {
-}
+@media only screen and (max-width: 320px) {}
 
 #start-game,
 #continue-game,
@@ -208,7 +175,7 @@ strong {
   text-decoration: none;
   font-weight: 300;
   color: #F8B195;
-  background-color: #355C7D ;
+  background-color: #355C7D;
   text-align: center;
   transition: all 0.2s;
   text-shadow: none;
@@ -230,6 +197,17 @@ strong {
   font-family: 'Merienda One', cursive;
   font-weight: 600;
 }
+
+body {
+  background-color: #C06C84;
+  box-sizing: border-box;
+  margin: 20px;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .block {
   position: relative;
@@ -363,17 +341,23 @@ strong {
 #song-by {
   font-size: 16px;
   font-style: italic;
-  color: black;
+  color: #454545;
 }
 
 #song-title {
   font-size: 20px;
   font-style: italic;
-  color: black;
+  color: #454545;
 }
 
-#missing-lyric-title {
+h3 {
+  display: flex;
+  justify-content: center;
   font-size: 28px;
   font-weight: bold;
-  color: black;
+  color: #F5F5DC;
+  background-color: #6C5B7B;
+  text-shadow: none;
+  padding: 5px;
+  letter-spacing: .9px;
 }

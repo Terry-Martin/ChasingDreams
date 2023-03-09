@@ -1,19 +1,15 @@
 const startGame = document.getElementById("start-game");
-startGame.addEventListener("click", newGame);
-
 const continueGame = document.getElementById("continue-game");
-continueGame.addEventListener("click", displayQuestion);
-
 const submitAnswer = document.getElementById("submit-answer");
-submitAnswer.addEventListener("click", checkAnswer);
-
 const progress = document.getElementById("check-progress");
+
+startGame.addEventListener("click", newGame);
+continueGame.addEventListener("click", displayQuestion);
+submitAnswer.addEventListener("click", checkAnswer);
 progress.addEventListener("click", showProgress);
 
-
-/*document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'hidden';*/
-/* document.getElementById("main-content").style.visibility = "hidden";*/
 document.getElementById("true-false").style.visibility = "hidden";
+document.getElementById('welcome-message').style.display = 'none';
 
 function newGame() {
     // Prevent page reloading
@@ -33,21 +29,7 @@ function newGame() {
 
     document.getElementById("continue-game").disabled = true;
     document.getElementById("submit-answer").disabled = false;
-
-    /*
-    if (document.getElementById("game").textContent == "missingLyric") {
-        document.getElementById("main-content").style.visibility = "visible";
-    } else if (document.getElementById("game").textContent == "truthyOrFalsy") {
-        document.getElementById("true-false").style.visibility = "visible";
-    } else {
-        alert("Wrong game");
-    }
-    */
-
-    // Disable button
-    //document.getElementById("start-game").disabled = "true";
 }
-
 
 // Create character array
 // Assign a random number between 70 and 99 to each of the variable player stats
@@ -57,23 +39,20 @@ function startingStats() {
         relaxation: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
-
-        // Get average of 5 stats and display as Sleep Depth, which is the overall player condition
+        // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
             return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
         }
     }
 
-    /**
-     * Generate a random number between 70 and 99
-     */
+     //Generate a random number between 70 and 99
+     
     function generateStat() {
         return Math.floor(Math.random() * 20) + 70;
     }
 
     // Display player stat values
     document.getElementById("name").textContent = "Name: Terry";
-
     document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
     document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
     document.getElementsByClassName("player-stats")[2].textContent = character.luck;
@@ -140,20 +119,24 @@ function setTerrain() {
     document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
 }
 
+//
+function checkAnswer() {
+    let playerAnswer = document.getElementById("player-answer").value;
+    playerAnswer = playerAnswer.toUpperCase();
+    if (correctAnswer == playerAnswer) {
+        alert("Most Excellent");
+    } else {
+        alert("oh nooooooo");
+    }
+}
+
 // Update game level and diplay next question
 function displayQuestion() {
     // Prevent page reloading
     event.preventDefault();
 
-
-
     let gameCounter = document.getElementById("area-number").textContent;
     gameCounter++;
-
-
-
-
-
 
     document.getElementById("area-number").textContent = gameCounter;
     document.getElementById("total-sleep").textContent = gameCounter;
@@ -167,43 +150,6 @@ function displayQuestion() {
     document.getElementById("submit-answer").disabled = false;
 }
 
-
-/*
-// Check player answer verses correct answer and feedback 
- function checkAnswer() {
-    // Prevent page reloading
-    event.preventDefault();
-
-    document.getElementById("continue-game").disabled = false;
-    document.getElementById("submit-answer").disabled = true;
-
-    let playerAnswer = document.getElementById("player-answer").value;
-    playerAnswer = playerAnswer.toUpperCase();
-
-    if (playerAnswer === "ALICE" && document.getElementById("area-number").textContent == 1) {
-        alert("Correct");
-        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
-    } else if (playerAnswer === "FUN" && document.getElementById("area-number").textContent == 2) {
-        alert("Correct");
-        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
-    } else if (playerAnswer === "SAND" && document.getElementById("area-number").textContent == 3) {
-        alert("Correct");
-        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
-    } else if (playerAnswer === "BLUE" && document.getElementById("area-number").textContent == 4) {
-        alert("Correct");
-        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 10;
-    } else {
-        alert("HMMMMMZ"); 
-        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 10;
-    }
-
-    document.getElementById("player-answer").value = "";
-    // document.getElementById("submit-answer").disabled = "true";
-
-    updateStats();
-} 
-*/
-
 // Reset game data and displays to start game position
 function resetGameData() {
     // Prevent page reloading
@@ -215,6 +161,7 @@ function resetGameData() {
     document.getElementById("player-answer").value = "";
 }
 
+// Progress Bar
 function showProgress() {
     event.preventDefault();
 
@@ -246,7 +193,6 @@ function showProgress() {
         }
     })
 };
-
 
 let lyricGame = [{
         songTitle: "White Rabbit",
@@ -522,14 +468,13 @@ let lyricGame = [{
         question: "<s>An bhfuil cead agam dul go dtí</s> What drink/spirit is in the bottle? (6 or 7 letters)",
         answer: "BRANDY" || "brandaí"
     }
-
 ];
 
+/// Returns a random integer from 0 to 25:
+let lyricQuestionNumber = Math.floor(Math.random() * (lyricGame.length));
+let correctAnswer = lyricGame[lyricQuestionNumber].answer;
 
-
-// Returns a random integer from 0 to 25:
-let lyricQuestionNumber = Math.floor(Math.random() * 26);
-
+// Set and display current song and question
 document.getElementById("song-title").innerHTML = lyricGame[lyricQuestionNumber].songTitle;
 document.getElementById("line-one").innerHTML = lyricGame[lyricQuestionNumber].line1;
 document.getElementById("line-two").innerHTML = lyricGame[lyricQuestionNumber].line2;
@@ -538,23 +483,19 @@ document.getElementById("line-four").innerHTML = lyricGame[lyricQuestionNumber].
 document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
 document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
 
-let correctAnswer = lyricGame[lyricQuestionNumber].answer;
 
-function checkAnswer() {
-    let playerAnswer1 = document.getElementById("player-answer").value;
-if (correctAnswer == playerAnswer1) {
-    alert("Most Excellent");
-} else {
-    alert("oh nooooooo");
-}
-}
+/*
+    // Prevent page reloading
+    event.preventDefault();
 
-document.getElementById('welcome-message').style.display = 'none';
+    document.getElementById("continue-game").disabled = false;
+    document.getElementById("submit-answer").disabled = true;
 
+    document.getElementById("player-answer").value = "";
+    // document.getElementById("submit-answer").disabled = "true";
 
-
-
-
+    updateStats();
+*/
 
 
 /* window.onload = function () {
