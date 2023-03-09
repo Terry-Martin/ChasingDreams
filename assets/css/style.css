@@ -358,3 +358,22 @@ strong {
   z-index: 90;
   line-height: 1.8em;
 }
+
+/* Artist Name */
+#song-by {
+  font-size: 16px;
+  font-style: italic;
+  color: black;
+}
+
+#song-title {
+  font-size: 20px;
+  font-style: italic;
+  color: black;
+}
+
+#missing-lyric-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+}
