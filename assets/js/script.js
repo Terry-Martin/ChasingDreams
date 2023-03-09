@@ -11,8 +11,8 @@ const progress = document.getElementById("check-progress");
 progress.addEventListener("click", showProgress);
 
 
-document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'hidden';
-document.getElementById("main-content").style.visibility = "hidden";
+/*document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'hidden';*/
+/* document.getElementById("main-content").style.visibility = "hidden";*/
 document.getElementById("true-false").style.visibility = "hidden";
 
 function newGame() {
@@ -218,10 +218,10 @@ function displayQuestion() {
 
 
     document.getElementById("area-number").textContent = gameCounter;
-    document.getElementById("total-sleep").textContent = (gameCounter * 30) / 60;
+    document.getElementById("total-sleep").textContent = gameCounter;
 
-    // Game complete as player reached level 16 which equals the mythical 8 hours of sleep
-    if (gameCounter == 16) {
+    // Game complete as player reached level 8 which equals the mythical 8 hours of sleep
+    if (gameCounter == 8) {
         alert("CONGRATS!!!");
     }
 
@@ -270,7 +270,7 @@ function resetGameData() {
     event.preventDefault();
 
     document.getElementById("area-number").textContent = 0;
-    document.getElementById("left-grid-content1").textContent = "";
+    /*document.getElementById("left-grid-content1").textContent = "";*/
     document.getElementById("game-question").textContent = "";
     document.getElementById("player-answer").value = "";
 }
@@ -308,51 +308,330 @@ function showProgress() {
 };
 
 
-
 let lyricGame = [{
-    songTitle: "Test Song",
-    line1: "Line 1",
-    line2: "Line 2",
-    line3: "Line 3",
-    line4: "Line 4",
-    question: "Test Question",
-    answer: "Test Answer",
-    answerCorrect: "Well done",
-    answerWrong: " Unlucky"
+    songTitle: "White Rabbit",
+    line1: "And one pill makes you small",
+    line2: "And the ones that mother gives you",
+    line3: "Don't do anything at all",
+    line4: "Go ask <strong> _ _ _ _ _</strong>",
+    songBy: "<em>By Jefferson Airplane</em>",
+    question: "According to Jefferson Airplane, who should you ask?",
+    answer: "ALICE"
 },
 
 {
-    songTitle: "Test Song 2",
-    line1: "Line 1",
-    line2: "Line 2",
-    line3: "Line 3",
-    line4: "Line 4",
-    question: "Test Question",
-    answer: "Test Answer",
-    answerCorrect: "Well done",
-    answerWrong: " Unlucky"
+    songTitle: "She's Leaving Home",
+    line1: "She (what did we do that was wrong)",
+    line2: "Is Having (we didn't know it was wrong)",
+    line3: "<strong>_ _ _ </strong>(<strong>_ _ _</strong> is the one thing that money can't buy)",
+    line4: "Something inside, that was always denied",
+    songBy: "<em>ByThe Beatles</em>",
+    question: "According to John (or Paul (or maybe even Ringo)), what three letter word is the one thing that money cant buy?",
+    answer: "FUN"
 },
 
 {
-    songTitle: "Test Song 3",
-    line1: "Line 1",
-    line2: "Line 2",
-    line3: "Line 3",
-    line4: "Line 4",
-    question: "Test Question",
-    answer: "Test Answer",
-    answerCorrect: "Well done",
-    answerWrong: " Unlucky"
+    songTitle: "In Dreams",
+    line1: "A candy-colored clown they call the <strong>_ _ _ _</strong>man",
+    line2: "Tiptoes to my room every night",
+    line3: "Just to sprinkle stardust and to whisper",
+    line4: "Go to sleep, everything is alright</em>",
+    songBy: "<em>By Roy Orbison</em>",
+    question: "Who sneaks into Roy Orbisons room every night?",
+    answer: "SAND"
+},
+
+{
+    songTitle: "All I Have To Do Is Dream",
+    line1: "When I feel <strong> _ _ _ _ </strong> in the night",
+    line2: "And I need you to hold me tight",
+    line3: "Whenever I want you, all I have to do is",
+    line4: "Dream",
+    songBy: "<em>By The Everly Brothers</em>",
+    question: "What colour do The Everly Brothers use to describe their feelings?",
+    answer: "BLUE"
+},
+
+{
+    songTitle: "Boulevard of Broken Dreams",
+    line1: "I walk this empty street",
+    line2: "On the Boulevard of Broken Dreams",
+    line3: "Where the city sleeps",
+    line4: "And I'm the only one, and I walk alone",
+    songBy: "<em>By Green Day</em>",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dont Dream Its Over",
+    line1: "… Hey now, hey now",
+    line2: "Don't dream it's over",
+    line3: "Hey now, hey now<",
+    line4: "When the world comes in",
+    songBy: "By Crowded House",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dreams",
+    line1: "Oh, thunder only happens when it's raining",
+    line2: "Players only love you when they're playing",
+    line3: "Say, women...they will come and they will go",
+    line4: "When the rain washes you clean, you'll know",
+    songBy: "By Fleetwood Mac",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Sweet Dreams",
+    line1: "Sweet dreams are made of this",
+    line2: "Who am I to disagree",
+    line3: "I travel the world and the seven seas",
+    line4: "Everybody's looking for something",
+    songBy: "By Eurythmics",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dreamlover",
+    line1: "I don't want another pretender",
+    line2: "To disillusion me one more time",
+    line3: "Whispering words of forever",
+    line4: "Playing with my mind",
+    songBy: "By Mariah Carey",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dream Operator",
+    line1: "Every dream has a name",
+    line2: "And names tell your story",
+    line3: "This song is your dream",
+    line4: "You're the dream operator",
+    songBy: "By Talking Heads",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dream Weaver",
+    line1: "I've just closed my eyes again",
+    line2: "Climbed aboard the dream weaver train",
+    line3: "Driver take away my worries of today",
+    line4: "And leave tomorrow behind",
+    songBy: "By Gary Wright",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "California Dreamin",
+    line1: "All the leaves are brown",
+    line2: ">And the sky is gray",
+    line3: "I've been for a walk",
+    line4: "On a winter's day",
+    songBy: "By The Mamas & the Papas",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Silent Lucidity",
+    line1: "It's a place where you will learn",
+    line2: "To face your fears, retrace the years",
+    line3: "And ride the whims of your mind",
+    line4: "Commanding in another world",
+    songBy: "By Queensrÿche",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dreams",
+    line1: "And now I tell you openly",
+    line2: "You have my heart so don't hurt me",
+    line3: "You're what I couldn't find",
+    line4: "A totally amazing mind",
+    songBy: "By The Cranberries ",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "These Dreams",
+    line1: "These dreams go on when I close my eyes",
+    line2: "Every second of the night I live another life",
+    line3: "These dreams that sleep when it's cold outside",
+    line4: "Every moment I'm awake the further I'm away",
+    songBy: "By Heart",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Dream",
+    line1: "We all are living in a dream",
+    line2: "But life ain't what it seems",
+    line3: "Oh, everything's a mess",
+    line4: "And all these sorrows I have seen",
+    songBy: "By Imagine Dragons",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "Get Outta My Dreams, Get Into My Car",
+    line1: "Like a road runner",
+    line2: "Coming after you",
+    line3: "Just like a hero",
+    line4: "Outta the blue",
+    songBy: "By Billy Ocean ",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "You Make My Dreams",
+    line1: "… On a night when bad dreams become a screamer",
+    line2: "When they're messin' with a dreamer",
+    line3: "I can laugh it in the face",
+    line4: "Twist and shout my way out",
+    songBy: "By Hall & Oate",
+    question: "",
+    answer: ""
+},
+
+{
+    songTitle: "#9 Dream",
+    line1: "Took a walk down the street",
+    line2: "Thru the heat whispered trees",
+    line3: "I thought I could hear (hear, hear, hear",
+    line4: "Somebody call out my name as it started to rain",
+    songBy: "By John Lennon",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "Last Night I Dreamt That Somebody Loved Me",
+    line1: "Last night I felt",
+    line2: "Real arms around me",
+    line3: "No hope, no harm",
+    line4: "Just another false alarm",
+    songBy: "By The Smiths",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "Dream A Little Dream Of Me",
+    line1: "Stars fading but I linger on, dear",
+    line2: "Still craving your kiss",
+    line3: "I'm longing to linger 'til dawn, dear",
+    line4: "Just saying this",
+    songBy: "By Doris Day",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "Nice Dream",
+    line1: "They love me like I was their brother",
+    line2: "They protect me",
+    line3: "Listen to me",
+    line4: "They dug me my very own garden",
+    songBy: "By Radiohead",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "The Lion Sleeps Tonight",
+    line1: "In the jungle, the mighty jungle",
+    line2: "The lion sleeps tonight",
+    line3: "In the jungle the quiet jungle",
+    line4: "The lion sleeps tonight",
+    songBy: "By The Tokens ",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "I Go to Sleep",
+    line1: "When I look up from my pillow",
+    line2: "I dream you are there with me",
+    line3: "Though you are far away",
+    line4: "I know you'll always be near to me",
+    songBy: "By The Pretenders",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "Tá Mo Chleamhnas Á Dhéanamh",
+    line1: "'Mo codladh go h-eadarshuth b'aite liom féin",
+    line2: "Leabaí luachair a bheith faoi mo thaobh",
+    line3: "Buideal brandaí a bheith faoi mo cheann",
+    line4: "'S mo chailín deas óg 'bheith ar lámh' liom",
+    songBy: "By Altan",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "",
+    line1: "",
+    line2: "",
+    line3: "",
+    line4: "",
+    songBy: "By ",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "",
+    line1: "",
+    line2: "",
+    line3: "",
+    line4: "",
+    songBy: "By ",
+    question: "",
+    answer: ""
+}, 
+
+{
+    songTitle: "",
+    line1: "",
+    line2: "",
+    line3: "",
+    line4: "",
+    songBy: "By ",
+    question: "",
+    answer: ""
 }
-]
 
-let xyz = 0;
-document.getElementById("song-title").textContent = lyricGame[xyz].songTitle;
-document.getElementById("line-one").textContent = lyricGame[xyz].line1;
-document.getElementById("line-two").textContent = lyricGame[xyz].line2;
-document.getElementById("line-three").textContent = lyricGame[xyz].line3;
-document.getElementById("line-four").textContent = lyricGame[xyz].line4;
-document.getElementById("song-by").textContent = lyricGame[xyz].question;
+
+
+
+
+];
+
+let xyz = 24;
+document.getElementById("song-title").innerHTML = lyricGame[xyz].songTitle;
+document.getElementById("line-one").innerHTML = lyricGame[xyz].line1;
+document.getElementById("line-two").innerHTML = lyricGame[xyz].line2;
+document.getElementById("line-three").innerHTML = lyricGame[xyz].line3;
+document.getElementById("line-four").innerHTML = lyricGame[xyz].line4;
+document.getElementById("song-by").innerHTML = lyricGame[xyz].songBy;
+
+document.getElementById("game-question").innerHTML = lyricGame[xyz].question;
+
 
 
 
