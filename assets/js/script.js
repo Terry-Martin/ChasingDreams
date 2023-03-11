@@ -1,7 +1,9 @@
 const startGame = document.getElementById("start-game");
-const continueGame = document.getElementById("continue-game");
 const submitAnswer = document.getElementById("submit-answer");
+const continueGame = document.getElementById("continue-game");
 const progress = document.getElementById("check-progress");
+
+
 
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
@@ -9,190 +11,10 @@ submitAnswer.addEventListener("click", checkAnswer);
 progress.addEventListener("click", showProgress);
 
 document.getElementById("true-false").style.visibility = "hidden";
-document.getElementById('welcome-message').style.display = 'none';
+document.getElementById('missing-lyric-game').style.display = "none";
+document.getElementsByClassName("right-grid")[0].style.display = "none";
+document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
 
-function newGame() {
-    // Prevent page reloading
-    event.preventDefault();
-
-    // Reset displays
-    resetGameData()
-
-    // Call game funtions
-    startingStats();
-    setGame();
-    setTerrain();
-    displayQuestion();
-
-    document.getElementsByClassName("left-grid-user-response")[0].style.visibility = 'visible';
-    document.getElementById("main-content").style.visibility = "visible";
-
-    document.getElementById("continue-game").disabled = true;
-    document.getElementById("submit-answer").disabled = false;
-}
-
-// Create character array
-// Assign a random number between 70 and 99 to each of the variable player stats
-function startingStats() {
-    const character = {
-        name: "Terry",
-        relaxation: generateStat(),
-        comfort: generateStat(),
-        luck: generateStat(),
-        // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
-        sleepDepth: function () {
-            return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
-        }
-    }
-
-     //Generate a random number between 70 and 99
-     
-    function generateStat() {
-        return Math.floor(Math.random() * 20) + 70;
-    }
-
-    // Display player stat values
-    document.getElementById("name").textContent = "Name: Terry";
-    document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
-    document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
-    document.getElementsByClassName("player-stats")[2].textContent = character.luck;
-
-    // Calculate player sleep depth as a calculation of player stats and display 
-    document.getElementById("sleep-depth").textContent = character.sleepDepth();
-
-    // Change font colour depending on current score
-    if (character.sleepDepth() < 26) {
-        document.getElementById("sleep-depth").style.color = "red";
-    } else if (character.sleepDepth() < 76) {
-        document.getElementById("sleep-depth").style.color = "yellow";
-    } else {
-        document.getElementById("sleep-depth").style.color = "green";
-    }
-}
-
-function updateStats() {
-    let xy = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
-    let op = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
-    let df = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
-    let bn = (parseInt((xy + op + df) / 3));
-
-    document.getElementById("sleep-depth").textContent = bn;
-}
-
-function setGame() {
-    // Set game type array and display random game type data
-    const game = ["missingLyric", "Echos of the Past", "Morning Ritual", "truthyOrFalsy"];
-    let gameType = Math.floor(Math.random() * game.length);
-    document.getElementById("game").textContent = game[gameType];
-
-    // Set the weather background
-    // ??CHANGE WEATHER TO GAME TYPE??
-    /*const gameImage = [
-        "url('/assets/images/weather/rain1.jpg')",
-        "url('/assets/images/weather/clear_sky.jpg')",
-        "url('/assets/images/weather/snow1.jpg')",
-        "url('/assets/images/weather/hurricane2.jpg')"
-    ];
-    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType]; */
-
-}
-
-function setTerrain() {
-    // Set terrain array and display random terrain data
-    // https://outforia.com/types-of-terrain/
-    const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
-    let terrainType = Math.floor(Math.random() * terrain.length);
-    document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
-
-    //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
-    const terrainImage = [
-        "url('/assets/images/terrain/foothills.jpg')",
-        "url('/assets/images/terrain/swamp.jpg')",
-        "url('/assets/images/terrain/meadow.jpg')",
-        "url('/assets/images/terrain/forest.jpg')",
-        "url('/assets/images/terrain/canyon.jpg')",
-        "url('/assets/images/terrain/valley.jpg')",
-        "url('/assets/images/terrain/dunes.jpg')",
-        "url('/assets/images/terrain/glacier.jpg')"
-    ];
-
-    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
-}
-
-//
-function checkAnswer() {
-    let playerAnswer = document.getElementById("player-answer").value;
-    playerAnswer = playerAnswer.toUpperCase();
-    if (correctAnswer == playerAnswer) {
-        alert("Most Excellent");
-    } else {
-        alert("oh nooooooo");
-    }
-}
-
-// Update game level and diplay next question
-function displayQuestion() {
-    // Prevent page reloading
-    event.preventDefault();
-
-    let gameCounter = document.getElementById("area-number").textContent;
-    gameCounter++;
-
-    document.getElementById("area-number").textContent = gameCounter;
-    document.getElementById("total-sleep").textContent = gameCounter;
-
-    // Game complete as player reached level 8 which equals the mythical 8 hours of sleep
-    if (gameCounter == 8) {
-        alert("CONGRATS!!!");
-    }
-
-    document.getElementById("continue-game").disabled = true;
-    document.getElementById("submit-answer").disabled = false;
-}
-
-// Reset game data and displays to start game position
-function resetGameData() {
-    // Prevent page reloading
-    event.preventDefault();
-
-    document.getElementById("area-number").textContent = 0;
-    /*document.getElementById("left-grid-content1").textContent = "";*/
-    document.getElementById("game-question").textContent = "";
-    document.getElementById("player-answer").value = "";
-}
-
-// Progress Bar
-function showProgress() {
-    event.preventDefault();
-
-    const block = document.querySelectorAll('.block');
-    let num = parseInt(document.getElementById("total-sleep").textContent);
-
-    block.forEach(item => {
-        let numElement = item.querySelector('.num');
-        //let num = parseInt(numElement.innerText);
-        //let num = parseInt(progress);
-        //let num = document.getElementById("total-sleep").textContent;
-        let count = 0;
-        let time = 2000 / num;
-        let circle = item.querySelector('.circle');
-        setInterval(() => {
-            if (count == num) {
-                clearInterval();
-            } else {
-                count += 1;
-                numElement.innerText = count;
-            }
-        }, time)
-        circle.style.strokeDashoffset = 503 - (503 * (num / 8));
-        let dots = item.querySelector('.dots');
-        dots.style.transform =
-            `rotate(${360 * ((num * 12.5) / 100)}deg)`;
-        if (num == 100) {
-            dots.style.opacity = 0;
-        }
-    })
-};
 
 let lyricGame = [{
         songTitle: "White Rabbit",
@@ -482,6 +304,185 @@ document.getElementById("line-three").innerHTML = lyricGame[lyricQuestionNumber]
 document.getElementById("line-four").innerHTML = lyricGame[lyricQuestionNumber].line4;
 document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
 document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
+
+function newGame() {
+    // Prevent page reloading
+    event.preventDefault();
+
+    // Reset displays
+    resetGameData()
+
+    // Call game funtions
+    startingStats();
+    displayQuestion();
+
+    document.getElementsByClassName("right-grid")[0].style.display = "grid";
+    document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
+    document.getElementById("welcome-message").style.display = "none";
+    document.getElementById('missing-lyric-game').style.display = "grid";
+    document.getElementsByClassName("left-grid-user-response")[0].style.display = "grid";
+    document.getElementById("continue-game").disabled = true;
+    
+}
+
+// Reset game data and displays to start game position
+function resetGameData() {
+    // Prevent page reloading
+    event.preventDefault();
+
+    document.getElementById("area-number").textContent = 0;
+    document.getElementById("game-question").textContent = "";
+    document.getElementById("player-answer").value = "";
+}
+
+// Create character array
+// Assign a random number between 70 and 99 to each of the 3 variable player stats
+function startingStats() {
+    const character = {
+        name: "Terry",
+        relaxation: generateStat(),
+        comfort: generateStat(),
+        luck: generateStat(),
+        // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
+        sleepDepth: function () {
+            return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
+        }
+    }
+    //Generate a random number between 70 and 99
+    function generateStat() {
+        return Math.floor(Math.random() * 20) + 70;
+    }
+
+    // Display player stat values
+    document.getElementById("name").textContent = "Name: Terry";
+    document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
+    document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
+    document.getElementsByClassName("player-stats")[2].textContent = character.luck;
+
+    // Calculate player sleep depth as a calculation of player stats and display 
+    document.getElementById("sleep-depth").textContent = character.sleepDepth();
+
+    // Change font colour depending on current score
+    if (character.sleepDepth() < 26) {
+        document.getElementById("sleep-depth").style.color = "red";
+    } else if (character.sleepDepth() < 76) {
+        document.getElementById("sleep-depth").style.color = "yellow";
+    } else {
+        document.getElementById("sleep-depth").style.color = "green";
+    }
+}
+
+// Update game level and diplay next question
+function displayQuestion() {
+    // Prevent page reloading
+    event.preventDefault();
+
+    document.getElementById("submit-answer").disabled = false;
+    document.getElementById("continue-game").disabled = true;
+    
+    let gameCounter = document.getElementById("area-number").textContent;
+    gameCounter++;
+
+    document.getElementById("area-number").textContent = gameCounter;
+    document.getElementById("total-sleep").textContent = gameCounter;
+
+    // Game complete as player reached level 8 which equals the mythical 8 hours of sleep
+    if (gameCounter == 8) {
+        alert("CONGRATS!!!");
+    }
+}
+
+function checkAnswer() {
+    event.preventDefault();
+    let playerAnswer = document.getElementById("player-answer").value;
+    playerAnswer = playerAnswer.toUpperCase();
+    if (correctAnswer == playerAnswer) {
+        alert("Most Excellent");
+    } else {
+        alert("oh nooooooo");
+    }
+}
+
+function updateStats() {
+    let xy = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
+    let op = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
+    let df = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
+    let bn = (parseInt((xy + op + df) / 3));
+
+    document.getElementById("sleep-depth").textContent = bn;
+}
+
+// Progress Bar
+function showProgress() {
+    event.preventDefault();
+
+    const block = document.querySelectorAll('.block');
+    let num = parseInt(document.getElementById("total-sleep").textContent);
+
+    block.forEach(item => {
+        let numElement = item.querySelector('.num');
+        //let num = parseInt(numElement.innerText);
+        //let num = parseInt(progress);
+        //let num = document.getElementById("total-sleep").textContent;
+        let count = 0;
+        let time = 2000 / num;
+        let circle = item.querySelector('.circle');
+        setInterval(() => {
+            if (count == num) {
+                clearInterval();
+            } else {
+                count += 1;
+                numElement.innerText = count;
+            }
+        }, time)
+        circle.style.strokeDashoffset = 503 - (503 * (num / 8));
+        let dots = item.querySelector('.dots');
+        dots.style.transform =
+            `rotate(${360 * ((num * 12.5) / 100)}deg)`;
+        if (num == 100) {
+            dots.style.opacity = 0;
+        }
+    })
+};
+
+
+
+/*
+function setGame() {
+    // Set game type array and display random game type data
+    const game = ["missingLyric", "Echos of the Past", "Morning Ritual", "truthyOrFalsy"];
+    let gameType = Math.floor(Math.random() * game.length);
+    document.getElementById("game").textContent = game[gameType];
+
+    // Set the weather background
+    // ??CHANGE WEATHER TO GAME TYPE??
+    const gameImage = [
+        "url('/assets/images/weather/rain1.jpg')",
+        "url('/assets/images/weather/clear_sky.jpg')",
+        "url('/assets/images/weather/snow1.jpg')",
+        "url('/assets/images/weather/hurricane2.jpg')"
+    ];
+    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType]; 
+}
+*/
+
+
+/*
+function setTerrain() {
+    // Set terrain array and display random terrain data
+    // https://outforia.com/types-of-terrain/
+    const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
+    let terrainType = Math.floor(Math.random() * terrain.length);
+    document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
+
+    //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
+    const terrainImage = [
+        "url('/assets/images/terrain/foothills.jpg')",
+        "url('/assets/images/terrain/swamp.jpg')"
+    ];
+    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
+}
+*/
 
 
 /*

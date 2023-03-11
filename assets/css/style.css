@@ -10,9 +10,10 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   grid-template-areas:
     'left-grid right-grid';
   /* background-color: #C06C84; */
-  max-width: 1300px;
+  /* max-width: 1300px; */
   gap: 20px;
   padding: 20px;
+
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
@@ -25,29 +26,29 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   gap: 20px;
 }
 
-
 /* main content area */
 .left-grid-content {
   background-color: #F8B195;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  /* opacity: .6; */
-  /* background-image: url('../images/terrain/canyon.jpg'); */
+  padding: 20px;
 }
 
-.start-message {
-  font-size: 24px;
-  font-family: 'Schoolbell', cursive;
-  padding: 10px;
+#welcome-message *{
   display: flex;
   justify-content: center;
+  align-items: center;
+  
+  font-size: 35px;
+  padding: 15px;
+  margin: 30px;
+  width: 100%;
+
 }
+
 
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: center;
 }
@@ -55,7 +56,8 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* user movement controls */
 .left-grid-user-controls {
   background-color: #F8B195;
-  padding: 10px;;
+  padding: 20px;
+  
   display: flex;
   justify-content: center;
 }
@@ -63,7 +65,7 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* main content area */
 .left-grid-user-items {
   background-color: #F8B195;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: center;
 }
@@ -91,20 +93,22 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: #F8B195;
-  padding: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
-  padding: 10px;
+  padding: 20px;
 
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
-  padding: 10px;
+  padding: 20px;
 }
 
 .block {
@@ -164,6 +168,7 @@ strong {
 /* Min-width: 320px (smaller desktop viewpoints) */
 @media only screen and (max-width: 320px) {}
 
+
 #start-game,
 #continue-game,
 #submit-answer {
@@ -200,10 +205,9 @@ strong {
 
 body {
   background-color: #C06C84;
-  box-sizing: border-box;
   margin: 20px;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -358,6 +362,7 @@ h3 {
   color: #F5F5DC;
   background-color: #6C5B7B;
   text-shadow: none;
-  padding: 5px;
+  padding: 10px;
   letter-spacing: .9px;
 }
+
