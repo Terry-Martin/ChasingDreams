@@ -293,17 +293,13 @@ let lyricGame = [{
 ];
 
 /// Returns a random integer from 0 to 25:
-let lyricQuestionNumber = Math.floor(Math.random() * (lyricGame.length));
-let correctAnswer = lyricGame[lyricQuestionNumber].answer;
 
-// Set and display current song and question
-document.getElementById("song-title").innerHTML = lyricGame[lyricQuestionNumber].songTitle;
-document.getElementById("line-one").innerHTML = lyricGame[lyricQuestionNumber].line1;
-document.getElementById("line-two").innerHTML = lyricGame[lyricQuestionNumber].line2;
-document.getElementById("line-three").innerHTML = lyricGame[lyricQuestionNumber].line3;
-document.getElementById("line-four").innerHTML = lyricGame[lyricQuestionNumber].line4;
-document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
-document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
+
+let lyricQuestionNumber;
+let correctAnswer;
+
+
+
 
 function newGame() {
     // Prevent page reloading
@@ -315,6 +311,8 @@ function newGame() {
     // Call game funtions
     startingStats();
     displayQuestion();
+    // Set and display current song and question
+
 
     document.getElementsByClassName("right-grid")[0].style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
@@ -322,7 +320,8 @@ function newGame() {
     document.getElementById('missing-lyric-game').style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "grid";
     document.getElementById("continue-game").disabled = true;
-    
+
+
 }
 
 // Reset game data and displays to start game position
@@ -331,7 +330,7 @@ function resetGameData() {
     event.preventDefault();
 
     document.getElementById("area-number").textContent = 0;
-    document.getElementById("game-question").textContent = "";
+    //document.getElementById("game-question").textContent = "";
     document.getElementById("player-answer").value = "";
 }
 
@@ -340,12 +339,12 @@ function resetGameData() {
 function startingStats() {
     const character = {
         name: "Terry",
-        relaxation: generateStat(),
+        dreaminess: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
         // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
-            return Math.floor((this.relaxation + this.comfort + this.luck) / 3);
+            return Math.floor((this.dreaminess + this.comfort + this.luck) / 3);
         }
     }
     //Generate a random number between 70 and 99
@@ -355,7 +354,7 @@ function startingStats() {
 
     // Display player stat values
     document.getElementById("name").textContent = "Name: Terry";
-    document.getElementsByClassName("player-stats")[0].textContent = character.relaxation;
+    document.getElementsByClassName("player-stats")[0].textContent = character.dreaminess;
     document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
     document.getElementsByClassName("player-stats")[2].textContent = character.luck;
 
@@ -377,14 +376,29 @@ function displayQuestion() {
     // Prevent page reloading
     event.preventDefault();
 
+    lyricQuestionNumber = Math.floor(Math.random() * (lyricGame.length));
+    correctAnswer = lyricGame[lyricQuestionNumber].answer;
+
+    document.getElementById("song-title").innerHTML = lyricGame[lyricQuestionNumber].songTitle;
+    document.getElementById("line-one").innerHTML = lyricGame[lyricQuestionNumber].line1;
+    document.getElementById("line-two").innerHTML = lyricGame[lyricQuestionNumber].line2;
+    document.getElementById("line-three").innerHTML = lyricGame[lyricQuestionNumber].line3;
+    document.getElementById("line-four").innerHTML = lyricGame[lyricQuestionNumber].line4;
+    document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
+    document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
+
+
     document.getElementById("submit-answer").disabled = false;
     document.getElementById("continue-game").disabled = true;
-    
+
+
     let gameCounter = document.getElementById("area-number").textContent;
     gameCounter++;
 
     document.getElementById("area-number").textContent = gameCounter;
     document.getElementById("total-sleep").textContent = gameCounter;
+
+    document.getElementById("player-answer").value = "";
 
     // Game complete as player reached level 8 which equals the mythical 8 hours of sleep
     if (gameCounter == 8) {
@@ -394,22 +408,46 @@ function displayQuestion() {
 
 function checkAnswer() {
     event.preventDefault();
+
+
+
     let playerAnswer = document.getElementById("player-answer").value;
     playerAnswer = playerAnswer.toUpperCase();
     if (correctAnswer == playerAnswer) {
         alert("Most Excellent");
+       document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
     } else {
         alert("oh nooooooo");
+        document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 20;
     }
+
+    updateStats();
+
+    document.getElementById("submit-answer").disabled = true;
+    document.getElementById("continue-game").disabled = false;
 }
 
 function updateStats() {
-    let xy = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
-    let op = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
-    let df = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
-    let bn = (parseInt((xy + op + df) / 3));
+    let updateDreaminess = parseInt((document.getElementsByClassName("player-stats")[0].textContent));
+    let updateComfort = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
+    let updateLuck = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
+    let UpdateSleepDepth = (parseInt((updateDreaminess + updateComfort + updateLuck) / 3));
 
-    document.getElementById("sleep-depth").textContent = bn;
+    // Dreaminess reduces by 10 for each question answered
+    document.getElementsByClassName("player-stats")[0].textContent = updateDreaminess - 10;
+    document.getElementById("sleep-depth").textContent = UpdateSleepDepth;
+    // No negative score
+    if (updateDreaminess < 10) {
+        document.getElementsByClassName("player-stats")[0].textContent = 0;
+    }
+    if (updateComfort < 10) {
+        document.getElementsByClassName("player-stats")[1].textContent = 0;
+    }
+    if (updateLuck < 10) {
+        document.getElementsByClassName("player-stats")[2].textContent = 0;
+    }
+
+
 }
 
 // Progress Bar
