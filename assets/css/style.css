@@ -11,8 +11,9 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
     'left-grid right-grid';
   /* background-color: #C06C84; */
   /* max-width: 1300px; */
-  gap: 20px;
-  padding: 20px;
+  
+  gap: 10px;
+  padding: 10px;
 
 }
 
@@ -22,33 +23,31 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   background-color: #355C7D;
   display: grid;
   grid-template-rows: auto;
-  padding: 20px;
-  gap: 20px;
+  padding: 10px;
+  gap: 10px;
 }
 
 /* main content area */
 .left-grid-content {
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
 }
 
 #welcome-message *{
   display: flex;
   justify-content: center;
   align-items: center;
-  
   font-size: 35px;
-  padding: 15px;
-  margin: 30px;
+  padding: 40px;
+  margin: 20px;
   width: 100%;
-
+  max-width: 1000px;
 }
-
 
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -56,7 +55,7 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* user movement controls */
 .left-grid-user-controls {
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
   
   display: flex;
   justify-content: center;
@@ -65,7 +64,7 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* main content area */
 .left-grid-user-items {
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -81,8 +80,8 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
     'player-info player-info'
     'npc2-info npc2-info';
   background-color: #355C7D;
-  padding: 20px;
-  gap: 20px;
+  padding: 10px;
+  gap: 10px;
 
 }
 
@@ -93,7 +92,7 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -101,14 +100,17 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
 
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
-  padding: 20px;
+  padding: 10px;
 }
 
 .block {
@@ -205,6 +207,7 @@ strong {
 
 body {
   background-color: #C06C84;
+  background-image: url("/assets/images/backgrounds/pexels-photo-11643390.webp");
   margin: 20px;
   width: 100%;
   display: flex;

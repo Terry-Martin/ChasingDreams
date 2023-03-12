@@ -344,7 +344,7 @@ function startingStats() {
         luck: generateStat(),
         // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
-            return Math.floor((this.dreaminess + this.comfort + this.luck) / 3);
+            return Math.floor((this.dreaminess + this.comfort) / 2);
         }
     }
     //Generate a random number between 70 and 99
@@ -362,7 +362,11 @@ function startingStats() {
     document.getElementById("sleep-depth").textContent = character.sleepDepth();
 
     // Change font colour depending on current score
-    if (character.sleepDepth() < 26) {
+
+
+    if (character.sleepDepth() < 1) {
+        alert("You woke up");
+    } else if (character.sleepDepth() < 26) {
         document.getElementById("sleep-depth").style.color = "red";
     } else if (character.sleepDepth() < 76) {
         document.getElementById("sleep-depth").style.color = "yellow";
@@ -400,10 +404,6 @@ function displayQuestion() {
 
     document.getElementById("player-answer").value = "";
 
-    // Game complete as player reached level 8 which equals the mythical 8 hours of sleep
-    if (gameCounter == 8) {
-        alert("CONGRATS!!!");
-    }
 }
 
 function checkAnswer() {
@@ -415,7 +415,7 @@ function checkAnswer() {
     playerAnswer = playerAnswer.toUpperCase();
     if (correctAnswer == playerAnswer) {
         alert("Most Excellent");
-       document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
+        document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
     } else {
         alert("oh nooooooo");
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 20;
@@ -425,6 +425,12 @@ function checkAnswer() {
 
     document.getElementById("submit-answer").disabled = true;
     document.getElementById("continue-game").disabled = false;
+
+    showProgress();
+
+    if (document.getElementById("total-sleep").textContent == 8) {
+        alert("Congrats - You got a full nights rest. You are ready to attack the day with a smile")
+    }
 }
 
 function updateStats() {
@@ -459,9 +465,6 @@ function showProgress() {
 
     block.forEach(item => {
         let numElement = item.querySelector('.num');
-        //let num = parseInt(numElement.innerText);
-        //let num = parseInt(progress);
-        //let num = document.getElementById("total-sleep").textContent;
         let count = 0;
         let time = 2000 / num;
         let circle = item.querySelector('.circle');
@@ -607,5 +610,3 @@ document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = 
 document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[4];
 document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[5];
 document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[6]; */
-
-//document.getElementById("left-grid-content1").style.backgroundImage = "url('/assets/images/terrain/canyon.jpg')";
