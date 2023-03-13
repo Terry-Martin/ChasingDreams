@@ -23,6 +23,7 @@ body {
 p {
   margin: 6px;
 }
+
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
@@ -59,9 +60,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 35px;
-  padding: 40px;
-  margin: 20px;
+  font-size: 26px;
+  padding: 30px;
   width: 100%;
   max-width: 1000px;
 }
@@ -73,19 +73,24 @@ p {
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
-  display: flex;
-  justify-content: center;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* user movement controls */
-.left-grid-user-controls {
-  background-color: #F8B195;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  justify-content: center;
+
+
+#player-answer {
+  width: 100%;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border: 3px solid #454545;
+  border-radius: 10px;
+  background-color: #D8BFD8;
+  color: #355C7D;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
 }
 
 /* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
@@ -121,29 +126,27 @@ p {
   justify-content: center;
 }
 
-/*.right-grid ul {
-  list-style-type: none;
-
-}*/
-
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
   padding-left: 10px;
   padding-right: 10px;
+}
 
+.right-grid-player-info ul {
+  padding:0;
 }
 
 .right-grid-player-info li {
   list-style-type: none;
   margin-top: 12px;
-  padding: 1px;
-  margin-left: 1px;
-  border-left: 1px;
 }
 
 #player-name {
   color: blue;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
 }
 
 .right-grid-items {
@@ -153,9 +156,16 @@ p {
   padding-right: 10px;
 }
 
+#sleep-depth {
+  font-size: 22px;
+  text-shadow: none;
+}
+
 /* Hightlight Blank Word in Content area */
 strong {
   color: red;
+  font-weight: bold;
+  font-weight: 900;
 }
 
 #start-game,
@@ -173,12 +183,25 @@ strong {
   text-align: center;
   transition: all 0.2s;
   text-shadow: none;
+  min-width:120px;
+}
+
+#start-game {
+  background-color: #355C7D;
+}
+
+#button-position {
+  display:flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
 }
 
 #start-game:hover,
 #continue-game:hover,
 #submit-answer:hover {
-  background-color: burlywood;
+  background-color: blueviolet;
+
 }
 
 #continue-game:disabled, 
@@ -307,8 +330,6 @@ button[disabled]{
   justify-content: right;
 }
 
-
-
 h3 {
   display: flex;
   justify-content: center;
@@ -318,6 +339,18 @@ h3 {
   text-shadow: none;
   padding: 4px;
   letter-spacing: .9px;
+}
+
+/* First game question flashes twice to draw players attention */
+/* https://stackoverflow.com/questions/9620594/removing-ul-indentation-with-css */
+#game-question {
+  animation: blinker 1s linear 2;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Media quiries */

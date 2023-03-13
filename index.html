@@ -27,6 +27,7 @@
                 <section id="welcome-message">
                     <p>You fall into a deep, peaceful slumber.</p>
                     <p>Wouldn't it be great to get a full, restive eight hours sleep.....for once</p>
+                    <p>Just fill out the missing song lyric to stay in dreamland</p>
                     <button id="start-game">Start Dreaming</button>
                 </section>
 
@@ -49,12 +50,15 @@
                     <form id="main-content">
                         <h3 id="missing-lyric-question">Question</h3>
                         <p id="game-question"></p>
-                        <label for="player-answer">Answer: </label>
-                        <input type="text" id="player-answer" name="player-answer" value="" required>
+                        <label for="player-answer"></label>
+                        <input type="text" id="player-answer" name="player-answer" placeholder="Enter Answer Here"
+                            required>
                         <br>
                         <br>
-                        <button type="submit" class="button" form="main-content" id="submit-answer">Submit</button>
-                        <button id="continue-game">Continue</button>
+                        <span id="button-position">
+                            <button type="submit" class="button" form="main-content" id="submit-answer">Submit</button>
+                            <button id="continue-game">Continue</button>
+                        </span>
                     </form>
                 </section>
 
@@ -104,17 +108,17 @@
                             <circle class="circle" cx="90" cy="90" r="80" />
                         </svg>
                     </div>
-                    
+
                 </section>
             </div>
 
             <div class="right-grid-player-info">
                 <section>
                     <h3>Player Info</h3>
-                    <ul>
-                        <li>Name:
+                        <p>
                             <span id="player-name">Terry</span>
-                        </li>
+                        <p>
+                            <ul>
                         <li>Dreaminess:
                             <span class="player-stats"></span>
                         </li>

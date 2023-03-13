@@ -114,7 +114,7 @@ let lyricGame = [{
     {
         songTitle: "Dream Operator",
         line1: "Every dream has a name",
-        line2: "And names tell your<strong>_ _ _ _ _</strong>",
+        line2: "And names tell your <strong>_ _ _ _ _</strong>",
         line3: "This song is your dream",
         line4: "You're the dream operator",
         songBy: "By Talking Heads",
@@ -405,6 +405,22 @@ function checkAnswer() {
 
     updateStats();
 
+// Change font colour depending on current score
+if (document.getElementById("sleep-depth").textContent < 1) {
+    alert("You woke up");
+} else if (document.getElementById("sleep-depth").textContent < 35) {
+    document.getElementById("sleep-depth").style.color = "red";
+} else if (document.getElementById("sleep-depth").textContent < 76) {
+    document.getElementById("sleep-depth").style.color = "yellow";
+} else {
+    document.getElementById("sleep-depth").style.color = "seagreen";
+}
+
+
+
+
+
+
     document.getElementById("submit-answer").disabled = true;
     document.getElementById("continue-game").disabled = false;
 
@@ -485,107 +501,3 @@ function setGame() {
     document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType]; 
 }
 */
-
-
-/*
-function setTerrain() {
-    // Set terrain array and display random terrain data
-    // https://outforia.com/types-of-terrain/
-    const terrain = ["Foothills", "Swamp", "Meadow", "Forest", "Canyon", "Valley", "Dunes", "Glacier"];
-    let terrainType = Math.floor(Math.random() * terrain.length);
-    document.getElementById("terrain").textContent = "Terrain: " + terrain[terrainType];
-
-    //Set the terrain background reusing terrainType variable to match terrain type to terrain image and display
-    const terrainImage = [
-        "url('/assets/images/terrain/foothills.jpg')",
-        "url('/assets/images/terrain/swamp.jpg')"
-    ];
-    document.getElementsByClassName("right-grid-npc2-info")[0].style.backgroundImage = terrainImage[terrainType];
-}
-*/
-
-
-/*
-    // Prevent page reloading
-    event.preventDefault();
-
-    document.getElementById("continue-game").disabled = false;
-    document.getElementById("submit-answer").disabled = true;
-
-    document.getElementById("player-answer").value = "";
-    // document.getElementById("submit-answer").disabled = "true";
-
-    updateStats();
-*/
-
-
-/* window.onload = function () {
-    startGame();
-}; */
-
-
-/* document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
-                checkAnswer();
-            } else {
-                let gameType = this.getAttribute("data-type");
-                runGame(gameType);
-            }
-        })
-    }*/
-
-// object.onload = startGame();
-
-// Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
-
-/* document.addEventListener("DOMContentLoaded", function () {
-    throw ("Alert Works using javascript to console");
-}) 
-
-
-console.log(character.name);
-console.log(character.mood()); */
-
-
-// hide element/text
-// document.getElementById("terrain").style.display = "none";
-
-
-// alert example
-// window.alert(5 + 6);
-// alert(5 + 6);
-
-
-// Returns a random integer from 0 to 99:
-// Math.floor(Math.random() * 100);
-
-
-// document.getElementById("terrain").style.fontSize = "35px";
-// document.getElementById("terrain").style.color = "blue";
-
-// document.getElementsByClassName("player-stats")[2].style.color = "yellow";
-
-
-// Edit style using getElementsByClassName
-/* for (const s of document.getElementsByClassName("player-stats")) {
-    s.style.color = "purple";
-} */
-
-
-// let t = character.mood();
-// document.getElementById("currentMood").textContent = t;
-// document.getElementById("currentMood").textContent = character.mood();
-
-
-/* document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[0];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[1];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[2];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[3];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[4];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[5];
-document.getElementsByClassName("left-grid-content")[0].style.backgroundImage = terrainImage[6]; */
