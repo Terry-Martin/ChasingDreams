@@ -15,6 +15,7 @@ document.getElementById('missing-lyric-game').style.display = "none";
 document.getElementsByClassName("right-grid")[0].style.display = "none";
 document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
 
+document.getElementsByClassName("right-grid-dream-info")[0].style.display = "none";
 
 let lyricGame = [{
         songTitle: "White Rabbit",
@@ -249,13 +250,13 @@ let lyricGame = [{
 
     {
         songTitle: "Nice Dream",
-        line1: "They love me like I was their <strong>_ _ _ _ _ _ _</strong>",
+        line1: "They love me like I was their brother",
         line2: "They protect me",
-        line3: "Listen to me",
+        line3: "<strong>_ _ _ _ _ _</strong> to me",
         line4: "They dug me my very own garden",
         songBy: "By Radiohead",
-        question: "Who did they love Radio like? (7 letters)",
-        answer: "BROTHER"
+        question: "What do they do to Radiohead? (6 letters)",
+        answer: "LISTEN"
     },
 
     {

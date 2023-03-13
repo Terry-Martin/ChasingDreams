@@ -13,9 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=Merienda+One&family=Schoolbell&display=swap"
         rel="stylesheet">
-
-
-
     <title>Chasing Dreams</title>
 </head>
 
@@ -33,9 +30,9 @@
                     <button id="start-game">Start Dreaming</button>
                 </section>
 
-                <section id=missing-lyric-game>
+                <section id="missing-lyric-game">
                     <h3 id="missing-lyric-title">Missing Song Lyric</h3>
-                    <h5 id="song-title"></h5>
+                    <p id="song-title"></p>
                     <p id="line-one"></p>
                     <p id="line-two"></p>
                     <p id="line-three"></p>
@@ -54,6 +51,8 @@
                         <p id="game-question"></p>
                         <label for="player-answer">Answer: </label>
                         <input type="text" id="player-answer" name="player-answer" value="" required>
+                        <br>
+                        <br>
                         <button type="submit" class="button" form="main-content" id="submit-answer">Submit</button>
                         <button id="continue-game">Continue</button>
                     </form>
@@ -71,7 +70,7 @@
                         </div>
                     </form>
                 </section>
-                
+
             </div>
 
         </div>
@@ -96,12 +95,9 @@
 
             <div class="right-grid-sleep-status">
                 <section>
-                    <h3>Sleep Duration</h3>
+                    <h3>Sleep Info</h3>
                     <p>Target Sleep: 8 Hours</p>
-                    
-                    
-
-                    <!-- Progres Circle Bar-->
+                    <!-- Progres Circle Bar -->
                     <div class="block">
                         <div class="box">
                             <p class="number">
@@ -120,7 +116,7 @@
                             </defs>
                             <circle class="circle" cx="90" cy="90" r="80" />
                         </svg>
-                    </div>
+                    </div> 
                 </section>
             </div>
 
@@ -142,14 +138,18 @@
                 </section>
             </div>
 
-
-
-            <div class="right-grid-npc2-info">
-                <h3>Player Items</h3>
-                <form action="">
-                    <button id="dream">Dream Jumper</button>
-                    <button id="check-progress">Check Progress - Luxury Pillow</button>
-                    <button>Hot Water Bottle</button>
+            <div class="right-grid-items">
+                <section>
+                    <h3>Player Items</h3>
+                    <form>
+                        <button id="dream">Dream Jumper</button>
+                        <img src="" alt="">
+                        <button id="check-progress">Luxury Pillow</button>
+                        <img src="" alt="">
+                        <button id="hot-water-bottle">Hot Water Bottle</button>
+                        <img src="" alt="">
+                    </form>
+                </section>
             </div>
 
         </div>

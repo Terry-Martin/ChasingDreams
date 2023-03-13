@@ -3,15 +3,34 @@ https://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-co
 Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D 
 */
 
+* {
+  box-sizing: border-box;
+  color: #355C7D;
+  font-size: 18px;
+  text-shadow: white 0px 0px 10px;
+  font-family: 'Merienda One', cursive;
+  font-weight: 600;
+}
+
+p {
+  margin: 10px;
+}
+
+body {
+  background-color: #C06C84;
+  background-image: url("/assets/images/backgrounds/pexels-photo-11643390.webp");
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
   grid-template-columns: auto;
   grid-template-areas:
     'left-grid right-grid';
-  /* background-color: #C06C84; */
-  /* max-width: 1300px; */
-  
   gap: 10px;
   padding: 10px;
 
@@ -30,10 +49,15 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* main content area */
 .left-grid-content {
   background-color: #F8B195;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#welcome-message *{
+#welcome-message * {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,24 +71,21 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
-  padding: 10px;
   display: flex;
   justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#user-response {
+
 }
 
 /* user movement controls */
 .left-grid-user-controls {
   background-color: #F8B195;
-  padding: 10px;
-  
-  display: flex;
-  justify-content: center;
-}
-
-/* main content area */
-.left-grid-user-items {
-  background-color: #F8B195;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   justify-content: center;
 }
@@ -73,12 +94,11 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 .right-grid {
   grid-area: right-grid;
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: 50%;
+  grid-template-rows: 50% 49%;
   grid-template-areas:
-    'dream-info sleep-status'
-    'player-info player-info'
-    'npc2-info npc2-info';
+    'player-info sleep-status'
+    'items items';
   background-color: #355C7D;
   padding: 10px;
   gap: 10px;
@@ -101,26 +121,19 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
   grid-area: sleep-status;
   background-color: #F8B195;
   padding: 10px;
-
   display: flex;
   justify-content: center;
-
 }
 
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
   padding: 10px;
+
 }
 
-.block {
-  grid-area: block;
-  background-color: #F8B195;
-  padding: 5px;
-}
-
-.right-grid-npc2-info {
-  grid-area: npc2-info;
+.right-grid-items {
+  grid-area: items;
   background-color: #F8B195;
   padding: 5px;
 }
@@ -133,43 +146,6 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 strong {
   color: red;
 }
-
-/* Min-width: 992px (smaller desktop viewpoints) */
-@media only screen and (max-width: 992px) {
-  .header-bar {
-    display: none;
-  }
-}
-
-/* Min-width: 768px (smaller desktop viewpoints) */
-@media only screen and (max-width: 768px) {
-  .footer-bar {
-    display: none;
-  }
-}
-
-/* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 600px) {
-
-  /* container grid to house left grid and right grid for main game area */
-  .container-grid {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      'left-grid'
-      'right-grid';
-    gap: 5px;
-    padding: 5px;
-    height: 100vh;
-  }
-}
-
-/* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 480px) {}
-
-/* Min-width: 320px (smaller desktop viewpoints) */
-@media only screen and (max-width: 320px) {}
-
 
 #start-game,
 #continue-game,
@@ -195,27 +171,6 @@ strong {
 }
 
 /* Progress Bar */
-
-* {
-  box-sizing: border-box;
-  color: #355C7D;
-  font-size: 18px;
-  text-shadow: white 0px 0px 10px;
-  font-family: 'Merienda One', cursive;
-  font-weight: 600;
-}
-
-body {
-  background-color: #C06C84;
-  background-image: url("/assets/images/backgrounds/pexels-photo-11643390.webp");
-  margin: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 .block {
   position: relative;
   display: flex;
@@ -310,7 +265,7 @@ body {
 
 /* radio input to look like button input */
 .button2 {
-  float: left;
+
   margin: 0 5px 0 0;
   width: 100px;
   height: 40px;
@@ -369,3 +324,39 @@ h3 {
   letter-spacing: .9px;
 }
 
+/* Media quiries */
+/* Min-width: 992px (smaller desktop viewpoints) */
+@media only screen and (max-width: 992px) {
+  .header-bar {
+    display: none;
+  }
+}
+
+/* Min-width: 768px (smaller desktop viewpoints) */
+@media only screen and (max-width: 768px) {
+  .footer-bar {
+    display: none;
+  }
+}
+
+/* Min-width: 480px (smaller desktop viewpoints) */
+@media only screen and (max-width: 600px) {
+
+  /* container grid to house left grid and right grid for main game area */
+  .container-grid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'left-grid'
+      'right-grid';
+    gap: 5px;
+    padding: 5px;
+    height: 100vh;
+  }
+}
+
+/* Min-width: 480px (smaller desktop viewpoints) */
+@media only screen and (max-width: 480px) {}
+
+/* Min-width: 320px (smaller desktop viewpoints) */
+@media only screen and (max-width: 320px) {}
