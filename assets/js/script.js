@@ -1,16 +1,11 @@
 const startGame = document.getElementById("start-game");
 const submitAnswer = document.getElementById("submit-answer");
 const continueGame = document.getElementById("continue-game");
-const progress = document.getElementById("check-progress");
-
-
 
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
 submitAnswer.addEventListener("click", checkAnswer);
-progress.addEventListener("click", showProgress);
 
-document.getElementById("true-false").style.visibility = "hidden";
 document.getElementById('missing-lyric-game').style.display = "none";
 document.getElementsByClassName("right-grid")[0].style.display = "none";
 document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
@@ -293,14 +288,9 @@ let lyricGame = [{
     }
 ];
 
-/// Returns a random integer from 0 to 25:
-
-
+// Returns a random integer from 0 to 25:
 let lyricQuestionNumber;
 let correctAnswer;
-
-
-
 
 function newGame() {
     // Prevent page reloading
@@ -314,15 +304,12 @@ function newGame() {
     displayQuestion();
     // Set and display current song and question
 
-
     document.getElementsByClassName("right-grid")[0].style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
     document.getElementById("welcome-message").style.display = "none";
     document.getElementById('missing-lyric-game').style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "grid";
     document.getElementById("continue-game").disabled = true;
-
-
 }
 
 // Reset game data and displays to start game position
@@ -339,7 +326,6 @@ function resetGameData() {
 // Assign a random number between 70 and 99 to each of the 3 variable player stats
 function startingStats() {
     const character = {
-        name: "Terry",
         dreaminess: generateStat(),
         comfort: generateStat(),
         luck: generateStat(),
@@ -354,7 +340,6 @@ function startingStats() {
     }
 
     // Display player stat values
-    document.getElementById("name").textContent = "Name: Terry";
     document.getElementsByClassName("player-stats")[0].textContent = character.dreaminess;
     document.getElementsByClassName("player-stats")[1].textContent = character.comfort;
     document.getElementsByClassName("player-stats")[2].textContent = character.luck;
@@ -363,8 +348,6 @@ function startingStats() {
     document.getElementById("sleep-depth").textContent = character.sleepDepth();
 
     // Change font colour depending on current score
-
-
     if (character.sleepDepth() < 1) {
         alert("You woke up");
     } else if (character.sleepDepth() < 26) {
@@ -392,10 +375,8 @@ function displayQuestion() {
     document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
     document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
 
-
     document.getElementById("submit-answer").disabled = false;
     document.getElementById("continue-game").disabled = true;
-
 
     let gameCounter = document.getElementById("area-number").textContent;
     gameCounter++;
@@ -405,12 +386,12 @@ function displayQuestion() {
 
     document.getElementById("player-answer").value = "";
 
+    // Remove question from array, so it cant be repeated
+    lyricGame.splice(lyricQuestionNumber, 1);
 }
 
 function checkAnswer() {
     event.preventDefault();
-
-
 
     let playerAnswer = document.getElementById("player-answer").value;
     playerAnswer = playerAnswer.toUpperCase();
@@ -453,8 +434,6 @@ function updateStats() {
     if (updateLuck < 10) {
         document.getElementsByClassName("player-stats")[2].textContent = 0;
     }
-
-
 }
 
 // Progress Bar
@@ -486,7 +465,6 @@ function showProgress() {
         }
     })
 };
-
 
 
 /*

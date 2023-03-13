@@ -6,14 +6,10 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 * {
   box-sizing: border-box;
   color: #355C7D;
-  font-size: 18px;
+  font-size: 16px;
   text-shadow: white 0px 0px 10px;
   font-family: 'Merienda One', cursive;
   font-weight: 600;
-}
-
-p {
-  margin: 10px;
 }
 
 body {
@@ -22,18 +18,20 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
+p {
+  margin: 6px;
+}
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
   grid-template-columns: auto;
   grid-template-areas:
     'left-grid right-grid';
-  gap: 10px;
-  padding: 10px;
-
+  gap: 20px;
+  padding-top: 40px;
+  min-height: 570px;
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
@@ -54,7 +52,7 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: center;
+ 
 }
 
 #welcome-message * {
@@ -68,6 +66,10 @@ body {
   max-width: 1000px;
 }
 
+#welcome-message p {
+  justify-content: left;
+}
+
 /* user reply options */
 .left-grid-user-response {
   background-color: #F8B195;
@@ -75,10 +77,6 @@ body {
   justify-content: center;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#user-response {
-
 }
 
 /* user movement controls */
@@ -95,7 +93,7 @@ body {
   grid-area: right-grid;
   display: grid;
   grid-template-columns: 50%;
-  grid-template-rows: 50% 49%;
+  grid-template-rows: 55%;
   grid-template-areas:
     'player-info sleep-status'
     'items items';
@@ -105,14 +103,11 @@ body {
 
 }
 
-.right-grid ul {
-  list-style-type: none;
-}
-
 .right-grid-dream-info {
   grid-area: dream-info;
   background-color: #F8B195;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   justify-content: center;
 }
@@ -120,26 +115,42 @@ body {
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   justify-content: center;
 }
 
+/*.right-grid ul {
+  list-style-type: none;
+
+}*/
+
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 
+}
+
+.right-grid-player-info li {
+  list-style-type: none;
+  margin-top: 12px;
+  padding: 1px;
+  margin-left: 1px;
+  border-left: 1px;
+}
+
+#player-name {
+  color: blue;
 }
 
 .right-grid-items {
   grid-area: items;
   background-color: #F8B195;
-  padding: 5px;
-}
-
-.player-stats {
-  color: #6C5B7B;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Hightlight Blank Word in Content area */
@@ -152,13 +163,13 @@ strong {
 #submit-answer {
 
   /* Based on https://fdossena.com/?p=html5cool/buttons/i.frag */
-  padding: 0.3em 1.2em;
-  margin: 0 0.3em 0.3em 0;
+  padding: 3px 8px;
+  margin: 0 1px 1px 0;
   border-radius: 2em;
   text-decoration: none;
   font-weight: 300;
-  color: #F8B195;
-  background-color: #355C7D;
+  color: white;
+  background-color: #230592;
   text-align: center;
   transition: all 0.2s;
   text-shadow: none;
@@ -168,6 +179,22 @@ strong {
 #continue-game:hover,
 #submit-answer:hover {
   background-color: burlywood;
+}
+
+#continue-game:disabled, 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+#submit-answer:disabled, 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 /* Progress Bar */
@@ -208,17 +235,17 @@ strong {
 }
 
 .box .number .num {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
 }
 
 .box .number .sub {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .box .title {
-  font-size: 15px;
-  color: #9b9b9b;
+  font-size: 16px;
+  color: #e9e9e9;
 }
 
 .dots {
@@ -263,64 +290,33 @@ strong {
   transition: 2s stroke-dashoffset;
 }
 
-/* radio input to look like button input */
-.button2 {
-
-  margin: 0 5px 0 0;
-  width: 100px;
-  height: 40px;
-  position: relative;
-  border: 4px solid black;
+/* Song Name */
+#song-title {
+  font-size: 16px;
+  font-style: italic;
+  color: #454545;
+  display: flex;
+  justify-content: center;
 }
-
-.button2 label,
-.button2 input {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.button2 input[type="radio"] {
-  opacity: 0.011;
-  z-index: 100;
-}
-
-.button2 input[type="radio"]:checked+label {
-  background: #20b8be;
-  border-radius: 4px;
-}
-
-.button2 label {
-  cursor: pointer;
-  z-index: 90;
-  line-height: 1.8em;
-}
-
 /* Artist Name */
 #song-by {
   font-size: 16px;
   font-style: italic;
   color: #454545;
+  display: flex;
+  justify-content: right;
 }
 
-#song-title {
-  font-size: 20px;
-  font-style: italic;
-  color: #454545;
-}
+
 
 h3 {
   display: flex;
   justify-content: center;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 18px;
   color: #F5F5DC;
   background-color: #6C5B7B;
   text-shadow: none;
-  padding: 10px;
+  padding: 4px;
   letter-spacing: .9px;
 }
 
