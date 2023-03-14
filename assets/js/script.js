@@ -406,9 +406,31 @@ function checkAnswer() {
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 20;
     }
 
+    // Array of items
+    let playerItem = [{
+            itemType: "jumper",
+            itemImage: ["../assets/images/items/jumper2.jpg", "../assets/images/items/jumper3.jpg", "../assets/images/items/jumper5.jpg"],
+            itemStatEdit: 2,
+            itemMessage: ""
+        },
 
-    // 1 in 8 chance to get an item
-    let itemChance = (Math.floor(Math.random() * (2 - 1 + 1) + 1));
+        {
+            itemType: "pillow",
+            itemImage: ["../assets/images/items/pillow9.jpg", "../assets/images/items/pillow12.jpg", "../assets/images/items/pillow13.jpg"],
+            itemStatEdit: 2,
+            itemMessage: ""
+        },
+
+        {
+            itemType: "bottle",
+            itemImage: ["../assets/images/items/hot_water_bottle2.jpg", "../assets/images/items/hot_water_bottle3.jpg", "../assets/images/items/hot_water_bottle4.jpg"],
+            itemStatEdit: 2,
+            itemMessage: ""
+        }
+    ]
+
+    // 1 in 8 chance of getting an item
+    let itemChance = (Math.floor(Math.random() * (1 - 1 + 1) + 1));
     switch (itemChance) {
         case 1:
             alert("1 - you get an item")
@@ -416,16 +438,13 @@ function checkAnswer() {
             let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
             switch (itemType) {
                 case 1:
-                    alert("You get a Jumper")
-                    document.getElementById("dream-jumper").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    document.getElementById("dream-jumper").src = playerItem[0].itemImage[0];
                     break;
                 case 2:
-                    alert("You get a Pillow")
-                    document.getElementById("luxury-pillow").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    document.getElementById("luxury-pillow").src = playerItem[1].itemImage[1];
                     break;
                 case 3:
-                    alert("You get a Hot Water Bottle")
-                    document.getElementById("hot-water-bottle").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[2];
                     break;
                 default:
                     alert("You are not supposed to be able to see this. What have you done?!?!?!")
