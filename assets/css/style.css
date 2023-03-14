@@ -103,7 +103,7 @@ p {
 .right-grid {
   grid-area: right-grid;
   display: grid;
-  grid-template-columns: 50%;
+  grid-template-columns: 48%;
   grid-template-rows: 55%;
   grid-template-areas:
     'player-info sleep-status'
@@ -394,9 +394,10 @@ h3 {
 
 #dream-jumper, #luxury-pillow, #hot-water-bottle {
   border-style: inset;
-  max-height: 130px;
-  padding:5px;
+  max-width: 80px;
+ 
 }
+
 
 
 

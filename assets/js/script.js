@@ -406,18 +406,47 @@ function checkAnswer() {
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 20;
     }
 
+
+    // 1 in 8 chance to get an item
+    let itemChance = (Math.floor(Math.random() * (2 - 1 + 1) + 1));
+    switch (itemChance) {
+        case 1:
+            alert("1 - you get an item")
+            // 1 of the 3 types of items at random
+            let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
+            switch (itemType) {
+                case 1:
+                    alert("You get a Jumper")
+                    document.getElementById("dream-jumper").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    break;
+                case 2:
+                    alert("You get a Pillow")
+                    document.getElementById("luxury-pillow").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    break;
+                case 3:
+                    alert("You get a Hot Water Bottle")
+                    document.getElementById("hot-water-bottle").src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                    break;
+                default:
+                    alert("You are not supposed to be able to see this. What have you done?!?!?!")
+            }
+            break;
+        default:
+            alert("Not 1 - No item for you")
+    }
+
     updateStats();
 
-// Change font colour depending on current score
-if (document.getElementById("sleep-depth").textContent < 1) {
-    alert("You woke up");
-} else if (document.getElementById("sleep-depth").textContent < 35) {
-    document.getElementById("sleep-depth").style.color = "red";
-} else if (document.getElementById("sleep-depth").textContent < 76) {
-    document.getElementById("sleep-depth").style.color = "yellow";
-} else {
-    document.getElementById("sleep-depth").style.color = "seagreen";
-}
+    // Change font colour depending on current score
+    if (document.getElementById("sleep-depth").textContent < 1) {
+        alert("You woke up");
+    } else if (document.getElementById("sleep-depth").textContent < 35) {
+        document.getElementById("sleep-depth").style.color = "red";
+    } else if (document.getElementById("sleep-depth").textContent < 76) {
+        document.getElementById("sleep-depth").style.color = "yellow";
+    } else {
+        document.getElementById("sleep-depth").style.color = "seagreen";
+    }
 
     document.getElementById("submit-answer").disabled = true;
     document.getElementById("continue-game").disabled = false;
