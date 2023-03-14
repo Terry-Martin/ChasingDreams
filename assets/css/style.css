@@ -18,6 +18,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 p {
@@ -43,6 +44,7 @@ p {
   grid-template-rows: auto;
   padding: 10px;
   gap: 10px;
+  row-gap: 0;
 }
 
 /* main content area */
@@ -53,7 +55,7 @@ p {
 
   display: flex;
   justify-content: center;
- 
+
 }
 
 #welcome-message * {
@@ -134,7 +136,7 @@ input[type=text]:focus {
 }
 
 .right-grid-player-info ul {
-  padding:0;
+  padding: 0;
 }
 
 .right-grid-player-info li {
@@ -145,6 +147,9 @@ input[type=text]:focus {
 #player-name {
   color: blue;
   display: flex;
+
+  padding-left: 5px;
+  padding-right: 5px;
   justify-content: center;
   font-size: 18px;
 }
@@ -159,7 +164,19 @@ input[type=text]:focus {
 #sleep-depth {
   font-size: 22px;
   text-shadow: none;
+  border-color: black;
+  border: 2px;
+  border-style: inset;
+  padding-left: 5px;
+  padding-right: 5px;
+  
+  font-size: 20px;
 }
+
+#sleep-dept-label {
+  font-size: 20px;
+}
+
 
 /* Hightlight Blank Word in Content area */
 strong {
@@ -183,7 +200,7 @@ strong {
   text-align: center;
   transition: all 0.2s;
   text-shadow: none;
-  min-width:120px;
+  min-width: 120px;
 }
 
 #start-game {
@@ -191,7 +208,7 @@ strong {
 }
 
 #button-position {
-  display:flex;
+  display: flex;
   justify-content: center;
   gap: 30px;
   margin-bottom: 10px;
@@ -204,17 +221,17 @@ strong {
 
 }
 
-#continue-game:disabled, 
+#continue-game:disabled,
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
 }
 
-#submit-answer:disabled, 
+#submit-answer:disabled,
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
@@ -321,6 +338,7 @@ button[disabled]{
   display: flex;
   justify-content: center;
 }
+
 /* Artist Name */
 #song-by {
   font-size: 16px;
@@ -341,10 +359,14 @@ h3 {
   letter-spacing: .9px;
 }
 
-/* First game question flashes twice to draw players attention */
+/* First game question flashes to draw players attention */
 /* https://stackoverflow.com/questions/9620594/removing-ul-indentation-with-css */
 #game-question {
-  animation: blinker 1s linear 2;
+  border: 5px;
+  border-style: double;
+  border-color: red;
+  padding: 5px;
+  animation: blinker 1.5s linear 3;
 }
 
 @keyframes blinker {
