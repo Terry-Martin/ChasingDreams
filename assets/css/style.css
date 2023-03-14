@@ -79,19 +79,23 @@ p {
   padding-right: 10px;
 }
 
-
-
 #player-answer {
   width: 100%;
   padding: 10px 16px;
   margin: 8px 0;
   border: 3px solid #454545;
   border-radius: 10px;
-  background-color: #D8BFD8;
+  background-color: #E1D9D1;
   color: #355C7D;
 }
 
-input[type=text]:focus {
+#player-answer:focus {
+  background-color: whitesmoke;
+  border: 3px solid #555;
+}
+
+#player-answer:hover {
+  background-color: #ADD8E6;
   border: 3px solid #555;
 }
 
@@ -107,6 +111,7 @@ input[type=text]:focus {
   background-color: #355C7D;
   padding: 10px;
   gap: 10px;
+  min-height: 600px;
 
 }
 
@@ -126,6 +131,7 @@ input[type=text]:focus {
   padding-right: 10px;
   display: flex;
   justify-content: center;
+
 }
 
 .right-grid-player-info {
@@ -169,7 +175,7 @@ input[type=text]:focus {
   border-style: inset;
   padding-left: 5px;
   padding-right: 5px;
-  
+
   font-size: 20px;
 }
 
@@ -257,9 +263,11 @@ button[disabled] {
   width: calc(100% - 50px);
   height: calc(100% - 50px);
   border-radius: 50%;
-  background-color: #292929;
-  box-shadow: 0 0 5px 3px #222121;
+  background-color: #355C7D;
+  box-shadow: 0 0 5px 3px #6C5B7B;
 }
+
+/* F8B195   F67280   C06C84   6C5B7B   355C7D  */
 
 .box::before {
   position: absolute;
@@ -271,11 +279,12 @@ button[disabled] {
 }
 
 .box .number span {
-  color: #e9e9e9;
+  color: whitesmoke;
+  text-shadow: none;
 }
 
 .box .number .num {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -285,7 +294,8 @@ button[disabled] {
 
 .box .title {
   font-size: 16px;
-  color: #e9e9e9;
+  color: whitesmoke;
+  text-shadow: none;
 }
 
 .dots {
@@ -295,7 +305,7 @@ button[disabled] {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  transition: 2s transform, 2s opacity ease;
+  transition: .5s transform, .5s opacity ease;
 }
 
 .dots::after {
@@ -324,10 +334,10 @@ button[disabled] {
   stroke-width: 4px;
   stroke-dasharray: 503;
   stroke-dashoffset: 503;
-  animation-duration: 2s;
+  animation-duration: .5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  transition: 2s stroke-dashoffset;
+  transition: .5s stroke-dashoffset;
 }
 
 /* Song Name */
@@ -366,7 +376,9 @@ h3 {
   border-style: double;
   border-color: red;
   padding: 5px;
-  animation: blinker 1.5s linear 3;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  animation: blinker 1.5s linear 2;
 }
 
 @keyframes blinker {
@@ -374,6 +386,23 @@ h3 {
     opacity: 0;
   }
 }
+
+#player-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#dream-jumper, #luxury-pillow, #hot-water-bottle {
+  border-style: inset;
+  max-height: 130px;
+  padding:5px;
+}
+
+
+
+
+
+
 
 /* Media quiries */
 /* Min-width: 992px (smaller desktop viewpoints) */

@@ -12,6 +12,8 @@ document.getElementsByClassName("left-grid-user-response")[0].style.display = "n
 
 document.getElementsByClassName("right-grid-dream-info")[0].style.display = "none";
 
+
+
 let lyricGame = [{
         songTitle: "White Rabbit",
         line1: "And one pill makes you small",
@@ -310,6 +312,7 @@ function newGame() {
     document.getElementById('missing-lyric-game').style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "grid";
     document.getElementById("continue-game").disabled = true;
+    document.getElementById("player-answer").focus();
 }
 
 // Reset game data and displays to start game position
@@ -415,11 +418,6 @@ if (document.getElementById("sleep-depth").textContent < 1) {
 } else {
     document.getElementById("sleep-depth").style.color = "seagreen";
 }
-
-
-
-
-
 
     document.getElementById("submit-answer").disabled = true;
     document.getElementById("continue-game").disabled = false;
