@@ -14,7 +14,7 @@ Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D
 
 body {
   background-color: #C06C84;
-  background-image: url("/assets/images/backgrounds/pexels-photo-11643390.webp");
+  background-image: url("../images/backgrounds/pexels-photo-11643390.webp");
   width: 100%;
   display: flex;
   justify-content: center;
