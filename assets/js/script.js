@@ -1,6 +1,8 @@
-const startGame = document.getElementById("start-game");
-const submitAnswer = document.getElementById("submit-answer");
-const continueGame = document.getElementById("continue-game");
+/*jslint browser:true */
+
+var startGame = document.getElementById("start-game");
+var submitAnswer = document.getElementById("submit-answer");
+var continueGame = document.getElementById("continue-game");
 
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
@@ -14,7 +16,7 @@ document.getElementsByClassName("right-grid-dream-info")[0].style.display = "non
 
 
 
-let lyricGame = [{
+var lyricGame = [{
         songTitle: "White Rabbit",
         line1: "And one pill makes you small",
         line2: "And the ones that mother gives you",
@@ -24,7 +26,6 @@ let lyricGame = [{
         question: "Who should you ask? (5 letters)",
         answer: "ALICE"
     },
-
     {
         songTitle: "She's Leaving Home",
         line1: "She (what did we do that was wrong)",
@@ -35,7 +36,6 @@ let lyricGame = [{
         question: "What cant money buy? (3 letters (although they claimed it was Love in another song, hmm))",
         answer: "FUN"
     },
-
     {
         songTitle: "In Dreams",
         line1: "A candy-colored clown they call the <strong>_ _ _ _</strong>man",
@@ -46,7 +46,6 @@ let lyricGame = [{
         question: "Who sneaks into Roy's room every night? (4 letters)",
         answer: "SAND"
     },
-
     {
         songTitle: "All I Have To Do Is Dream",
         line1: "When I feel <strong> _ _ _ _ </strong> in the night",
@@ -57,7 +56,6 @@ let lyricGame = [{
         question: "What colour do the lads use to describe their feelings? (4 letters)",
         answer: "BLUE"
     },
-
     {
         songTitle: "Boulevard of Broken Dreams",
         line1: "I walk this empty street",
@@ -68,7 +66,6 @@ let lyricGame = [{
         question: "Is anybody at all with Green Day? (5 letters)",
         answer: "ALONE"
     },
-
     {
         songTitle: "Dont Dream Its Over",
         line1: "… Hey now, hey now",
@@ -79,7 +76,6 @@ let lyricGame = [{
         question: "What comes in? (5 letters)",
         answer: "WORLD"
     },
-
     {
         songTitle: "Dreams",
         line1: "Oh, thunder only happens when it's raining",
@@ -90,7 +86,6 @@ let lyricGame = [{
         question: "Who will come and go? (5 letters)",
         answer: "WOMEN"
     },
-
     {
         songTitle: "Sweet Dreams",
         line1: "Sweet dreams are made of this",
@@ -101,7 +96,6 @@ let lyricGame = [{
         question: "How many seas are there? (5 letters)",
         answer: "SEVEN"
     },
-
     {
         songTitle: "Dreamlover",
         line1: "I don't want another <strong>_ _ _ _ _ _ _ _ _</strong>",
@@ -112,7 +106,6 @@ let lyricGame = [{
         question: "What doesnt Mariah want? (9 letters)",
         answer: "PRETENDER"
     },
-
     {
         songTitle: "Dream Operator",
         line1: "Every dream has a name",
@@ -123,7 +116,6 @@ let lyricGame = [{
         question: "What do dreams tell? (5 letters)",
         answer: "STORY"
     },
-
     {
         songTitle: "Dream Weaver",
         line1: "I've just closed my eyes again",
@@ -134,7 +126,6 @@ let lyricGame = [{
         question: "What mode of transport does Gary take? (5 letters)",
         answer: "TRAIN"
     },
-
     {
         songTitle: "California Dreamin",
         line1: "All the leaves are brown",
@@ -145,7 +136,6 @@ let lyricGame = [{
         question: "What colour is the sky? (4 letters)",
         answer: "GRAY"
     },
-
     {
         songTitle: "Silent Lucidity",
         line1: "It's a place where you will learn",
@@ -156,7 +146,6 @@ let lyricGame = [{
         question: "Where will you command? (5 letters)",
         answer: "WORLD"
     },
-
     {
         songTitle: "Dreams",
         line1: "And now I tell you openly",
@@ -167,7 +156,6 @@ let lyricGame = [{
         question: "WHats so amazing? (4 letters)",
         answer: "MIND"
     },
-
     {
         songTitle: "These Dreams",
         line1: "These dreams go on when I close my eyes",
@@ -178,7 +166,6 @@ let lyricGame = [{
         question: "DId this song play in your head as you read it? (2 or 3 letters)",
         answer: "YES" || "NO"
     },
-
     {
         songTitle: "Dream",
         line1: "We all are living in a dream",
@@ -189,7 +176,6 @@ let lyricGame = [{
         question: "What isnt what it seems? (4 letters)",
         answer: "LIFE"
     },
-
     {
         songTitle: "Get Outta My Dreams, Get Into My Car",
         line1: "Like a road <strong>_ _ _ _ _ _</strong>",
@@ -200,7 +186,6 @@ let lyricGame = [{
         question: "Whats it like? (Wile E. Coyote is obsessed)",
         answer: "RUNNER"
     },
-
     {
         songTitle: "You Make My Dreams",
         line1: "… On a night when bad dreams become a screamer",
@@ -211,7 +196,6 @@ let lyricGame = [{
         question: "How does Hall or Oate get out? (5 letters)",
         answer: "TWIST"
     },
-
     {
         songTitle: "#9 Dream",
         line1: "Took a walk down the street",
@@ -222,7 +206,6 @@ let lyricGame = [{
         question: "What did it start to? (4 letters)",
         answer: "RAIN"
     },
-
     {
         songTitle: "Last Night I Dreamt That Somebody Loved Me",
         line1: "Last night I felt",
@@ -233,7 +216,6 @@ let lyricGame = [{
         question: "What was false? (5 letters?)",
         answer: "ALARM"
     },
-
     {
         songTitle: "Dream A Little Dream Of Me",
         line1: "Stars fading but I linger on, dear",
@@ -244,7 +226,6 @@ let lyricGame = [{
         question: "What does Doris crave? (4 letters)",
         answer: "KISS"
     },
-
     {
         songTitle: "Nice Dream",
         line1: "They love me like I was their brother",
@@ -255,7 +236,6 @@ let lyricGame = [{
         question: "What do they do to Radiohead? (6 letters)",
         answer: "LISTEN"
     },
-
     {
         songTitle: "The Lion Sleeps Tonight",
         line1: "In the jungle, the mighty jungle",
@@ -266,7 +246,6 @@ let lyricGame = [{
         question: "How was the jungle described? (5 letters)",
         answer: "QUIET"
     },
-
     {
         songTitle: "I Go to Sleep",
         line1: "When I look up from my <strong>_ _ _ _ _ _</strong>",
@@ -277,7 +256,6 @@ let lyricGame = [{
         question: "What did The Pretenders look up from? (6 letters)",
         answer: "PILLOW"
     },
-
     {
         songTitle: "Tá Mo Chleamhnas Á Dhéanamh",
         line1: "'Mo codladh go h-eadarshuth b'aite liom féin",
