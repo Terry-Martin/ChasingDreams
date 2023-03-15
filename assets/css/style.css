@@ -34,6 +34,7 @@ p {
   gap: 20px;
   padding-top: 40px;
   min-height: 570px;
+  max-width: 900px;
 }
 
 /* left grid to contain flex column for Content/Story, User Responses, User controls and User Items bar */
@@ -392,10 +393,12 @@ h3 {
   justify-content: space-evenly;
 }
 
-#dream-jumper, #luxury-pillow, #hot-water-bottle {
+#dream-jumper,
+#luxury-pillow,
+#hot-water-bottle {
   border-style: inset;
   max-width: 80px;
- 
+
 }
 
 
@@ -408,20 +411,37 @@ h3 {
 /* Media quiries */
 /* Min-width: 992px (smaller desktop viewpoints) */
 @media only screen and (max-width: 992px) {
-  .header-bar {
-    display: none;
+
+  /* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
+  .right-grid {
+    grid-area: right-grid;
+    display: grid;
+
+    grid-template-areas:
+      'player-info'
+      'sleep-status'
+      'items';
+    background-color: #355C7D;
+    padding: 10px;
+    gap: 10px;
+    min-height: 600px;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .right-grid-player-info {
+    display:flex;
+    justify-content: center;
   }
 }
 
 /* Min-width: 768px (smaller desktop viewpoints) */
 @media only screen and (max-width: 768px) {
-  .footer-bar {
-    display: none;
-  }
 }
 
 /* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 
   /* container grid to house left grid and right grid for main game area */
   .container-grid {
@@ -437,7 +457,14 @@ h3 {
 }
 
 /* Min-width: 480px (smaller desktop viewpoints) */
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
 
-/* Min-width: 320px (smaller desktop viewpoints) */
-@media only screen and (max-width: 320px) {}
+  *{
+    font-size: 16px;
+    margin: 5px;
+    gap: 5px;
+
+  }
+
+
+}
