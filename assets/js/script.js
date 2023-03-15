@@ -387,7 +387,7 @@ function checkAnswer() {
     // Array of items
     let playerItem = [{
             itemType: "jumper",
-            itemImage: ["../assets/images/items/jumper2.jpg", "../assets/images/items/jumper3.jpg", "../assets/images/items/jumper5.jpg"],
+            itemImage: ["./assets/images/items/jumper2.jpg", "./assets/images/items/jumper3.jpg", "./assets/images/items/jumper5.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         },
@@ -401,7 +401,7 @@ function checkAnswer() {
 
         {
             itemType: "bottle",
-            itemImage: ["assets/images/items/hot_water_bottle2.jpg", "assets/images/items/hot_water_bottle3.jpg", "assets/images/items/hot_water_bottle4.jpg"],
+            itemImage: ["./assets/images/items/hot_water_bottle2.jpg", "./assets/images/items/hot_water_bottle3.jpg", "./assets/images/items/hot_water_bottle4.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         }
