@@ -25,6 +25,32 @@ p {
   margin: 6px;
 }
 
+figcaption {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#page-title {
+  font-size: 28;
+  display: flex;
+  justify-content: center;
+}
+
+
+#page-title {
+  font-size: 32px;
+  padding: 30px;
+}
+
+
+
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
@@ -57,6 +83,7 @@ p {
   display: flex;
   justify-content: center;
 
+  
 }
 
 #welcome-message * {
@@ -67,10 +94,25 @@ p {
   padding: 30px;
   width: 100%;
   max-width: 1000px;
+  
 }
 
 #welcome-message p {
   justify-content: left;
+}
+
+
+
+/* ???Add background image to welcome screen??? Might remove */
+#welcome-message {
+  background-image: url("../images/backgrounds/1pexels-photo-1444492.webp");
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* user reply options */
@@ -400,13 +442,6 @@ h3 {
   max-width: 80px;
 
 }
-
-
-
-
-
-
-
 
 /* Media quiries */
 /* Min-width: 992px (smaller desktop viewpoints) */

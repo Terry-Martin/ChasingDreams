@@ -1,30 +1,36 @@
 # ChasingDreams
 (Developer: Terry Martin)
-Based on - jarradbaker readme
-![Mockup image](docs/responsive.png)
 
-[Live webpage](https://jarradbaker.github.io/CI_PP1_SkateShack/)
+Based on - jarradbaker readme
+
+![Mockup image](assets/images/readme_images/am-i-responsive.jpg)
+
+[Live webpage](https://terry-martin.github.io/ChasingDreams/)
 
 ## Table Of Contents
 
 1. [Project Goals](#project-goals)
-  1. [User Goals](#user-goals)
-  2. [Website Owner Goals](#website-owner-goals)
-2. [User Experience](#user-experience)
+    1. [Creator Goals](#creator-goals)
+    2. [Player Goals](#player-goals)
+2. [Game Info](#game-info)
+    1. [Game Themes](#game-themes)
+    2. [Game Ideas](#game-ideas)
+    3. [Game Basics](#game-basics)
+3. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
     2. [User Requrements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
-3. [Design](#design)
+4. [Design](#design)
     1. [Design Choices](#design-choices)
     2. [Colour](#colour)
     3. [Fonts](#fonts)
     4. [Structure](#structure)
     5. [Wireframes](#wireframes)
-4. [Technologies Used](#technologies-used)
+5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks and Tools](#frameworks-and-tools)
-5. [Features](#features)
-6. [Testing](#validation)
+6. [Features](#features)
+7. [Testing](#validation)
     1. [HTML Validation](#HTML-validation)
     2. [CSS Validation](#CSS-validation)
     3. [Accessibility](#accessibility)
@@ -39,98 +45,106 @@ Based on - jarradbaker readme
 
 ## Project Goals
 
-### User Goals
-- Find good quality skateboards
-- See examples of pricing for the products
-- Learn more about skateboarding
-- Find the location of the store
-- Learn what makes this company different
-- Learn how to use skateboards
+### Creator Goals
+- Build on HTML and CSS learnings
+- Include JavaScript for interactivity and feedback
+- Create a game about Dreams incorporating the above three languages
+- Allow user to read and answer questions about dream songs
+- Give user a chance to complete game under certain conditions
+- Keep tight control of which buttons are available to user to reduce bugs
+- Direct the users focus to what they should do next
 
-### Website Owner Goals
-- Reach the target audience
-- Increase the traffic and sales
-- Direct interaction with customers
-- Show what makes this company different
+
+### Player Goals
+- Input answers to questions
+- View current score/stats
+- Receive feedback if a question is right or wrong and see overall progress
+- Be made aware of target needed to complete game
+- Obtain knowlege of game functions through feedback
+
+## Game Info
+
+### Game Themes
+- Sleep is the main theme of the game with the goal of achiving eight hours of it. Eight hours is something we are all told is a solid target for us to have healthy lives. However, that eight hours is elusive to most of us because of busy lives or busy brains.
+- Dreams are sometimes said to be guardians of sleep. The longer we dream, the longer we sleep.
+- Pysical comfort and mental relaxion assist us in having a deeper calmer sleep. Feeling cosy and carefree is another way to put this, so perhaps the idea of ourselves wrapped in our favourite jumper or having a super comfy pillow under our head can help us sleep that tad longer...
+
+### Game Ideas
+- Player is given a target of 8 hours sleep to complete them game
+- Game itself is a quiz with missing song lyrics
+- Each question answered counts as 1 hour of sleep. So, 8 questions to finish the game
+- Player is given a Sleep Depth score at start of game. This number will go up or down depending on answers to quiz
+- Sleep Depth is also affected by random, external factors (such as neighbours dog is barking)
+- Players can find items that increase or decrease their Sleep Depth (such as Dream Jumper)
+- If Sleep Depth reaches zero, the player will wake up
+
+### Game Basics
+- User will read a short intro and then be invited to click a "Start Dreaming" button
+- User will have a view of Missing Song Lyric (Question and Answer Box), Player Info, Sleep Info and Player Items
+- Missing Song Lyric will contain 4 lines of a song. One word will be blanked out with red underline in its place
+- A question is displayed directly below the song about the missing lyric. The user will be told how many letters are in the missing word
+- User will type in text box and will receive feedback if the answer is correct or incorrect.
+- Player Info (showing name and player stats), Sleep Info (showing current progress of how many hours currently asleep) and Player Items (any items player made have found. Players can hold a max of 3 items at a time)
+- Players have a 1 in 8 chance of getting an item when they answer a question. This means, on avgerage, players will receive one item if they complete the game (8 questions to complete). There are three types of items - Dream Jumper, Luxuiry Pillow and Comforter. Each type also has three versions, so 3 jumers, 3 pillow, 3 comforters. Each item has a different impact on player stats. The items appear in bottom right corner.
 
 ## User Experience
 
 ### Target Audience
 The website is designed with the following target audience in mind:
-- Skateboarders looking to buy a new board
-- People looking to get in to skateboarding
-- Physical skating shops looking for stock
-- Skateboarders looking to learn new tricks
+- Project assessor
+- Student peers
+- Poeple with an interest in music
+- People who enjoy games
+- People with a interest in dreams/sleep
 
 ### User Requirements and Expectations
-- Simplistic user interface
-- Smooth Navigation System
-- Easy to find relevant information
-- All social links direct to the correct website
-- Presentation of content is clear
-- Visually appealing design
-- Accessibility
-- Media and functions work as expected
+- Straight forward, easy to use interface
+- Quick page load times
+- Feedback for each question they answer
+- Feedback on their overall progress
+- Clear target to complete the game
+- Questions to be interesting with a medium degree of difficulty
 
 ### User Stories
 
-#### First Time User
-1. As a first time user, I want to understand the product
-2. As a first time user, I want to learn about the company
-3. As a first time user, I want to know how much the product costs
-4. As a first time user, I want to learn more about skateboarding
-5. As a first time user, I want to learn how to use the product
-6. As a first time user, I want to ask questions about my order
-7. As a first time user, I want to know why to choose this company
-8. As a first time user, I want to be able to navigate the site easily
+#### Player
+1. As a player, I want to start the game
+2. As a player, I want to understand what the game is about
+3. As a player, I want to know how to play the game
+4. As a player, I want to be able to see how am i am progressing through the game
+5. As a player, I want to verify if i got a an answer right or wrong
+6. As a player, I want to be told what the correct answer is if i give the wrong answer
+7. As a player, I want to receive acknowledment if i complete the game
+8. As a player, I want to be able to play the game without any bugs
 
-#### Returning User
-9. As a returning user, I want to be able to contact the company
-10. As a returning user, I want to learn more tricks
-11. As a returning user, I want to learn where a physical store is
-12. As a returning user, I want to look at products
-
-#### Site Owner
-13. As a site owner, I want users to find out about our products
-14. As a site owner, I want users to have a good visual experience when using the website
-15. As a site owner, I want users to be able to see a 404 page if anything goes wrong
-16. As a site owner, I want to enrich our users' skateboarding experience
+#### Creator
+13. As the creator, I want showcase my abilities with HTML, CSS and JavaScript
+14. As the creator, I want users to enjoy the game and have a interest in completing it
+15. As the creator, I want users to be surprised by some of the game features
+16. As the creator, I want to think about the songs as they answer the questions and have a desire to play that song afterwards
 
 ## Design
 
 ### Design Choices
-The website was designed to give a "street" feel to the users, which is why a colder colour theme was used. The images of products and skateboarding were used to engage the users.
+The website was designed with soft colours and whimiscal font to give a relaxed atmosphere. Although the game is based on music questions, luck plays a large part in their ability to complete it. This idea reflects back to the idea that we dont have much control in real life to long we can sleep. 
 
 ### Colour
-Colour was a very important aspect for engaging with the audience, as anything too childish, or bright may put visitors off. For this reason, I chose to use a nice cold themed colour set for the website, providing a "street" feel. For accessibility reasons, the colours were tested on Webaim using their contrast checker, and the darkest and lightest colours got a contrast ratio of 12.78:1 meaning that they were a great fit.
-![Colours image](docs/Colours.png)
+The colour palette was quite small for this website with the colour combination taken from
+https://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-code/
+The colours used were #F8B195 #F67280  #C06C84  #6C5B7B  #355C7D 
+Whitesmoke was also used for some of the text.
 
 ### Fonts
-The chosen font for the website was "Quicksand", with sans serif as a backup font. I originally also used "Lobster" for headings, but I found that "Quicksand" fitted in much better for my target audience and the feel of the site, so I used a higher weight for the headings to make it appear bolder.
+The font family chosen was 'Merienda One', cursive. This is a flowing, playful script that works well for a game/dream setting
 
 ### Structure
-To keep the user interface as beginner friendly, and simple as possible, I went for a classic looking nav bar style. It is a simple layout with the logo to the left on desktops, and above on mobile. The theme remains the same throughout all four pages:
-- Index page: Shows an image of a skateboarder and why you would choose the company. Also contains the history of the company.
-- Tricks page: Gives explanations of how to perform various tricks, enriching the users skateboarding experience. Also has a video for each trick.
-- Boards page: Allows the users to see the products that are available.
-- Contact page: Gives users a chance to communicate with the company, and also shows a real map displaying where the physical store is.
+The structure of this site is all on one page. There is a main grid of one row and two coloms. This splits the game areas into the left and right part of the screen. The Left side contains the song lyrics, missing word, game question, text box for answer and both control buttons (submit answer and continue). The right had part of main grid shows player info/stats, player progress and player items. A further grid is used in the right hand game section to break it down. FLex is also used extensivily through the site. Sections of the page are hidden or shown when needed. Control buttons are hidden/shown and enabled/disabled when required to reduce user error and also make it more intuitive to the user on what they should do next. An array is used to contain the questions and answers, while a nested array is used to store the different types of items and their sub-items.
 
-### Wireframes
-<details><summary>Home</Summary>
-<img src="docs/wireframes/index.png">  
-</details>
-<details><summary>Tricks</Summary>
-<img src="docs/wireframes/tricks.png">  
-</details>
-<details><summary>Boards</Summary>
-<img src="docs/wireframes/boards.png">  
-</details>
-<details><summary>Contact</Summary>
-<img src="docs/wireframes/contact.png">  
-</details>
-<details><summary>404</Summary>
-<img src="docs/wireframes/404.png">  
-</details>
+### Wireframe 
+
+Most of the game features from the first wire frame made it into submitted version (with a few exceptions, notable NPCs). The overall final layout is similar to original design.
+![balsamiq image](assets/images/readme_images/balsamiq.jpg)
+
 
 ## Technologies Used
 
@@ -138,6 +152,7 @@ To keep the user interface as beginner friendly, and simple as possible, I went 
 The following languages were used to develop the website:
 - HTML
 - CSS
+- JavaScript
 
 ### Frameworks and Tools
 The following frameworks and tools were used to develop the website:
@@ -147,10 +162,10 @@ The following frameworks and tools were used to develop the website:
 - Google Fonts
 - Font Awesome
 - Balsamiq
-- Favicon.io
+- Dream by WOMBO
 
 ## Features
-The website contains 5 pages including the 404 page, and a total of 13 features
+The website is one page with XXX features
 
 ### Header (logo and navigation)
 - Shows on every page
@@ -168,88 +183,6 @@ The website contains 5 pages including the 404 page, and a total of 13 features
 - User Stories: 2, 8, 14
 <details><summary>Footer</Summary>
 <img src="docs/features/Footer.png">  
-</details>
-
-### Tricks
-- Shows users explanations as well as videos on how to do tricks, enhancing their exoperience.
-- Has an introduction, and an outro
-- User Stories: 1, 4, 5, 10, 16
-<details><summary>Tricks</Summary>
-<img src="docs/features/Tricks.png">  
-</details>
-
-### Trick videos
-- Part of the tricks page
-- Has a video with controls explaining how to do the trick
-- User Stories: 1, 4, 5, 10, 16
-<details><summary>Trick Videos</Summary>
-<img src="docs/features/TrickVideos.png">  
-</details>
-
-### Hero Image
-- Makes the website more appealing and professional looking
-- Connects with the target audience
-- User Stories: 14
-<details><summary>Hero Image</Summary>
-<img src="docs/features/HeroImage.png">  
-</details>
-
-### Why Choose Us?
-- Explains how the site differs from competitors
-- Provides users more info about the products
-- User Stories: 1, 7, 13
-<details><summary>Why Choose Us</Summary>
-<img src="docs/features/WhyChooseUs.png">  
-</details>
-
-### History
-- Gives the user an explanation of the company/website
-- Tells the personal story of the companies creation
-- User Stories: 2, 7
-<details><summary>History</Summary>
-<img src="docs/features/History.png">  
-</details>
-
-### Boards
-- Allows users to see all products available
-- Located on the Boards page
-- User Stories: 1, 3, 12, 13
-<details><summary>Boards</Summary>
-<img src="docs/features/Boards.png">  
-</details>
-
-### Products
-- Shows the user the individual info for each product
-- Allows them to purchase the item
-- Located on the boards page
-- User Stories: 1, 3, 12, 13
-<details><summary>Products</Summary>
-<img src="docs/features/Products.png">  
-</details>
-
-### Contact form
-- Allows users to contact the site owner/company
-- Can be used to chase up an order
-- Located on the contact page
-- User Stories: 6, 9
-<details><summary>Contact Form</Summary>
-<img src="docs/features/ContactForm.png">  
-</details>
-
-### Google Map
-- Shows the location of the physical store on a google maps window
-- Located on the contact page
-- User Stories: 2, 9, 11
-<details><summary>Google Map</Summary>
-<img src="docs/features/GoogleMap.png">  
-</details>
-
-### Address
-- Provides the physical store location
-- Located above the google map
-- User Stories: 2, 9, 11
-<details><summary>Address</Summary>
-<img src="docs/features/Address.png">  
 </details>
 
 ### 404 page
