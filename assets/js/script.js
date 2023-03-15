@@ -394,14 +394,14 @@ function checkAnswer() {
 
         {
             itemType: "pillow",
-            itemImage: ["../assets/images/items/pillow9.jpg", "../assets/images/items/pillow12.jpg", "../assets/images/items/pillow13.jpg"],
+            itemImage: ["./assets/images/items/pillow9.jpg", "./assets/images/items/pillow12.jpg", "./assets/images/items/pillow13.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         },
 
         {
             itemType: "bottle",
-            itemImage: ["../assets/images/items/hot_water_bottle2.jpg", "../assets/images/items/hot_water_bottle3.jpg", "../assets/images/items/hot_water_bottle4.jpg"],
+            itemImage: ["assets/images/items/hot_water_bottle2.jpg", "assets/images/items/hot_water_bottle3.jpg", "assets/images/items/hot_water_bottle4.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         }
