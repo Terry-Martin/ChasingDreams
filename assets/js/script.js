@@ -440,7 +440,7 @@ function checkAnswer() {
                     if (jumperCheck == false) {
                         document.getElementById('jumper-placeholder').style.display = "grid";
                         document.getElementById("dream-jumper").src = playerItem[0].itemImage[itemPic];
-                        alert("Wait a minute, where's me jumper ?  Ohhhh there is it, i thought i lost it. Soooooooo lucky, its my fav. +20 Luck")
+                        alert("Wait a minute, where's me jumper ?  Ohhhh there is it, i thought i lost it. Soooooooo lucky, its my fav. +20 Luck");
                         document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 20;
                         // Ensure Item cannot be received asecond time
                         jumperCheck = true;
@@ -450,7 +450,7 @@ function checkAnswer() {
                     if (pillowCheck == false) {
                         document.getElementById('pillow-placeholder').style.display = "grid";
                         document.getElementById("luxury-pillow").src = playerItem[1].itemImage[itemPic];
-                        alert("Wow, this pillow never gts too hot or too cold. Truly a marvel. +20 Dreaminess")
+                        alert("Wow, this pillow never gts too hot or too cold. Truly a marvel. +20 Dreaminess");
                         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 20;
                         // Ensure Item cannot be received asecond time
                         pillowCheck = true;
@@ -460,7 +460,7 @@ function checkAnswer() {
                     if (comforterCheck == false) {
                         document.getElementById('comforter-placeholder').style.display = "grid";
                         document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[itemPic];
-                        alert("This is unbelievably comfy. I may never move again. +20 Comfort")
+                        alert("This is unbelievably comfy. I may never move again. +20 Comfort");
                         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 20;
                         // Ensure Item cannot be received asecond time
                         comforterCheck = true;

@@ -37,11 +37,9 @@ Based on - jarradbaker readme
     4. [Performance](#performance)
     5. [Device testing](#performing-tests-on-various-devices)
     6. [Browser compatibility](#browser-compatability)
-    7. [Testing user stories](#testing-user-stories)
 8. [Bugs](#Bugs)
-9. [Deployment](#deployment)
-10. [Credits](#credits)
-11. [Acknowledgements](#acknowledgements)
+9. [Credits](#credits)
+10. [Acknowledgements](#acknowledgements)
 
 ## Project Goals
 
@@ -93,7 +91,7 @@ Based on - jarradbaker readme
 The website is designed with the following target audience in mind:
 - Project assessor
 - Student peers
-- Poeple with an interest in music
+- People with an interest in music
 - People who enjoy games
 - People with a interest in dreams/sleep
 
@@ -210,38 +208,22 @@ The website is one page with XXX features
 
 ### HTML Validation
 
-
-IMAGE
-
--
+- Passed through https://validator.w3.org/
 
 
 ### CSS Validation
 
-IMAGE
-
--
+- Passed through https://jigsaw.w3.org/css-validator/
 
 
 ### JaveScript Validation
 
-IMAGE
-
--
-
-
-### Accessibility
-
-The WAVE web accessibility evaluation tool by WebAIM was used to ensure the webpages met accessibility standards. All 5 pages passed without any errors.
+- Passed through https://jshint.com/
 
 
 ### Performance
 
-The Google Lighthouse tool, within the Google Chrome Developer Tools was used to ensure that each page met a high performance rating. This shows that the website will load efficiently over various devices.
-
-<details><summary>Home</Summary>
-<img src="docs/Validation/Performance/index.png">
-</details>
+Checked and edited after Google Lighthouse
 
 
 ### Performance tests on various devices
@@ -260,91 +242,32 @@ The website was tested on several web browsers to ensure consistency. The browse
 - Google Chrome
 - Firefox
 
-### Testing User Stories
-
-1. As a first time user, I want to understand the product
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-| Why Choose Us? | Navigate to the Home page and scoll down | See the Why Choose Us? section | Works as expected |
-| Boards | Navigate to the Boards page | See the page containing all the products | Works as expected |
-| Products | Navigate to the Boards page, and scroll down | See all of the products available | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-  <details><summary>Why Choose Us?</Summary>
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep1.png">
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep2.png">
-  </details>
-  <details><summary>Boards</Summary>
-    <img src="docs/Validation/UserStoryTests/BoardsTest.png">
-  </details>
-  <details><summary>Products</Summary>
-    <img src="docs/Validation/UserStoryTests/ProductsTest.png">
-  </details>
-</details>
-
-
 ## Bugs
 
-| **Bug** | **Fix** |
-|---------|---------|
-| Height for most sections wasn't big enough | Removed the max-height value so the height would be as big as the actual content |
-| Grid items and Borders not fitting sizing | Added box-sixing: border-box and everything looked as it should |
-| Padding issue on tricks page for small mobile phone screens | Removed the padding for smaller screen sizes |
-| Social links not directing properly and not opening in a new tab | Corrected all links with http/https, and made them open in new tabs |
+ - Bug from validator: Bad value for attribute src on element img: Must be non-empty.
+ - Fix: Set the image src attribute to #:
 
-## Deployment
+- Bug from validator: Element hr not allowed as child of element ul in this context.
+- Fix: Move HR tag outside of ul/ol
 
-The website was deployed through the use of GitHub Pages, a feature built in to GitHub. This can be done by following the steps below.
-1. In the desired repository, click on "Settings" from the top menu.
-2. From the side menu to your left, select "Pages" in the "Code and automation" section.
-3. Make sure the "Source" option is set to "Deploy from a branch"
-4. Select the desired "Branch" from the drop down below (main branch in most cases, making sure the director is set to /(root)).
-5. Select "Save", and after it refreshes the page, you will see a box at the top of the page providing you with the URL of your now published site.
-
-
-## Credits
-
-### Media
-
-#### Videos
-
-- "How to Ollie in under 4 minutes" Video was taken from Youtube, from the creator "CCS"
-- "How to Shuvit & Pop Shuvit | In-Depth Trick Tip | Tactics" Video was taken from Youtube, from the creator "Tactics Boardshop"
-- "HOW TO FS 180" Video was taken from Youtube, from the creator "Jonny Giger"
-- "How to Kickflip in 5 minutes" Video was taken from Youtube, from the creator "CCS"
-- "How to Heelflip" Video was taken from Youtube, from the creator "Jonny Giger"
+- Bug: Game not restarting when fuction called
+- Fix: No fix added yet
 
 #### Images
 
-- "main-hero-image-new.jpg" by "Salvio Bhering" on Pexels
-- "404.jpg" by "Erik McLean" on Pexels
-- "board1.jpg" from "Vol.1 Checker Skateboard Deck (black and white)" on SkatePro.uk
-- "board2.jpg" from "Vol.1 Checker Skateboard Deck (purple and black)" on SkatePro.uk
-- "board3.jpg" from "Vol.1 Tie-Dye Skateboard Deck" on SkatePro.uk
-- "board4.jpg" from "Blue Baker Signature Deck" on SkatePro.uk
-- "board5.jpg" from "Red Baker Signature Deck" on SkatePro.uk
-- "board6.jpg" from "Green Baker Signature Deck" on SkatePro.uk
+- https://www.pexels.com/
+- https://dream.ai/create
+
 
 ### Code
 
-- HTML: For the interactive google map was taken from google maps.
-- HTML: "i" tags with the icons and the social media link icons were all imported from FontAwesome.
-- CSS: The font "Quicksand" was imported from Google Fonts.
-- HTML: The embedded youtube videos' code was edited to fit my site, but originally from Youtube.
+- Progress Bar code adapted from: https://codepen.io/Asadabbas/pen/ZEGLBoJ 
+- Text flashing from: https://stackoverflow.com/questions/9620594/removing-ul-indentation-with-css
 
 ## Acknowledgements
 
-I would like to take this opportunity to acknowledge and thank the following people:
-- My mentor Mo Shami for continuous guidance and support.
-- My mother, who always encouraged me to strive for a career that I enjoy.
-- My peers on the Code Institute Slack channels, for advice and feedback.
-- My partener Kirsty, for her belief in me, s
+Thanks to all the below:
+- Classmates who are also giving a helping hand
+- Slack community
+- Course facilitator (Paul Thomas)
+- My Creative Director Nason (7 year old god son) Thanks for Dream Jumper idea
