@@ -37,20 +37,6 @@ img {
   justify-content: center;
 }
 
-#page-title {
-  font-size: 28;
-  display: flex;
-  justify-content: center;
-}
-
-
-#page-title {
-  font-size: 32px;
-  padding: 30px;
-}
-
-
-
 /* container grid to house left grid and right grid for main game area */
 .container-grid {
   display: grid;
@@ -82,8 +68,6 @@ img {
 
   display: flex;
   justify-content: center;
-
-  
 }
 
 #welcome-message * {
@@ -94,7 +78,6 @@ img {
   padding: 30px;
   width: 100%;
   max-width: 1000px;
-  
 }
 
 #welcome-message p {

@@ -401,14 +401,14 @@ function checkAnswer() {
 
         {
             itemType: "pillow",
-            itemImage: ["./assets/images/items/pillow9.jpg", "./assets/images/items/pillow12.jpg", "./assets/images/items/pillow13.jpg"],
+            itemImage: ["./assets/images/items/pillow12.jpg", "./assets/images/items/pillow20.jpg", "./assets/images/items/pillow21.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         },
 
         {
             itemType: "bottle",
-            itemImage: ["./assets/images/items/hot_water_bottle2.jpg", "./assets/images/items/hot_water_bottle3.jpg", "./assets/images/items/hot_water_bottle4.jpg"],
+            itemImage: ["./assets/images/items/comforter2.jpg", "./assets/images/items/comforter3.jpg", "./assets/images/items/comforter4.jpg"],
             itemStatEdit: 2,
             itemMessage: ""
         }
@@ -421,26 +421,32 @@ function checkAnswer() {
         case 1:
             // 1 of the 3 types of items at random
             let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
+            let itemPic = Math.floor(Math.random() * 3);
+            // Returns a random integer from 0 to 10:
 
             switch (itemType) {
                 case 1:
                     if (jumperCheck == false) {
-                        document.getElementById('jumper-placeholder').style.display = "inline";
-                        document.getElementById("dream-jumper").src = playerItem[0].itemImage[0];
+                        document.getElementById('jumper-placeholder').style.display = "grid";
+                        document.getElementById("dream-jumper").src = playerItem[0].itemImage[itemPic];
+                        alert("Wait a minute, where's me jumper ?  Ohhhh there is it, i thought i lost it. Soooooooo lucky, its my fav. +20 Luck")
                         jumperCheck = true;
+
                     }
                     break;
                 case 2:
                     if (pillowCheck == false) {
-                        document.getElementById('pillow-placeholder').style.display = "inline";
-                        document.getElementById("luxury-pillow").src = playerItem[1].itemImage[1];
+                        document.getElementById('pillow-placeholder').style.display = "grid";
+                        document.getElementById("luxury-pillow").src = playerItem[1].itemImage[itemPic];
+                        alert("Wow, this pillow never gts too hot or too cold. Truly a marvel. +20 Dreaminess")
                         pillowCheck = true;
                     }
                     break;
                 case 3:
                     if (comforterCheck == false) {
-                        document.getElementById('comforter-placeholder').style.display = "inline";
-                        document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[2];
+                        document.getElementById('comforter-placeholder').style.display = "grid";
+                        document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[itemPic];
+                        alert("This is unbelievably comfy. I may never move again. +20 Comfort")
                         comforterCheck = true;
                     }
                     break;
