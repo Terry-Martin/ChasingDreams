@@ -319,7 +319,7 @@ function startingStats() {
         luck: generateStat(),
         // Get average of 3 stats and display as Sleep Depth, which is the overall player condition
         sleepDepth: function () {
-            return Math.floor((this.dreaminess + this.comfort) / 2);
+            return Math.floor((this.dreaminess + this.comfort + this.luck) / 3);
         }
     };
     //Generate a random number between 70 and 90
@@ -384,11 +384,15 @@ function checkAnswer() {
     let playerAnswer = document.getElementById("player-answer").value;
     playerAnswer = playerAnswer.toUpperCase();
     if (correctAnswer == playerAnswer) {
-        alert("Most Excellent");
+        alert("Correct");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
+        document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 10;
     } else {
-        alert("oh nooooooo");
-        document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 20;
+        alert("Ohhh, unlucky. Correct answer is ???");
+        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 30;
+        document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 30;
+        document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) - 30;
     }
 
     // Array of items
@@ -416,7 +420,7 @@ function checkAnswer() {
 
 
     // 1 in 8 chance of getting an item
-    let itemChance = (Math.floor(Math.random() * (1 - 1 + 1) + 1));
+    let itemChance = (Math.floor(Math.random() * (5 - 1 + 1) + 1));
     switch (itemChance) {
         case 1:
             // 1 of the 3 types of items at random
@@ -430,8 +434,8 @@ function checkAnswer() {
                         document.getElementById('jumper-placeholder').style.display = "grid";
                         document.getElementById("dream-jumper").src = playerItem[0].itemImage[itemPic];
                         alert("Wait a minute, where's me jumper ?  Ohhhh there is it, i thought i lost it. Soooooooo lucky, its my fav. +20 Luck")
+                        document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 20;
                         jumperCheck = true;
-
                     }
                     break;
                 case 2:
@@ -439,6 +443,7 @@ function checkAnswer() {
                         document.getElementById('pillow-placeholder').style.display = "grid";
                         document.getElementById("luxury-pillow").src = playerItem[1].itemImage[itemPic];
                         alert("Wow, this pillow never gts too hot or too cold. Truly a marvel. +20 Dreaminess")
+                        document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 20;
                         pillowCheck = true;
                     }
                     break;
@@ -447,6 +452,7 @@ function checkAnswer() {
                         document.getElementById('comforter-placeholder').style.display = "grid";
                         document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[itemPic];
                         alert("This is unbelievably comfy. I may never move again. +20 Comfort")
+                        document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 20;
                         comforterCheck = true;
                     }
                     break;
@@ -455,7 +461,7 @@ function checkAnswer() {
             }
             break;
         default:
-            alert("Not 1 - No item for you");
+            break;
     }
 
     updateStats();
@@ -487,8 +493,13 @@ function updateStats() {
     let updateLuck = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
     let UpdateSleepDepth = (parseInt((updateDreaminess + updateComfort + updateLuck) / 3));
 
-    // Dreaminess reduces by 10 for each question answered
+    //let hasJumper = jumperCheck;
+
+
+    // Stats reduces by 10 for each question answered
     document.getElementsByClassName("player-stats")[0].textContent = updateDreaminess - 10;
+    document.getElementsByClassName("player-stats")[1].textContent = updateComfort - 10;
+    document.getElementsByClassName("player-stats")[2].textContent = updateLuck - 10;
     document.getElementById("sleep-depth").textContent = UpdateSleepDepth;
     // No negative score
     if (updateDreaminess < 10) {
