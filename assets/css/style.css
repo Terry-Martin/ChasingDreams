@@ -1,8 +1,4 @@
-/* 
-https://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-code/
-Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D 
-*/
-
+/* Set defaults */
 * {
   box-sizing: border-box;
   color: #355C7D;
@@ -21,16 +17,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Set paragraph defaults */
 p {
   margin: 6px;
 }
 
+/* Item text and placeholder */
 figcaption {
   font-size: 10px;
   display: flex;
   justify-content: center;
 }
 
+/* Item images */
 img {
   font-size: 10px;
   display: flex;
@@ -70,6 +69,8 @@ img {
   justify-content: center;
 }
 
+
+/* Welcome message displayed at start */
 #welcome-message * {
   display: flex;
   justify-content: center;
@@ -84,17 +85,14 @@ img {
   justify-content: left;
 }
 
-
-
-/* ???Add background image to welcome screen??? Might remove */
 #welcome-message {
-    /* Full height */
-    height: 100%;
+  /* Full height */
+  height: 100%;
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* user reply options */
@@ -104,6 +102,7 @@ img {
   padding-right: 10px;
 }
 
+/* Text input for user to give answer */
 #player-answer {
   width: 100%;
   padding: 10px 16px;
@@ -124,7 +123,7 @@ img {
   border: 3px solid #555;
 }
 
-/* right grid to contain a 2 column by 3 row grid to host DreamInfo, Sleep Status, Player Info, NPC 1 Info and NPC 2 Info */
+/* right grid to contain a 2 column by 2 row grid to host Sleep Status, Player Info and Item Info */
 .right-grid {
   grid-area: right-grid;
   display: grid;
@@ -149,6 +148,8 @@ img {
   justify-content: center;
 }
 
+
+/* Sleep Status  */
 .right-grid-sleep-status {
   grid-area: sleep-status;
   background-color: #F8B195;
@@ -159,6 +160,7 @@ img {
 
 }
 
+/* Player Info*/
 .right-grid-player-info {
   grid-area: player-info;
   background-color: #F8B195;
@@ -175,16 +177,17 @@ img {
   margin-top: 12px;
 }
 
+/* Hightlight player name */
 #player-name {
   color: blue;
   display: flex;
-
   padding-left: 5px;
   padding-right: 5px;
   justify-content: center;
   font-size: 18px;
 }
 
+/* Player Items */
 .right-grid-items {
   grid-area: items;
   background-color: #F8B195;
@@ -216,6 +219,8 @@ strong {
   font-weight: 900;
 }
 
+
+/* Buttons */
 #start-game,
 #continue-game,
 #submit-answer,
@@ -271,6 +276,7 @@ button[disabled] {
 }
 
 /* Progress Bar */
+/* https://codepen.io/Asadabbas/pen/ZEGLBoJ */
 .block {
   position: relative;
   display: flex;
@@ -385,6 +391,7 @@ button[disabled] {
   justify-content: right;
 }
 
+/* Game function headings */
 h3 {
   display: flex;
   justify-content: center;
@@ -414,6 +421,8 @@ h3 {
   }
 }
 
+
+/* Player Items */
 #player-items {
   display: flex;
   justify-content: space-evenly;
@@ -450,14 +459,13 @@ h3 {
   }
 
   .right-grid-player-info {
-    display:flex;
+    display: flex;
     justify-content: center;
   }
 }
 
 /* Min-width: 768px (smaller desktop viewpoints) */
-@media only screen and (max-width: 768px) {
-}
+@media only screen and (max-width: 768px) {}
 
 /* Min-width: 480px (smaller desktop viewpoints) */
 @media only screen and (max-width: 768px) {
@@ -478,12 +486,14 @@ h3 {
 /* Min-width: 480px (smaller desktop viewpoints) */
 @media only screen and (max-width: 480px) {
 
-  *{
+  * {
     font-size: 16px;
     margin: 5px;
     gap: 5px;
-
   }
-
-
 }
+
+/* 
+Colout palette -  F8B195   F67280   C06C84   6C5B7B   355C7D 
+https://digitalsynopsis.com/design/minimal-web-color-palettes-combination-hex-code/
+*/

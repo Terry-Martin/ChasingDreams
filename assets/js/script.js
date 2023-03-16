@@ -1,30 +1,33 @@
 /*jslint browser:true */
 
+
+//  Variables Event Listeners
 var startGame = document.getElementById("start-game");
 var submitAnswer = document.getElementById("submit-answer");
 var continueGame = document.getElementById("continue-game");
 var resetGame = document.getElementById("reset-to-start");
 
+// CHeck if player already has a certain item
 let jumperCheck = false;
 let pillowCheck = false;
 let comforterCheck = false;
 
+// Event Listeners
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
 submitAnswer.addEventListener("click", checkAnswer);
 resetGame.addEventListener("click", restartGame);
 
+// Set up initial display and content
 document.getElementById('missing-lyric-game').style.display = "none";
 document.getElementsByClassName("right-grid")[0].style.display = "none";
 document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
-
 document.getElementsByClassName("right-grid-dream-info")[0].style.display = "none";
-
 document.getElementById('jumper-placeholder').style.display = "none";
 document.getElementById('pillow-placeholder').style.display = "none";
 document.getElementById('comforter-placeholder').style.display = "none";
 
-
+// Array to hold song lyrics, questions and answers
 var lyricGame = [{
         songTitle: "White Rabbit",
         line1: "And one pill makes you small",
@@ -292,7 +295,6 @@ function newGame() {
     startingStats();
     displayQuestion();
     // Set and display current song and question
-
     document.getElementsByClassName("right-grid")[0].style.display = "grid";
     document.getElementsByClassName("left-grid-user-response")[0].style.display = "none";
     document.getElementById("welcome-message").style.display = "none";
@@ -337,9 +339,12 @@ function startingStats() {
     // Calculate player sleep depth as a calculation of player stats and display 
     document.getElementById("sleep-depth").textContent = character.sleepDepth();
 
-    // Change font colour depending on current score
+    // End game if user score is zero
     if (character.sleepDepth() < 1) {
-        alert("You woke up");
+        alert("You woke up. Please press Restart Button to try again");
+        document.getElementById("body").submit();
+
+        // Change font colour depending on current score
     } else if (character.sleepDepth() < 26) {
         document.getElementById("sleep-depth").style.color = "red";
     } else if (character.sleepDepth() < 76) {
@@ -354,6 +359,7 @@ function displayQuestion() {
     // Prevent page reloading
     event.preventDefault();
 
+    // Display 1 of 25 questions at random
     lyricQuestionNumber = Math.floor(Math.random() * (lyricGame.length));
     correctAnswer = lyricGame[lyricQuestionNumber].answer;
 
@@ -365,15 +371,16 @@ function displayQuestion() {
     document.getElementById("song-by").innerHTML = lyricGame[lyricQuestionNumber].songBy;
     document.getElementById("game-question").innerHTML = lyricGame[lyricQuestionNumber].question;
 
+    // Enable and disabled buttons
     document.getElementById("submit-answer").disabled = false;
     document.getElementById("continue-game").disabled = true;
 
+    //Game counter
     let gameCounter = document.getElementById("area-number").textContent;
     gameCounter++;
 
     document.getElementById("area-number").textContent = gameCounter;
     document.getElementById("total-sleep").textContent = gameCounter;
-
     document.getElementById("player-answer").value = "";
 
     // Remove question from array, so it cant be repeated
@@ -383,8 +390,11 @@ function displayQuestion() {
 function checkAnswer() {
     event.preventDefault();
 
+    // Check user answer against correct answer
     let playerAnswer = document.getElementById("player-answer").value;
+    // Allow user to enter answer in upper or lower case
     playerAnswer = playerAnswer.toUpperCase();
+    // Adjust score depending on answer
     if (correctAnswer == playerAnswer) {
         alert("Correct");
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 10;
@@ -397,26 +407,20 @@ function checkAnswer() {
         document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) - 30;
     }
 
-    // Array of items
+    // Array of items and images
     let playerItem = [{
             itemType: "jumper",
             itemImage: ["./assets/images/items/jumper2.jpg", "./assets/images/items/jumper3.jpg", "./assets/images/items/jumper5.jpg"],
-            itemStatEdit: 2,
-            itemMessage: ""
         },
 
         {
             itemType: "pillow",
             itemImage: ["./assets/images/items/pillow12.jpg", "./assets/images/items/pillow20.jpg", "./assets/images/items/pillow21.jpg"],
-            itemStatEdit: 2,
-            itemMessage: ""
         },
 
         {
             itemType: "bottle",
             itemImage: ["./assets/images/items/comforter2.jpg", "./assets/images/items/comforter3.jpg", "./assets/images/items/comforter4.jpg"],
-            itemStatEdit: 2,
-            itemMessage: ""
         }
     ];
 
@@ -427,9 +431,10 @@ function checkAnswer() {
         case 1:
             // 1 of the 3 types of items at random
             let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
+            // Display 1 of 3 pics
             let itemPic = Math.floor(Math.random() * 3);
-            // Returns a random integer from 0 to 10:
 
+            // Display message and correct image for Items
             switch (itemType) {
                 case 1:
                     if (jumperCheck == false) {
@@ -437,6 +442,7 @@ function checkAnswer() {
                         document.getElementById("dream-jumper").src = playerItem[0].itemImage[itemPic];
                         alert("Wait a minute, where's me jumper ?  Ohhhh there is it, i thought i lost it. Soooooooo lucky, its my fav. +20 Luck")
                         document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 20;
+                        // Ensure Item cannot be received asecond time
                         jumperCheck = true;
                     }
                     break;
@@ -446,6 +452,7 @@ function checkAnswer() {
                         document.getElementById("luxury-pillow").src = playerItem[1].itemImage[itemPic];
                         alert("Wow, this pillow never gts too hot or too cold. Truly a marvel. +20 Dreaminess")
                         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) + 20;
+                        // Ensure Item cannot be received asecond time
                         pillowCheck = true;
                     }
                     break;
@@ -455,6 +462,7 @@ function checkAnswer() {
                         document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[itemPic];
                         alert("This is unbelievably comfy. I may never move again. +20 Comfort")
                         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 20;
+                        // Ensure Item cannot be received asecond time
                         comforterCheck = true;
                     }
                     break;
@@ -470,7 +478,7 @@ function checkAnswer() {
 
     // Change font colour depending on current score
     if (document.getElementById("sleep-depth").textContent < 1) {
-        alert("You woke up");
+        alert("You woke up. Please press Restart Button to try again");
     } else if (document.getElementById("sleep-depth").textContent < 35) {
         document.getElementById("sleep-depth").style.color = "red";
     } else if (document.getElementById("sleep-depth").textContent < 76) {
@@ -478,12 +486,13 @@ function checkAnswer() {
     } else {
         document.getElementById("sleep-depth").style.color = "seagreen";
     }
-
+    // Enable and disable buttoms
     document.getElementById("submit-answer").disabled = true;
     document.getElementById("continue-game").disabled = false;
 
     showProgress();
 
+    // Display message if user completes game
     if (document.getElementById("total-sleep").textContent == 8) {
         alert("Congrats - You got a full nights rest. You are ready to attack the day with a smile");
     }
@@ -494,9 +503,6 @@ function updateStats() {
     let updateComfort = parseInt((document.getElementsByClassName("player-stats")[1].textContent));
     let updateLuck = parseInt((document.getElementsByClassName("player-stats")[2].textContent));
     let UpdateSleepDepth = (parseInt((updateDreaminess + updateComfort + updateLuck) / 3));
-
-    //let hasJumper = jumperCheck;
-
 
     // Stats reduces by 10 for each question answered
     document.getElementsByClassName("player-stats")[0].textContent = updateDreaminess - 10;
@@ -549,23 +555,5 @@ function showProgress() {
 function restartGame() {
     document.getElementById("player-answer").value = "Restart";
     document.getElementById("body").reset();
-}
 
-/*
-function setGame() {
-    // Set game type array and display random game type data
-    const game = ["missingLyric", "Echos of the Past", "Morning Ritual", "truthyOrFalsy"];
-    let gameType = Math.floor(Math.random() * game.length);
-    document.getElementById("game").textContent = game[gameType];
-
-    // Set the weather background
-    // ??CHANGE WEATHER TO GAME TYPE??
-    const gameImage = [
-        "url('/assets/images/weather/rain1.jpg')",
-        "url('/assets/images/weather/clear_sky.jpg')",
-        "url('/assets/images/weather/snow1.jpg')",
-        "url('/assets/images/weather/hurricane2.jpg')"
-    ];
-    document.getElementsByClassName("right-grid-npc1-info")[0].style.backgroundImage = gameImage[gameType]; 
 }
-*/

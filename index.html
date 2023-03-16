@@ -21,10 +21,12 @@
 </head>
 
 <body>
-
+    <!-- Overall grid -->
     <div class="container-grid">
+        <!-- left hand grid for Missing Song Lyic -->
         <div class="left-grid">
             <div class="left-grid-content">
+                <!-- Initial area displayed to user-->
                 <section id="welcome-message">
                     <p>You fall into a deep, peaceful slumber.</p>
                     <p>Wouldn't it be great to get a full, restive eight hours sleep.....for once</p>
@@ -32,7 +34,7 @@
                         a little luck along the way)</p>
                     <button id="start-game">Start Dreaming</button>
                 </section>
-
+                <!-- Main Game Song Lyrics-->
                 <section id="missing-lyric-game">
                     <h3 id="missing-lyric-title">Missing Song Lyric</h3>
                     <p id="song-title"></p>
@@ -44,11 +46,9 @@
                 </section>
 
             </div>
-
+            <!-- Question and answer section -->
             <div class="left-grid-user-response">
-
                 <section id="user-response">
-                    <!-- <form action="https://formdump.codeinstitute.net/" method="POST" id="main-content"></form> -->
                     <form id="main-content">
                         <hr>
                         <p id="game-question"></p>
@@ -68,8 +68,9 @@
             </div>
 
         </div>
-
+        <!-- RIght grid to hold Player Info, Sleep Info and Player Items section -->
         <div class="right-grid">
+            <!-- Dream Info section -->
             <div class="right-grid-dream-info">
                 <section>
                     <h3>Dream Info</h3>
@@ -81,17 +82,17 @@
                         <li>Total Sleep:
                             <span id="total-sleep"></span>
                         </li>
-
                         <li id="area-number">0</li>
                     </ul>
                 </section>
             </div>
-
+            <!-- Sleep Status Section -->
             <div class="right-grid-sleep-status">
                 <section>
                     <h3>Sleep Info</h3>
 
                     <!-- Progres Circle Bar -->
+                    <!-- Addapted from https://codepen.io/Asadabbas/pen/ZEGLBoJ-->
                     <div class="block">
                         <div class="box">
                             <p class="number">
@@ -114,12 +115,12 @@
                     <p>Target: 8 hours</p>
                 </section>
             </div>
-
+            <!-- Player Info and stats section -->
             <div class="right-grid-player-info">
                 <section>
                     <h3>Player Info</h3>
                     <p>
-                        <span id="player-name">Terry</span>
+                        <span id="player-name">Yourself</span>
                     </p>
                     <ul>
                         <li>Dreaminess:
@@ -138,7 +139,7 @@
                     <hr>
                 </section>
             </div>
-
+            <!-- Player Items scetion -->
             <div class="right-grid-items">
                 <section>
                     <h3>Player Items</h3>
