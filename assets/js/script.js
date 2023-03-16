@@ -3,6 +3,7 @@
 var startGame = document.getElementById("start-game");
 var submitAnswer = document.getElementById("submit-answer");
 var continueGame = document.getElementById("continue-game");
+var resetGame = document.getElementById("reset-to-start");
 
 let jumperCheck = false;
 let pillowCheck = false;
@@ -11,6 +12,7 @@ let comforterCheck = false;
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
 submitAnswer.addEventListener("click", checkAnswer);
+resetGame.addEventListener("click", restartGame);
 
 document.getElementById('missing-lyric-game').style.display = "none";
 document.getElementsByClassName("right-grid")[0].style.display = "none";
@@ -389,7 +391,7 @@ function checkAnswer() {
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) + 10;
         document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) + 10;
     } else {
-        alert("Ohhh, unlucky. Correct answer is ???");
+        alert(`Oh, unlucky - The correct answer is ${correctAnswer}!`);
         document.getElementsByClassName("player-stats")[0].textContent = parseInt(document.getElementsByClassName("player-stats")[0].textContent) - 30;
         document.getElementsByClassName("player-stats")[1].textContent = parseInt(document.getElementsByClassName("player-stats")[1].textContent) - 30;
         document.getElementsByClassName("player-stats")[2].textContent = parseInt(document.getElementsByClassName("player-stats")[2].textContent) - 30;
@@ -543,6 +545,11 @@ function showProgress() {
     });
 }
 
+// Restart the game
+function restartGame() {
+    document.getElementById("player-answer").value = "Restart";
+    document.getElementById("body").reset();
+}
 
 /*
 function setGame() {
