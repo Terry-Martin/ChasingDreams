@@ -277,7 +277,7 @@ function newGame() {
     event.preventDefault();
 
     // Reset displays
-    resetGameData()
+    resetGameData();
 
     // Call game funtions
     startingStats();
@@ -314,8 +314,8 @@ function startingStats() {
         sleepDepth: function () {
             return Math.floor((this.dreaminess + this.comfort) / 2);
         }
-    }
-    //Generate a random number between 70 and 99
+    };
+    //Generate a random number between 70 and 90
     function generateStat() {
         return Math.floor(Math.random() * 20) + 70;
     }
@@ -405,13 +405,13 @@ function checkAnswer() {
             itemStatEdit: 2,
             itemMessage: ""
         }
-    ]
+    ];
 
     // 1 in 8 chance of getting an item
     let itemChance = (Math.floor(Math.random() * (1 - 1 + 1) + 1));
     switch (itemChance) {
         case 1:
-            alert("1 - you get an item")
+            alert("1 - you get an item");
             // 1 of the 3 types of items at random
             let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
             switch (itemType) {
@@ -425,11 +425,11 @@ function checkAnswer() {
                     document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[2];
                     break;
                 default:
-                    alert("You are not supposed to be able to see this. What have you done?!?!?!")
+                    alert("You are not supposed to be able to see this. What have you done?!?!?!");
             }
             break;
         default:
-            alert("Not 1 - No item for you")
+            alert("Not 1 - No item for you");
     }
 
     updateStats();
@@ -451,7 +451,7 @@ function checkAnswer() {
     showProgress();
 
     if (document.getElementById("total-sleep").textContent == 8) {
-        alert("Congrats - You got a full nights rest. You are ready to attack the day with a smile")
+        alert("Congrats - You got a full nights rest. You are ready to attack the day with a smile");
     }
 }
 
@@ -495,7 +495,7 @@ function showProgress() {
                 count += 1;
                 numElement.innerText = count;
             }
-        }, time)
+        }, time);
         circle.style.strokeDashoffset = 503 - (503 * (num / 8));
         let dots = item.querySelector('.dots');
         dots.style.transform =
@@ -503,8 +503,8 @@ function showProgress() {
         if (num == 100) {
             dots.style.opacity = 0;
         }
-    })
-};
+    });
+}
 
 
 /*

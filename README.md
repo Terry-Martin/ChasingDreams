@@ -156,104 +156,83 @@ The following languages were used to develop the website:
 
 ### Frameworks and Tools
 The following frameworks and tools were used to develop the website:
-- Git
 - Github
 - Gitpod
+- Google
 - Google Fonts
-- Font Awesome
 - Balsamiq
 - Dream by WOMBO
 
 ## Features
 The website is one page with XXX features
 
-### Header (logo and navigation)
-- Shows on every page
-- The nav links stack under the logo on smaller screens making it responsive
-- Enables easy and smooth navigation
-- The current page is highlighted in blue
-- User Stories: 8, 14
-<details><summary>Header</Summary>
-<img src="docs/features/Header.png">  
-</details>
+### Question, Answer and Submit for Missing Song Lyric Game
 
-### Footer
-- Shows on every page like the header
-- Like the header, the social links also stack underneath the copyright text on smaller screens
-- User Stories: 2, 8, 14
-<details><summary>Footer</Summary>
-<img src="docs/features/Footer.png">  
-</details>
+![balsamiq image](assets/images/readme_images/feature1.jpg)
+- Displays 4 lines of a song. Each song has Dream theme to it
+- It takes 8 songs to complete game. They are selected randomly from a bank of 25 question/answers.
+- Questions/Answers are stored in an array. Songs sourced from Google. Questions are custom made
+- Text of first question asked flashes on screen to draw user attention and direct their focus
+- User is told how many letters there are in missing lyric word
+- Answers can be typed in Input Box
+- Answers will be accepted in lower and upper case
 
-### 404 page
-- Redirects the user to a working page
-- Explains what the issue is
-- User Stories: 8, 15
-<details><summary>404 Page</Summary>
-<img src="docs/features/404page.png">  
-</details>
+### Player Info
+
+![balsamiq image](assets/images/readme_images/feature2.jpg)
+- Displays users 4 stats with current score - Dreaminess, Comfort, Luck and Sleep Depth
+- Dreaminess, Comfort and Luck are generated at the start of each game. Each stat score will start at a number between 70 to 90 (randomly decided)
+- These 3 stats are combined to give an overall Sleep Depth score.
+- User stats will increase/decrease depnding on answers given to Missing Song Lyric questions
+
+### Sleep Info
+
+![balsamiq image](assets/images/readme_images/feature3.jpg)
+- Displays a progress bar (circle) that highlights the numer of hours sleep the user has achived so far
+- This increments by one hour each question answered, regardless if the answer given was correct or incorrect
+- Target of 8 hours is shown. If user reaches this target they complete the game
+
+
+### Player Items
+
+![balsamiq image](assets/images/readme_images/feature4.jpg)
+- This area starts the game blank as user has zero items 
+- Items can be found randomly when users answer a question. The chances of finding an item are 1 in 8
+- There are 3 types of items - Jumper, Pillow and Comforter
+- There are 3 subtypes of each item. Finding any of these items will give a positive or negative influence on user stats. 
+- USers can only find one of each item type per game but can possible find 3 items per game (eg, user can find 1 Jumper, 1 Pillow and 1 Comforter per game but not 2 Jumpers)
+- Items are displayed as an image after they are found
+- These images were generated using Dream by Womba AI imaging, so are custome made
+
 
 ## Validation
 
 ### HTML Validation
 
-The Nu HTML Checker (W3C) is used to validate HTML documents. This ensures that all unintended mistakes are spotted before release, so that they can be corrected. All of my pages passed the check without any errors, including the 404 page.
 
-<details><summary>Home</Summary>
-<img src="docs/Validation/HTML/index.png">  
-</details>
+IMAGE
 
-<details><summary>Tricks</Summary>
-<img src="docs/Validation/HTML/tricks.png">  
-</details>
+-
 
-<details><summary>Boards</Summary>
-<img src="docs/Validation/HTML/boards.png">  
-</details>
-
-<details><summary>Contact</Summary>
-<img src="docs/Validation/HTML/contact.png">   
-</details>
-
-<details><summary>404</Summary>
-<img src="docs/Validation/HTML/404.png">
-</details>
 
 ### CSS Validation
 
-The W3C Jigsaw CSS Validation Service is used in exactly the same way as the Nu HTML Validator, but for CSS. I ran both my actual style.css file, and an actual web page through it, and both passed without any errors.
+IMAGE
 
-<details><summary>Web Page</Summary>
-<img src="docs/Validation/CSS/CSS.png">
-</details>
+-
 
-<details><summary>Stylesheet</Summary>
-<img src="docs/Validation/CSS/stylesheet.png">
-</details>
+
+### JaveScript Validation
+
+IMAGE
+
+-
+
 
 ### Accessibility
 
 The WAVE web accessibility evaluation tool by WebAIM was used to ensure the webpages met accessibility standards. All 5 pages passed without any errors.
 
-<details><summary>Home</Summary>
-<img src="docs/Validation/Accessibility/index.png">
-</details>
-
-<details><summary>Tricks</Summary>
-<img src="docs/Validation/Accessibility/tricks.PNG">
-</details>
-
-<details><summary>Boards</Summary>
-<img src="docs/Validation/Accessibility/boards.PNG">
-</details>
-
-<details><summary>Contact</Summary>
-<img src="docs/Validation/Accessibility/contact.PNG">
-</details>
-
-<details><summary>404</Summary>
-<img src="docs/Validation/Accessibility/404.PNG">
-</details>
 
 ### Performance
 
@@ -263,30 +242,14 @@ The Google Lighthouse tool, within the Google Chrome Developer Tools was used to
 <img src="docs/Validation/Performance/index.png">
 </details>
 
-<details><summary>Tricks</Summary>
-<img src="docs/Validation/Performance/tricks.png">
-</details>
-
-<details><summary>Boards</Summary>
-<img src="docs/Validation/Performance/boards.png">
-</details>
-
-<details><summary>Contact</Summary>
-<img src="docs/Validation/Performance/contact.png">
-</details>
-
-<details><summary>404</Summary>
-<img src="docs/Validation/Performance/404.png">
-</details>
 
 ### Performance tests on various devices
 
 Throughout development and testing, I used the following devices to ensure that the site was responsive, and worked as intended.
 
-- Samsung Galaxy ZFold 2 (both ultra slim mode, and wide mode)
-- Microsoft Surface Book 2 (Both as the laptop, and tablet)
-- Macbook Pro
-- Desktop PC with a 32" monitor
+- Laptop running Windows 11
+- Samsung S20
+
 
 ### Browser Compatibility
 
@@ -294,9 +257,7 @@ The website was tested on several web browsers to ensure consistency. The browse
 
 - Microsoft Edge
 - Google Chrome
-- Brave Browser (A Chrome based browser)
-- Mozilla Firefox
-- Opera GX
+- Firefox
 
 ### Testing User Stories
 
@@ -329,260 +290,6 @@ The website was tested on several web browsers to ensure consistency. The browse
   </details>
 </details>
 
-2. As a first time user, I want to learn about the company
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Footer | Scroll down to the bottom of any page | See the social links | Works as expected |
-| History | Navigate to the Home page and scroll down to the bottom | See the History of Skate Shack section | Works as expected |
-| Google Map | Navigate to the Contact page | See the Google Map | Works as expected |
-| Address | Navigate to the Contact page | See the Address above the Google Map | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Footer</Summary>
-    <img src="docs/Validation/UserStoryTests/FooterTest.png">
-  </details>
-  <details><summary>History</Summary>
-    <img src="docs/Validation/UserStoryTests/HistoryTestStep1.png">
-    <img src="docs/Validation/UserStoryTests/HistoryTestStep2.png">
-  </details>
-  <details><summary>Google Map</Summary>
-    <img src="docs/Validation/UserStoryTests/GoogleMapTest.png">
-  </details>
-  <details><summary>Address</Summary>
-    <img src="docs/Validation/UserStoryTests/AddressTest.png">
-  </details>
-</details>
-
-3. As a first time user, I want to know how much the product costs
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Boards | Navigate to the Boards page | See the page containing all the products | Works as expected |
-| Products | Navigate to the Boards page, and scroll down | See all of the products available | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Boards</Summary>
-    <img src="docs/Validation/UserStoryTests/BoardsTest.png">
-  </details>
-  <details><summary>Products</Summary>
-    <img src="docs/Validation/UserStoryTests/ProductsTest.png">
-  </details>
-</details>
-
-4. As a first time user, I want to learn more about skateboarding
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-</details>
-
-5. As a first time user, I want to learn how to use the product
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-</details>
-
-6. As a first time user, I want to ask questions about my order
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact form | Navigate to the Contact page | See the Contact form and be able to fill it in | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Contact Form</Summary>
-    <img src="docs/Validation/UserStoryTests/ContactFormTest.png"> 
-  </details>
-</details>
-
-7. As a first time user, I want to know why to choose this company
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Why Choose Us? | Navigate to the Home page and scoll down | See the Why Choose Us? section | Works as expected |
-| History | Navigate to the Home page and scroll down to the bottom | See the History of Skate Shack section | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Why Choose Us?</Summary>
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep1.png">
-    <img src="docs/Validation/UserStoryTests/WhyChooseUsTestStep2.png">
-  </details>
-  <details><summary>History</Summary>
-    <img src="docs/Validation/UserStoryTests/HistoryTestStep1.png">
-    <img src="docs/Validation/UserStoryTests/HistoryTestStep2.png">
-  </details>
-</details>
-
-8. As a first time user, I want to be able to navigate the site easily
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Header | Scroll up to the top of any page | See the logo and nav bar | Works as expected |
-| Footer | Scroll down to the bottom of any page | See the social links | Works as expected |
-| 404 Page | If a link is broken, or the url is entered incorrectly | See the 404 Page | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Header</Summary>
-    <img src="docs/Validation/UserStoryTests/HeaderTest.png">
-  </details>
-  <details><summary>Footer</Summary>
-    <img src="docs/Validation/UserStoryTests/FooterTest.png">
-  </details>
-  <details><summary>404</Summary>
-    <img src="docs/Validation/UserStoryTests/404Test.png">
-  </details>
-</details>
-
-9. As a returning user, I want to be able to contact the company
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact form | Navigate to the Contact page | See the Contact form and be able to fill it in | Works as expected |
-| Google Map | Navigate to the Contact page | See the Google Map | Works as expected |
-| Address | Navigate to the Contact page | See the Address above the Google Map | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Contact Form</Summary>
-    <img src="docs/Validation/UserStoryTests/ContactFormTest.png">
-  </details>
-  <details><summary>Google Map</Summary>
-    <img src="docs/Validation/UserStoryTests/GoogleMapTest.png">
-  </details>
-  <details><summary>Address</Summary>
-    <img src="docs/Validation/UserStoryTests/AddressTest.png">
-  </details>
-</details>
-
-10. As a returning user, I want to learn more tricks
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-</details>
-
-11. As a returning user, I want to learn where a physical store is
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Google Map | Navigate to the Contact page | See the Google Map | Works as expected |
-| Address | Navigate to the Contact page | See the Address above the Google Map | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Google Map</Summary>
-    <img src="docs/Validation/UserStoryTests/GoogleMapTest.png">
-  </details>
-  <details><summary>Address</Summary>
-    <img src="docs/Validation/UserStoryTests/AddressTest.png">
-  </details>
-</details>
-
-12. As a returning user, I want to look at products
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Boards | Navigate to the Boards page | See the page containing all the products | Works as expected |
-| Products | Navigate to the Boards page, and scroll down | See all of the products available | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Boards</Summary>
-    <img src="docs/Validation/UserStoryTests/BoardsTest.png">
-  </details>
-  <details><summary>Products</Summary>
-    <img src="docs/Validation/UserStoryTests/ProductsTest.png">
-  </details>
-</details>
-
-13. As a site owner, I want users to find out about our products
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Boards | Navigate to the Boards page | See the page containing all the products | Works as expected |
-| Products | Navigate to the Boards page, and scroll down | See all of the products available | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Boards</Summary>
-    <img src="docs/Validation/UserStoryTests/BoardsTest.png">
-  </details>
-  <details><summary>Products</Summary>
-    <img src="docs/Validation/UserStoryTests/ProductsTest.png">
-  </details>
-</details>
-
-14. As a site owner, I want users to have a good visual experience when using the website
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Header | Scroll up to the top of any page | See the logo and nav bar | Works as expected |
-| Footer | Scroll down to the bottom of any page | See the social links | Works as expected |
-| Hero Image | Navigate to the top of the Home page | See the Hero Image and cover text | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Header</Summary>
-    <img src="docs/Validation/UserStoryTests/HeaderTest.png">
-  </details>
-  <details><summary>Footer</Summary>
-    <img src="docs/Validation/UserStoryTests/FooterTest.png">
-  </details>
-  <details><summary>Hero Image</Summary>
-    <img src="docs/Validation/UserStoryTests/HeroImageTest.png">
-  </details>
-</details>
-
-15. As a site owner, I want users to be able to see a 404 page if anything goes wrong
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| 404 Page | If a link is broken, or the url is entered incorrectly | See the 404 Page | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>404</Summary>
-    <img src="docs/Validation/UserStoryTests/404Test.png">
-  </details>
-</details>
-
-16. As a site owner, I want to enrich our users' skateboarding experience
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Tricks | Navigate to the Tricks page and find any Trick | See the tricks | Works as expected |
-| Trick Videos | Navigate to the Tricks page and find any Trick Video | See the trick videos | Works as expected |
-
-<details><summary>Screenshots</Summary>
-  <details><summary>Tricks</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksTest.png">
-  </details>
-  <details><summary>Tricks Videos</Summary>
-    <img src="docs/Validation/UserStoryTests/TricksVideosTest.png">
-  </details>
-</details>
 
 ## Bugs
 
@@ -602,21 +309,6 @@ The website was deployed through the use of GitHub Pages, a feature built in to 
 4. Select the desired "Branch" from the drop down below (main branch in most cases, making sure the director is set to /(root)).
 5. Select "Save", and after it refreshes the page, you will see a box at the top of the page providing you with the URL of your now published site.
 
-You can fork my, or any other repository by doing the following.
-1. Go to the desired repository
-2. Click "Fork" in the upper right corner
-3. Select the owner, and set the repository name. A description can be added if desired
-4. Choose whether to copy the default branch, or all branches
-5. Click "Create Form"
-
-You can clone a repository by following the steps below.
-1. Go to the desired repository
-2. Click the "Code" button at the top of the files section of the page
-3. Select your desired method for cloning (HTTPS/SSH/GitHub CLI)
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory
-6. Type "git clone", and then paste the URL you copied earlier. It will look like this, with your GitHub username instead of "YOUR-USERNAME": "$ git clone https://github.com/YOUR-USERNAME/DESIRED-REPOSITORY"
-7. Press Enter. Your local clone will be created.
 
 ## Credits
 
