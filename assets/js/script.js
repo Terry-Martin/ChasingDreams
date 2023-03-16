@@ -4,6 +4,10 @@ var startGame = document.getElementById("start-game");
 var submitAnswer = document.getElementById("submit-answer");
 var continueGame = document.getElementById("continue-game");
 
+let jumperCheck = false;
+let pillowCheck = false;
+let comforterCheck = false;
+
 startGame.addEventListener("click", newGame);
 continueGame.addEventListener("click", displayQuestion);
 submitAnswer.addEventListener("click", checkAnswer);
@@ -14,6 +18,9 @@ document.getElementsByClassName("left-grid-user-response")[0].style.display = "n
 
 document.getElementsByClassName("right-grid-dream-info")[0].style.display = "none";
 
+document.getElementById('jumper-placeholder').style.display = "none";
+document.getElementById('pillow-placeholder').style.display = "none";
+document.getElementById('comforter-placeholder').style.display = "none";
 
 
 var lyricGame = [{
@@ -407,22 +414,35 @@ function checkAnswer() {
         }
     ];
 
+
     // 1 in 8 chance of getting an item
     let itemChance = (Math.floor(Math.random() * (1 - 1 + 1) + 1));
     switch (itemChance) {
         case 1:
-            alert("1 - you get an item");
             // 1 of the 3 types of items at random
             let itemType = (Math.floor(Math.random() * (3 - 1 + 1) + 1));
+
             switch (itemType) {
                 case 1:
-                    document.getElementById("dream-jumper").src = playerItem[0].itemImage[0];
+                    if (jumperCheck == false) {
+                        document.getElementById('jumper-placeholder').style.display = "inline";
+                        document.getElementById("dream-jumper").src = playerItem[0].itemImage[0];
+                        jumperCheck = true;
+                    }
                     break;
                 case 2:
-                    document.getElementById("luxury-pillow").src = playerItem[1].itemImage[1];
+                    if (pillowCheck == false) {
+                        document.getElementById('pillow-placeholder').style.display = "inline";
+                        document.getElementById("luxury-pillow").src = playerItem[1].itemImage[1];
+                        pillowCheck = true;
+                    }
                     break;
                 case 3:
-                    document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[2];
+                    if (comforterCheck == false) {
+                        document.getElementById('comforter-placeholder').style.display = "inline";
+                        document.getElementById("hot-water-bottle").src = playerItem[2].itemImage[2];
+                        comforterCheck = true;
+                    }
                     break;
                 default:
                     alert("You are not supposed to be able to see this. What have you done?!?!?!");

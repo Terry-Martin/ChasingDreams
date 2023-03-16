@@ -190,8 +190,9 @@ The website is one page with XXX features
 ![balsamiq image](assets/images/readme_images/feature3.jpg)
 - Displays a progress bar (circle) that highlights the numer of hours sleep the user has achived so far
 - This increments by one hour each question answered, regardless if the answer given was correct or incorrect
+- Each hours sleep costs the user 10 points of each stat
 - Target of 8 hours is shown. If user reaches this target they complete the game
-
+- Sleep Depth stat score shows in green when it is high, changes to yellow when in mid range and red when score is low
 
 ### Player Items
 
